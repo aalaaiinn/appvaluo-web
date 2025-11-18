@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,472 +20,477 @@
     </nav>
   </header>
 
-  <!-- HERO / PORTADA -->
-  <section class="hero" id="inicio">
-    <div class="container hero-content">
-      <div class="hero-text">
-        <h1>Plataforma profesional para avalúos inmobiliarios.</h1>
-        <p>
-          AppValúo concentra en un solo sistema lo que un valuador usa todos los días:
-          enfoque de mercado, tablas de deméritos Ross-Heidecke, construcciones,
-          clasificación de zona, plano con valores y generación de reportes listos para impresión.
+  <!-- CONTENIDO PRINCIPAL -->
+  <main>
+
+    <!-- HERO / PORTADA -->
+    <section class="hero" id="inicio">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h1>Plataforma profesional para avalúos inmobiliarios.</h1>
+          <p>
+            AppValúo concentra en un solo sistema lo que un valuador usa todos los días:
+            enfoque de mercado, tablas de deméritos Ross-Heidecke, construcciones,
+            clasificación de zona, plano con valores y generación de reportes listos para impresión.
+          </p>
+          <div class="hero-actions">
+            <a href="#mercado" class="btn btn-primary">Ir al mercado de propiedades</a>
+            <a href="#contacto" class="btn btn-outline">Solicitar AppValúo</a>
+            <a href="#tutoriales" class="btn btn-ghost">Ver tutoriales</a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <h2>Resumen del sistema</h2>
+          <ul>
+            <li>Captura guiada de antecedentes, terreno y construcciones.</li>
+            <li>Enfoque de mercado con comparables y URL de respaldo.</li>
+            <li>Tablas de deméritos Ross-Heidecke integradas.</li>
+            <li>Catálogo de construcciones y clasificación de zona.</li>
+            <li>Plano con valores para ubicar sectores y valores unitarios.</li>
+            <li>Generación de reportes en PDF listos para entregar al cliente.</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ENFOQUE DE MERCADO (RESUMEN + BOTONES) -->
+    <section class="section" id="mercado">
+      <div class="container">
+        <h2>Mercado de propiedades</h2>
+
+        <p class="section-intro">
+          Aquí se concentra el enfoque de mercado de AppValúo. Se registran los comparables
+          de casas y terrenos con sus datos principales y la URL completa de la oferta,
+          para que cada avalúo tenga un respaldo claro y verificable.
         </p>
-        <div class="hero-actions">
-          <a href="#mercado" class="btn btn-primary">Ir al mercado de propiedades</a>
-          <a href="#contacto" class="btn btn-outline">Solicitar AppValúo</a>
-          <a href="#tutoriales" class="btn btn-ghost">Ver tutoriales</a>
+
+        <div class="grid-2">
+          <article class="card market-summary">
+            <h3>Flujo de trabajo del valuador</h3>
+            <ol class="steps-list">
+              <li>Abres el navegador desde la app (botón “Ir al navegador”).</li>
+              <li>Buscas casas y terrenos comparables en portales o anuncios.</li>
+              <li>Capturas precio, colonia, superficie y observaciones.</li>
+              <li>Pegas la URL completa de cada oferta como respaldo.</li>
+              <li>AppValúo calcula el valor por m² y el valor homologado.</li>
+            </ol>
+            <p>
+              El objetivo es sencillo: que cada comparable quede documentado
+              y puedas defender tu criterio ante clientes, bancos o autoridades.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Accesos rápidos</h3>
+            <p>Acciones clave relacionadas con el mercado de propiedades:</p>
+
+            <div class="market-actions">
+              <!-- BOTÓN COMPARABLES TERRENO -->
+              <a
+                href="https://www.appsheet.com/start/11913076-3908-4fb1-84c3-1f4e786327a4#control=11FormularioEnfoquemercadoterreno_Form"
+                target="_blank"
+                class="btn btn-primary btn-full">
+                Comparables Terreno
+              </a>
+
+              <!-- BOTÓN COMPARABLES CONSTRUCCIÓN -->
+              <a
+                href="https://www.appsheet.com/start/11913076-3908-4fb1-84c3-1f4e786327a4#control=12FormularioEbfoquemercadoconstruccion_Form"
+                target="_blank"
+                class="btn btn-outline btn-full">
+                Comparables Construcción
+              </a>
+            </div>
+          </article>
         </div>
       </div>
+    </section>
 
-      <aside class="hero-card">
-        <h2>Resumen del sistema</h2>
-        <ul>
-          <li>Captura guiada de antecedentes, terreno y construcciones.</li>
-          <li>Enfoque de mercado con comparables y URL de respaldo.</li>
-          <li>Tablas de deméritos Ross-Heidecke integradas.</li>
-          <li>Catálogo de construcciones y clasificación de zona.</li>
-          <li>Plano con valores para ubicar sectores y valores unitarios.</li>
-          <li>Generación de reportes en PDF listos para entregar al cliente.</li>
-        </ul>
-      </aside>
-    </div>
-  </section>
+    <!-- TABLA DE MERCADO (GOOGLE SHEETS EMBEBIDO) -->
+    <section class="section" id="tabla-mercado">
+      <div class="container">
 
-  <!-- ENFOQUE DE MERCADO (RESUMEN + BOTONES) -->
-  <section class="section" id="mercado">
-    <div class="container">
-      <h2>Mercado de propiedades</h2>
+        <header class="table-header">
+          <div>
+            <h2 class="table-title">
+              <svg class="table-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 3h18v2H3V3zm2 14h3v4H5v-4zm5-6h3v10h-3V11zm5-4h3v14h-3V7z"/>
+              </svg>
+              Base de datos de comparables de mercado
+            </h2>
+            <p>
+              Tabla de comparables ligada directamente a AppValúo.
+              Se actualiza en tiempo real cada vez que capturas un nuevo comparable.
+            </p>
+          </div>
 
-      <p class="section-intro">
-        Aquí se concentra el enfoque de mercado de AppValúo. Se registran los comparables
-        de casas y terrenos con sus datos principales y la URL completa de la oferta,
-        para que cada avalúo tenga un respaldo claro y verificable.
-      </p>
-
-      <div class="grid-2">
-        <article class="card market-summary">
-          <h3>Flujo de trabajo del valuador</h3>
-          <ol class="steps-list">
-            <li>Abres el navegador desde la app (botón “Ir al navegador”).</li>
-            <li>Buscas casas y terrenos comparables en portales o anuncios.</li>
-            <li>Capturas precio, colonia, superficie y observaciones.</li>
-            <li>Pegas la URL completa de cada oferta como respaldo.</li>
-            <li>AppValúo calcula el valor por m² y el valor homologado.</li>
-          </ol>
-          <p>
-            El objetivo es sencillo: que cada comparable quede documentado
-            y puedas defender tu criterio ante clientes, bancos o autoridades.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Accesos rápidos</h3>
-          <p>Acciones clave relacionadas con el mercado de propiedades:</p>
-
-          <div class="market-actions">
-            <!-- BOTÓN COMPARABLES TERRENO -->
+          <div>
             <a
-              href="https://www.appsheet.com/start/11913076-3908-4fb1-84c3-1f4e786327a4#control=11FormularioEnfoquemercadoterreno_Form"
+              href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRGUQ7tY9sXdumhL6ipZTBQYEGgnkNjZ5k2gyCnw5BneVJD5gBRzdUUY3bufoc8Bpg574sKV9lIBAZW/pubhtml?gid=411938610&single=true"
               target="_blank"
-              class="btn btn-primary btn-full">
-              Comparables Terreno
-            </a>
-
-            <!-- BOTÓN COMPARABLES CONSTRUCCIÓN -->
-            <a
-              href="https://www.appsheet.com/start/11913076-3908-4fb1-84c3-1f4e786327a4#control=12FormularioEbfoquemercadoconstruccion_Form"
-              target="_blank"
-              class="btn btn-outline btn-full">
-              Comparables Construcción
+              class="btn-table">
+              Ver en Google Sheets
             </a>
           </div>
-        </article>
+        </header>
+
+        <div class="status-pill">
+          Datos en tiempo real · Mercado de propiedades
+        </div>
+
+        <div class="iframe-wrapper">
+          <iframe
+            src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRGUQ7tY9sXdumhL6ipZTBQYEGgnkNjZ5k2gyCnw5BneVJD5gBRzdUUY3bufoc8Bpg574sKV9lIBAZW/pubhtml?gid=411938610&single=true"
+            width="100%"
+            height="750"
+            frameborder="0"
+            style="border:0;">
+          </iframe>
+        </div>
+
       </div>
-    </div>
-  </section>
+    </section>
+    <!-- FIN TABLA DE MERCADO -->
 
-  <!-- TABLA DE MERCADO (GOOGLE SHEETS EMBEBIDO) -->
-  <section class="section" id="tabla-mercado">
-    <div class="container">
+    <!-- DEMÉRITOS -->
+    <section class="section section-alt" id="demeritos">
+      <div class="container">
+        <h2>Deméritos Ross-Heidecke</h2>
+        <p class="section-intro">
+          AppValúo integra la tabla de deméritos basada en el criterio Ross-Heidecke,
+          para aplicar depreciaciones de forma consistente de acuerdo con la edad y el estado de conservación
+          de las construcciones.
+        </p>
 
-      <header class="table-header">
-        <div>
-          <h2 class="table-title">
-            <svg class="table-icon" viewBox="0 0 24 24">
-              <path d="M3 3h18v2H3V3zm2 14h3v4H5v-4zm5-6h3v10h-3V11zm5-4h3v14h-3V7z"/>
-            </svg>
-            Base de datos de comparables de mercado
-          </h2>
-          <p>
-            Tabla de comparables ligada directamente a AppValúo.
-            Se actualiza en tiempo real cada vez que capturas un nuevo comparable.
-          </p>
-        </div>
-
-        <div>
-          <a
-            href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRGUQ7tY9sXdumhL6ipZTBQYEGgnkNjZ5k2gyCnw5BneVJD5gBRzdUUY3bufoc8Bpg574sKV9lIBAZW/pubhtml?gid=411938610&single=true"
-            target="_blank"
-            class="btn-table">
-            Ver en Google Sheets
-          </a>
-        </div>
-      </header>
-
-      <div class="status-pill">
-        Datos en tiempo real · Mercado de propiedades
-      </div>
-
-      <div class="iframe-wrapper">
-        <iframe
-          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRGUQ7tY9sXdumhL6ipZTBQYEGgnkNjZ5k2gyCnw5BneVJD5gBRzdUUY3bufoc8Bpg574sKV9lIBAZW/pubhtml?gid=411938610&single=true"
-          width="100%"
-          height="750"
-          frameborder="0"
-          style="border:0;">
-        </iframe>
-      </div>
-
-    </div>
-  </section>
-  <!-- FIN TABLA DE MERCADO -->
-
-  <!-- DEMÉRITOS -->
-  <section class="section section-alt" id="demeritos">
-    <div class="container">
-      <h2>Deméritos Ross-Heidecke</h2>
-      <p class="section-intro">
-        AppValúo integra la tabla de deméritos basada en el criterio Ross-Heidecke,
-        para aplicar depreciaciones de forma consistente de acuerdo con la edad y el estado de conservación
-        de las construcciones.
-      </p>
-
-      <div class="grid-2">
-        <div>
-          <h3>Esquema general de vida útil</h3>
-          <ul class="bullet-list">
-            <li>De 1 a 30 años: vida útil de 50 años.</li>
-            <li>De 31 a 45 años: vida útil de 60 años.</li>
-            <li>De 46 a 60 años: vida útil de 70 años.</li>
-          </ul>
-          <p>
-            Sobre este esquema se aplica el porcentaje de demérito según el estado de conservación
-            (nuevo, bueno, regular, malo, etc.), respetando el criterio original Ross-Heidecke.
-          </p>
-        </div>
-
-        <div class="card table-card">
-          <h3>Ejemplo de estructura de deméritos</h3>
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Edad (años)</th>
-                <th>Vida útil (años)</th>
-                <th>Estado</th>
-                <th>Demérito aprox.</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1 – 10</td>
-                <td>50</td>
-                <td>Nuevo / Bueno</td>
-                <td>5% – 15%</td>
-              </tr>
-              <tr>
-                <td>11 – 20</td>
-                <td>50</td>
-                <td>Bueno / Regular</td>
-                <td>15% – 30%</td>
-              </tr>
-              <tr>
-                <td>21 – 30</td>
-                <td>50</td>
-                <td>Regular</td>
-                <td>30% – 40%</td>
-              </tr>
-              <tr>
-                <td>31 – 45</td>
-                <td>60</td>
-                <td>Regular / Malo</td>
-                <td>40% – 55%</td>
-              </tr>
-              <tr>
-                <td>46 – 60</td>
-                <td>70</td>
-                <td>Malo</td>
-                <td>55% – 70%</td>
-              </tr>
-            </tbody>
-          </table>
-          <p class="table-note">
-            Los valores son ilustrativos. En AppValúo se usa la tabla completa con los coeficientes según edad y estado,
-            para que el cálculo del demérito sea automático y consistente.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONSTRUCCIONES -->
-  <section class="section" id="construcciones">
-    <div class="container">
-      <h2>Construcciones y categorías</h2>
-      <p class="section-intro">
-        AppValúo maneja un catálogo de construcciones con número de categoría, tipo, modelo y valor catastral unitario,
-        alineado con la normatividad local. Esto permite capturar de forma ordenada cada área construida del inmueble.
-      </p>
-
-      <div class="grid-3">
-        <div class="card">
-          <h3>Catálogo de construcciones</h3>
-          <ul class="bullet-list">
-            <li>Número de categoría.</li>
-            <li>Tipo de construcción (casa, local, bodega, etc.).</li>
-            <li>Modelo o clasificador específico.</li>
-            <li>Valor unitario catastral por m².</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Datos que capturas</h3>
-          <ul class="bullet-list">
-            <li>Superficie construida por nivel o área.</li>
-            <li>Edad y estado de conservación.</li>
-            <li>Acabados y características relevantes.</li>
-            <li>Asignación automática de valor por categoría.</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>Beneficio para el valuador</h3>
-          <ul class="bullet-list">
-            <li>Criterio uniforme entre distintos avalúos.</li>
-            <li>Menos errores al capturar y calcular valores.</li>
-            <li>Información alineada con tablas catastrales.</li>
-            <li>Base sólida para avalúos fiscales, bancarios o comerciales.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CLASIFICACIÓN DE ZONA -->
-  <section class="section section-alt" id="clasificacion-zona">
-    <div class="container">
-      <h2>Clasificación de zona</h2>
-      <p class="section-intro">
-        La plataforma incluye las claves de zona y sus descripciones para que,
-        al elaborar un avalúo, el valuador seleccione la opción correcta y el informe
-        quede en línea con el padrón catastral y la realidad urbana.
-      </p>
-
-      <div class="grid-2">
-        <div>
-          <h3>Información disponible</h3>
-          <ul class="bullet-list">
-            <li>Clave de zona oficial.</li>
-            <li>Nombre o descripción (ej. Habitacional medio, Comercial, Mixta, etc.).</li>
-            <li>Tipo predominante de uso del suelo.</li>
-            <li>Observaciones que influyen en el valor (plusvalía, servicios, entorno).</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Uso práctico</h3>
-          <p>
-            Al seleccionar una zona, el sistema puede vincular valores unitarios,
-            referencias y condicionantes propias de esa área, facilitando el llenado del avalúo
-            y manteniendo consistencia entre diferentes inmuebles de la misma zona.
-          </p>
-          <a href="#" class="btn btn-primary btn-full">Ver catálogo de zonas</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PLANO CON VALORES -->
-  <section class="section" id="plano-valores">
-    <div class="container">
-      <h2>Plano con valores</h2>
-      <p class="section-intro">
-        AppValúo permite asociar planos por sectores con sus valores unitarios,
-        de modo que puedas ubicar el predio dentro del sector correcto y consultar el valor de referencia.
-      </p>
-
-      <div class="grid-2">
-        <div>
-          <h3>¿Qué se muestra?</h3>
-          <ul class="bullet-list">
-            <li>Sector y clave correspondiente.</li>
-            <li>Valores de terreno por zona o subzona.</li>
-            <li>Referencias visuales para localizar el predio.</li>
-            <li>Enlace a PDFs con el detalle del sector.</li>
-          </ul>
-          <p>
-            La idea es que el valuador tenga siempre a la mano el plano que respalda
-            el valor utilizado, sin perder tiempo buscando archivos dispersos.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Plano de ejemplo</h3>
-          <p>
-            Aquí se puede colocar una imagen del plano general o un enlace al PDF
-            con los sectores y sus valores unitarios.
-          </p>
-          <a href="docs/plano-sectores.pdf" class="btn btn-outline btn-full">Descargar plano en PDF</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TUTORIALES -->
-  <section class="section section-alt" id="tutoriales">
-    <div class="container">
-      <h2>Tutoriales de AppValúo</h2>
-      <p class="section-intro">
-        Material de apoyo para que los valuadores y usuarios nuevos conozcan paso a paso
-        cómo utilizar la plataforma y su integración con la app móvil.
-      </p>
-
-      <div class="grid-3">
-        <div class="card">
-          <h3>Parte I</h3>
-          <p>
-            Introducción a AppValúo, recorrido general, vistas principales
-            y explicación de los módulos clave.
-          </p>
-          <a href="#" class="btn btn-outline btn-full">Ver Parte I</a>
-        </div>
-        <div class="card">
-          <h3>Parte II</h3>
-          <p>
-            Captura de antecedentes, terreno, medidas, colindancias
-            y registro de construcciones con sus categorías.
-          </p>
-          <a href="#" class="btn btn-outline btn-full">Ver Parte II</a>
-        </div>
-        <div class="card">
-          <h3>Parte III</h3>
-          <p>
-            Enfoque de mercado, comparables, factores y generación del valor homologado
-            para terrenos y construcciones.
-          </p>
-          <a href="#" class="btn btn-outline btn-full">Ver Parte III</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PREGUNTAS FRECUENTES -->
-  <section class="section" id="faq">
-    <div class="container">
-      <h2>Preguntas frecuentes</h2>
-
-      <div class="faq-list">
-        <details class="faq-item">
-          <summary>
-            <span>¿Qué es AppValúo?</span>
-            <span class="faq-icon"></span>
-          </summary>
-          <div class="faq-content">
+        <div class="grid-2">
+          <div>
+            <h3>Esquema general de vida útil</h3>
+            <ul class="bullet-list">
+              <li>De 1 a 30 años: vida útil de 50 años.</li>
+              <li>De 31 a 45 años: vida útil de 60 años.</li>
+              <li>De 46 a 60 años: vida útil de 70 años.</li>
+            </ul>
             <p>
-              Es una plataforma creada para valuadores inmobiliarios que integra tablas, factores,
-              planos y reportes en un solo sistema, reduciendo errores y tiempo de elaboración.
+              Sobre este esquema se aplica el porcentaje de demérito según el estado de conservación
+              (nuevo, bueno, regular, malo, etc.), respetando el criterio original Ross-Heidecke.
             </p>
           </div>
-        </details>
 
-        <details class="faq-item">
-          <summary>
-            <span>¿Puedo usar AppValúo desde el celular?</span>
-            <span class="faq-icon"></span>
-          </summary>
-          <div class="faq-content">
-            <p>
-              Sí. AppValúo se conecta con una app móvil pensada para trabajar en campo:
-              puedes capturar datos del inmueble y regresar a la oficina con la información lista para procesar.
+          <div class="card table-card">
+            <h3>Ejemplo de estructura de deméritos</h3>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Edad (años)</th>
+                  <th>Vida útil (años)</th>
+                  <th>Estado</th>
+                  <th>Demérito aprox.</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1 – 10</td>
+                  <td>50</td>
+                  <td>Nuevo / Bueno</td>
+                  <td>5% – 15%</td>
+                </tr>
+                <tr>
+                  <td>11 – 20</td>
+                  <td>50</td>
+                  <td>Bueno / Regular</td>
+                  <td>15% – 30%</td>
+                </tr>
+                <tr>
+                  <td>21 – 30</td>
+                  <td>50</td>
+                  <td>Regular</td>
+                  <td>30% – 40%</td>
+                </tr>
+                <tr>
+                  <td>31 – 45</td>
+                  <td>60</td>
+                  <td>Regular / Malo</td>
+                  <td>40% – 55%</td>
+                </tr>
+                <tr>
+                  <td>46 – 60</td>
+                  <td>70</td>
+                  <td>Malo</td>
+                  <td>55% – 70%</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="table-note">
+              Los valores son ilustrativos. En AppValúo se usa la tabla completa con los coeficientes según edad y estado,
+              para que el cálculo del demérito sea automático y consistente.
             </p>
           </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>
-            <span>¿Genera reportes en PDF?</span>
-            <span class="faq-icon"></span>
-          </summary>
-          <div class="faq-content">
-            <p>
-              Sí. El sistema permite generar un PDF con el avalúo completo,
-              listo para impresión o envío digital al cliente o a la institución que lo solicita.
-            </p>
-          </div>
-        </details>
-
-        <details class="faq-item">
-          <summary>
-            <span>¿Se puede adaptar a otros municipios o estados?</span>
-            <span class="faq-icon"></span>
-          </summary>
-          <div class="faq-content">
-            <p>
-              La estructura es flexible. Se pueden ajustar tablas, valores y formatos
-              para adecuarse a otros municipios o entidades, respetando su propia normatividad.
-            </p>
-          </div>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section class="section section-alt" id="contacto">
-    <div class="container">
-      <h2>Contacto</h2>
-      <div class="grid-2">
-        <div class="contact-form">
-          <h3>Déjanos tus datos</h3>
-          <p>
-            Si te interesa conocer más sobre AppValúo, solicitar una demostración
-            o recibir información para implementar la plataforma, llena el siguiente formulario.
-          </p>
-          <form>
-            <div class="form-group">
-              <label for="nombre">Nombre completo</label>
-              <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" />
-            </div>
-            <div class="form-group">
-              <label for="correo">Correo electrónico</label>
-              <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" />
-            </div>
-            <div class="form-group">
-              <label for="telefono">Teléfono (opcional)</label>
-              <input type="tel" id="telefono" name="telefono" placeholder="Ej. 311 000 0000" />
-            </div>
-            <div class="form-group">
-              <label for="mensaje">Mensaje</label>
-              <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos qué necesitas o qué tipo de avalúos realizas."></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary btn-full">Enviar mensaje</button>
-          </form>
-        </div>
-
-        <div>
-          <h3>¿Qué puedes lograr con AppValúo?</h3>
-          <ul class="bullet-list">
-            <li>Ordenar tu información de avalúos en un solo lugar.</li>
-            <li>Reducir tiempos de captura y de cálculo.</li>
-            <li>Respaldar cada valor con tablas, planos y comparables.</li>
-            <li>Presentar reportes claros y profesionales a tus clientes.</li>
-          </ul>
-          <p>
-            El objetivo es sencillo: que el valuador tenga una herramienta práctica,
-            alineada a la realidad del día a día y lista para crecer conforme aumente la carga de trabajo.
-          </p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- CONSTRUCCIONES -->
+    <section class="section" id="construcciones">
+      <div class="container">
+        <h2>Construcciones y categorías</h2>
+        <p class="section-intro">
+          AppValúo maneja un catálogo de construcciones con número de categoría, tipo, modelo y valor catastral unitario,
+          alineado con la normatividad local. Esto permite capturar de forma ordenada cada área construida del inmueble.
+        </p>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Catálogo de construcciones</h3>
+            <ul class="bullet-list">
+              <li>Número de categoría.</li>
+              <li>Tipo de construcción (casa, local, bodega, etc.).</li>
+              <li>Modelo o clasificador específico.</li>
+              <li>Valor unitario catastral por m².</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Datos que capturas</h3>
+            <ul class="bullet-list">
+              <li>Superficie construida por nivel o área.</li>
+              <li>Edad y estado de conservación.</li>
+              <li>Acabados y características relevantes.</li>
+              <li>Asignación automática de valor por categoría.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Beneficio para el valuador</h3>
+            <ul class="bullet-list">
+              <li>Criterio uniforme entre distintos avalúos.</li>
+              <li>Menos errores al capturar y calcular valores.</li>
+              <li>Información alineada con tablas catastrales.</li>
+              <li>Base sólida para avalúos fiscales, bancarios o comerciales.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLASIFICACIÓN DE ZONA -->
+    <section class="section section-alt" id="clasificacion-zona">
+      <div class="container">
+        <h2>Clasificación de zona</h2>
+        <p class="section-intro">
+          La plataforma incluye las claves de zona y sus descripciones para que,
+          al elaborar un avalúo, el valuador seleccione la opción correcta y el informe
+          quede en línea con el padrón catastral y la realidad urbana.
+        </p>
+
+        <div class="grid-2">
+          <div>
+            <h3>Información disponible</h3>
+            <ul class="bullet-list">
+              <li>Clave de zona oficial.</li>
+              <li>Nombre o descripción (ej. Habitacional medio, Comercial, Mixta, etc.).</li>
+              <li>Tipo predominante de uso del suelo.</li>
+              <li>Observaciones que influyen en el valor (plusvalía, servicios, entorno).</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Uso práctico</h3>
+            <p>
+              Al seleccionar una zona, el sistema puede vincular valores unitarios,
+              referencias y condicionantes propias de esa área, facilitando el llenado del avalúo
+              y manteniendo consistencia entre diferentes inmuebles de la misma zona.
+            </p>
+            <a href="#" class="btn btn-primary btn-full">Ver catálogo de zonas</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANO CON VALORES -->
+    <section class="section" id="plano-valores">
+      <div class="container">
+        <h2>Plano con valores</h2>
+        <p class="section-intro">
+          AppValúo permite asociar planos por sectores con sus valores unitarios,
+          de modo que puedas ubicar el predio dentro del sector correcto y consultar el valor de referencia.
+        </p>
+
+        <div class="grid-2">
+          <div>
+            <h3>¿Qué se muestra?</h3>
+            <ul class="bullet-list">
+              <li>Sector y clave correspondiente.</li>
+              <li>Valores de terreno por zona o subzona.</li>
+              <li>Referencias visuales para localizar el predio.</li>
+              <li>Enlace a PDFs con el detalle del sector.</li>
+            </ul>
+            <p>
+              La idea es que el valuador tenga siempre a la mano el plano que respalda
+              el valor utilizado, sin perder tiempo buscando archivos dispersos.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Plano de ejemplo</h3>
+            <p>
+              Aquí se puede colocar una imagen del plano general o un enlace al PDF
+              con los sectores y sus valores unitarios.
+            </p>
+            <a href="docs/plano-sectores.pdf" class="btn btn-outline btn-full">Descargar plano en PDF</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TUTORIALES -->
+    <section class="section section-alt" id="tutoriales">
+      <div class="container">
+        <h2>Tutoriales de AppValúo</h2>
+        <p class="section-intro">
+          Material de apoyo para que los valuadores y usuarios nuevos conozcan paso a paso
+          cómo utilizar la plataforma y su integración con la app móvil.
+        </p>
+
+        <div class="grid-3">
+          <div class="card">
+            <h3>Parte I</h3>
+            <p>
+              Introducción a AppValúo, recorrido general, vistas principales
+              y explicación de los módulos clave.
+            </p>
+            <a href="#" class="btn btn-outline btn-full">Ver Parte I</a>
+          </div>
+          <div class="card">
+            <h3>Parte II</h3>
+            <p>
+              Captura de antecedentes, terreno, medidas, colindancias
+              y registro de construcciones con sus categorías.
+            </p>
+            <a href="#" class="btn btn-outline btn-full">Ver Parte II</a>
+          </div>
+          <div class="card">
+            <h3>Parte III</h3>
+            <p>
+              Enfoque de mercado, comparables, factores y generación del valor homologado
+              para terrenos y construcciones.
+            </p>
+            <a href="#" class="btn btn-outline btn-full">Ver Parte III</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section class="section" id="faq">
+      <div class="container">
+        <h2>Preguntas frecuentes</h2>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>
+              <span>¿Qué es AppValúo?</span>
+              <span class="faq-icon"></span>
+            </summary>
+            <div class="faq-content">
+              <p>
+                Es una plataforma creada para valuadores inmobiliarios que integra tablas, factores,
+                planos y reportes en un solo sistema, reduciendo errores y tiempo de elaboración.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>¿Puedo usar AppValúo desde el celular?</span>
+              <span class="faq-icon"></span>
+            </summary>
+            <div class="faq-content">
+              <p>
+                Sí. AppValúo se conecta con una app móvil pensada para trabajar en campo:
+                puedes capturar datos del inmueble y regresar a la oficina con la información lista para procesar.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>¿Genera reportes en PDF?</span>
+              <span class="faq-icon"></span>
+            </summary>
+            <div class="faq-content">
+              <p>
+                Sí. El sistema permite generar un PDF con el avalúo completo,
+                listo para impresión o envío digital al cliente o a la institución que lo solicita.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>¿Se puede adaptar a otros municipios o estados?</span>
+              <span class="faq-icon"></span>
+            </summary>
+            <div class="faq-content">
+              <p>
+                La estructura es flexible. Se pueden ajustar tablas, valores y formatos
+                para adecuarse a otros municipios o entidades, respetando su propia normatividad.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="section section-alt" id="contacto">
+      <div class="container">
+        <h2>Contacto</h2>
+        <div class="grid-2">
+          <div class="contact-form">
+            <h3>Déjanos tus datos</h3>
+            <p>
+              Si te interesa conocer más sobre AppValúo, solicitar una demostración
+              o recibir información para implementar la plataforma, llena el siguiente formulario.
+            </p>
+            <form>
+              <div class="form-group">
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" />
+              </div>
+              <div class="form-group">
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" name="correo" placeholder="tucorreo@ejemplo.com" />
+              </div>
+              <div class="form-group">
+                <label for="telefono">Teléfono (opcional)</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Ej. 311 000 0000" />
+              </div>
+              <div class="form-group">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos qué necesitas o qué tipo de avalúos realizas."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">Enviar mensaje</button>
+            </form>
+          </div>
+
+          <div>
+            <h3>¿Qué puedes lograr con AppValúo?</h3>
+            <ul class="bullet-list">
+              <li>Ordenar tu información de avalúos en un solo lugar.</li>
+              <li>Reducir tiempos de captura y de cálculo.</li>
+              <li>Respaldar cada valor con tablas, planos y comparables.</li>
+              <li>Presentar reportes claros y profesionales a tus clientes.</li>
+            </ul>
+            <p>
+              El objetivo es sencillo: que el valuador tenga una herramienta práctica,
+              alineada a la realidad del día a día y lista para crecer conforme aumente la carga de trabajo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <!-- PIE DE PÁGINA -->
   <footer class="footer">
