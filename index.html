@@ -596,54 +596,6 @@
     document.getElementById('anio-actual').textContent = new Date().getFullYear();
   </script>
 
-  <!-- Script KPIs de mercado -->
-<script>
-const hojaUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRGUQ7tY9sXdumhL6ipZTBQYEGgnkNjZ5k2gyCnw5BneVJD5gBRzdUUY3bufoc8Bpg574sKV9lIBAZW/gviz/tq?tqx=out:json&gid=411938610";
-
-fetch(hojaUrl)
-  .then(res => res.text())
-  .then(raw => {
-    const json = JSON.parse(raw.substr(47).slice(0, -2));
-    const rows = json.table.rows;
-
-    let total = rows.length;
-    let precios = [];
-
-    rows.forEach(r => {
-      if (r.c[4] && r.c[4].v) {
-        let txt = String(r.c[4].v)
-          .replace(/\$/g, "")
-          .replace(/,/g, "")
-          .replace(/\s/g, "");
-
-        let num = parseFloat(txt);
-        if (!isNaN(num)) precios.push(num);
-      }
-    });
-
-    if (precios.length === 0) {
-      document.getElementById("kpi-total").innerText = total;
-      document.getElementById("kpi-rango").innerText = "Sin datos válidos";
-      document.getElementById("kpi-actualizacion").innerText = "Tiempo real";
-      return;
-    }
-
-    let min = Math.min(...precios);
-    let max = Math.max(...precios);
-
-    document.getElementById("kpi-total").innerText = total;
-    document.getElementById("kpi-rango").innerText =
-      "$" + min.toLocaleString() + " – $" + max.toLocaleString();
-    document.getElementById("kpi-actualizacion").innerText = "Tiempo real";
-  })
-  .catch(() => {
-    document.getElementById("kpi-total").innerText = "—";
-    document.getElementById("kpi-rango").innerText = "Sin conexión";
-    document.getElementById("kpi-actualizacion").innerText = "—";
-  });
-</script>
-
-  </script>
 
 </body>
 </html>
