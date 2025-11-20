@@ -1081,5 +1081,34 @@ a.btn.btn-outline.btn-full:hover {
   height: 580px;
   border: none;
 }
+/* ==== KPIs de Mercado ==== */
+
+.market-kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.kpi-card {
+  background: #020617;
+  border: 1px solid #1e3a8a;
+  border-radius: 14px;
+  padding: 16px;
+  color: #e5e7eb;
+  box-shadow: 0 0 18px rgba(30, 64, 175, 0.25);
+  text-align: center;
+}
+
+.kpi-card span {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.kpi-card strong {
+  font-size: 1.4rem;
+  margin-top: 0.3rem;
+  display: block;
+}
 
 
