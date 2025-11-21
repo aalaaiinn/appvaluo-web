@@ -2,15 +2,17 @@
    VARIABLES Y BASE
 =========================== */
 :root {
-  --color-primary: #0052cc;
-  --color-primary-light: #e6f0ff;
-  --color-secondary: #0b8f8f;
-  --color-bg: #f5f7fb;
-  --color-text: #1f2933;
-  --color-muted: #6b7280;
-  --color-border: #dde2f2;
+ :root {
+  --color-primary: #0f172a;
+  --color-primary-light: #e0ecff;
+  --color-secondary: #1d4ed8;
+  --color-bg: #ffffff;
+  --color-text: #020617;
+  --color-muted: #4b5563;
+  --color-border: #e5e7eb;
   --color-card-bg: #ffffff;
 }
+
 
 *,
 *::before,
