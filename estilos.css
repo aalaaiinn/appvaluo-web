@@ -1,7 +1,17 @@
+/* ===========================
+   VARIABLES Y BASE
+=========================== */
+:root {
+  --color-primary: #0052cc;
+  --color-primary-light: #e6f0ff;
+  --color-secondary: #0b8f8f;
+  --color-bg: #f5f7fb;
+  --color-text: #1f2933;
+  --color-muted: #6b7280;
+  --color-border: #dde2f2;
+  --color-card-bg: #ffffff;
+}
 
-/* =======================
-   ESTILOS GENERALES
-   ======================= */
 *,
 *::before,
 *::after {
@@ -12,28 +22,228 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Para que las anclas (#mercado, #videos, etc.) no queden tapadas por el menú */
-:target {
-  scroll-margin-top: 96px;
-}
-
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background-color: #061726; /* fondo general oscuro acorde al logo */
-  color: #1f2933;
-  line-height: 1.6;
+  font-family: Arial, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.5;
 }
 
-img {
-  max-width: 100%;
-  display: block;
+/* Para que al hacer clic en el menú no quede tapado por el header */
+section {
+  scroll-margin-top: 80px;
 }
 
-a {
+/* ===========================
+   LAYOUT GENERAL
+=========================== */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ===========================
+   HEADER Y MENÚ
+=========================== */
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
+}
+
+.main-header .logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-primary);
+}
+
+.main-header,
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+}
+
+.main-nav a {
+  margin-left: 1rem;
+  font-size: 0.95rem;
   text-decoration: none;
-  color: inherit;
+  color: var(--color-muted);
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
+
+.main-nav a:hover {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+/* ===========================
+   HERO / PORTADA
+=========================== */
+.hero {
+  padding: 3.5rem 0 3rem;
+  background: radial-gradient(circle at top left, #e6f0ff 0, #ffffff 50%);
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-text h1 {
+  margin: 0 0 0.75rem;
+  font-size: 2.3rem;
+  color: var(--color-primary);
+}
+
+.hero-subtitle {
+  margin: 0 0 1.5rem;
+  color: var(--color-muted);
+  font-size: 1rem;
+  max-width: 34rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.hero-side {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-card {
+  background-color: var(--color-card-bg);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  border: 1px solid var(--color-border);
+}
+
+.hero-card h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.2rem;
+  color: var(--color-primary);
+}
+
+.hero-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+/* ===========================
+   BOTONES
+=========================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease,
+    border-color 0.15s ease, transform 0.05s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+  background-color: #003e99;
+  border-color: #003e99;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary-light);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: #ffffff;
+  border-color: var(--color-secondary);
+}
+
+.btn-secondary:hover {
+  background-color: #076b6b;
+}
+
+/* ===========================
+   SECCIONES
+=========================== */
+.section {
+  padding: 3rem 0;
+}
+
+.section-alt {
+  background-color: #ffffff;
+}
+
+.section h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  text-align: left;
+}
+
+.section-intro {
+  margin: 0 0 1.75rem;
+  color: var(--color-muted);
+  font-size: 0.98rem;
+  max-width: 42rem;
+}
+
+/* ===========================
+   GRID Y CARDS
+=========================== */
+.grid-2 {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+  gap: 1.75rem;
+}
+
+.card {
+  background-color: var(--color-card-bg);
+  border-radius: 0.9rem;
+  padding: 1.25rem 1.4rem;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+}
+
+.
 
 .container {
   width: 100%;
