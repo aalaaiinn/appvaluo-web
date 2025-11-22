@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AppValúo | Plataforma para valuadores inmobiliarios</title>
+  <meta name="description" content="AppValúo es una plataforma diseñada para valuadores inmobiliarios que integra enfoque de mercado, deméritos, construcciones, clasificación de zona y generación de avalúos." />
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header class="main-header">
+    <div class="logo">
+      <img src="logo.png" alt="Logo AppValúo">
+    </div>
+    <nav class="main-nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#mercado">Mercado</a>
+      <a href="#tutoriales">Tutoriales</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <h1>AppValúo</h1>
+    <p>Innovando la manera de valuar</p>
+    <a href="#" class="btn-primary">Abrir AppValúo</a>
+  </section>
+
+  <!-- MERCADO -->
+  <section class="seccion" id="mercado">
+    <h2>Mercado de Propiedades</h2>
+    <p>Base de datos integrada para análisis comparativo de mercado.</p>
+  </section>
+
+  <!-- TUTORIALES -->
+  <section class="seccion" id="tutoriales">
+    <h2>Tutoriales</h2>
+
+    <div class="videos">
+
+      <video controls>
+        <source src="videos/video1.mp4" type="video/mp4">
+      </video>
+
+      <video controls>
+        <source src="videos/video2.mp4" type="video/mp4">
+      </video>
+
+      <video controls>
+        <source src="videos/video3.mp4" type="video/mp4">
+      </video>
+
+      <video controls>
+        <source src="videos/video4.mp4" type="video/mp4">
+      </video>
+
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="seccion" id="contacto">
+    <h2>Contacto</h2>
+    <p>Correo: contacto@appvaluo.com</p>
+  </section>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="footer">
+    <p>© <span id="anio-actual"></span> AppValúo. Todos los derechos reservados.</p>
+    <p>AppValúo – Innovando la manera de valuar.</p>
+  </footer>
+
+  <script>
+    document.getElementById('anio-actual').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
