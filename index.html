@@ -1,165 +1,272 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AppValúo | Plataforma para valuadores inmobiliarios</title>
-  <meta name="description" content="AppValúo es una plataforma para valuadores inmobiliarios que integra mercado, deméritos, construcciones, zona y plano con valores." />
+/* ==============================
+   RESET CORPORATIVO
+================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b1020;
+  color: #ffffff;
+  line-height: 1.6;
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  <!-- ENLACE CORRECTO AL CSS -->
-  <link rel="stylesheet" href="estilos.css" />
-</head>
+/* ==============================
+   COLORES CORPORATIVOS
+================================= */
+:root {
+  --azul-principal: #00b0ff;
+  --dorado: #f2b705;
+  --azul-oscuro: #020817;
+  --gris-claro: #eaeaea;
+}
 
+/* ==============================
+   HEADER
+================================= */
+.main-header {
+  background: linear-gradient(90deg, #020817, #0b1d3a);
+  border-bottom: 2px solid var(--azul-principal);
+  padding: 15px 0;
+}
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo img {
+  height: 55px;
+}
+.main-nav a {
+  color: var(--gris-claro);
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.main-nav a:hover {
+  color: var(--azul-principal);
+}
 
-  <!-- HERO -->
-  <section class="hero" id="inicio">
-    <div class="container hero-content">
-      <h1>AppValúo</h1>
-      <p class="hero-subtitle">Innovando la manera de valuar</p>
-      <p class="hero-copy">
-        Plataforma digital para valuadores inmobiliarios que integra en un solo lugar:
-        enfoque de mercado, deméritos, construcciones, clasificación de zona y plano con valores.
-      </p>
-      <div class="hero-buttons">
-        <a
-          href="https://www.appsheet.com/template/AppDef?appName=AppVal%C3%BAo-380800148&appId=11913076-3908-4fb1-84c3-1f4e786327a4&quickStart=False"
-          class="btn-primary"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Abrir AppValúo
-        </a>
-        <a href="#tutoriales" class="btn-secondary">
-          Ver tutoriales
-        </a>
-      </div>
-      <ul class="hero-list">
-        <li>Captura de datos guiada</li>
-        <li>Deméritos y cálculos automáticos</li>
-        <li>Resultados al instante</li>
-        <li>Visualización previa del avalúo</li>
-      </ul>
-    </div>
-  </section>
+/* ==============================
+   HERO
+================================= */
+.hero {
+  background: radial-gradient(circle, #0b1d3a 0%, #020817 100%);
+  padding: 90px 0 70px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 48px;
+  color: var(--azul-principal);
+  letter-spacing: 1px;
+}
+.hero-subtitle {
+  font-size: 20px;
+  color: var(--dorado);
+  margin: 10px 0 20px;
+}
+.hero-copy {
+  font-size: 16px;
+  color: #cfd8dc;
+  max-width: 720px;
+  margin: 0 auto 30px;
+}
 
-  <!-- BENEFICIOS -->
-  <section class="seccion" id="beneficios">
-    <div class="container">
-      <h2 class="section-title">Módulos principales de AppValúo</h2>
-      <div class="cards-grid">
-        <article class="card">
-          <h3>Enfoque de mercado</h3>
-          <p>Gestión de comparables, ajustes automáticos y análisis por metro cuadrado en una vista única.</p>
-        </article>
-        <article class="card">
-          <h3>Deméritos Ross-Heidecke</h3>
-          <p>Captura estructurada de deméritos con porcentajes y cálculos automáticos, listo para el reporte.</p>
-        </article>
-        <article class="card">
-          <h3>Construcciones y superficies</h3>
-          <p>Registro de áreas, tipos de construcción y calidades; totales automáticos incluidos.</p>
-        </article>
-        <article class="card">
-          <h3>Plano con valores</h3>
-          <p>Integra tu croquis, áreas libres y construidas, alineado al enfoque catastral y de mercado.</p>
-        </article>
-      </div>
-    </div>
-  </section>
+/* ==============================
+   BOTONES
+================================= */
+.hero-buttons a {
+  display: inline-block;
+  margin: 6px 12px;
+  padding: 14px 30px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
 
-  <!-- MERCADO -->
-  <section class="seccion" id="mercado">
-    <div class="container">
-      <h2 class="section-title">Mercado de propiedades</h2>
-      <p class="section-intro">
-        Consulta y filtra tu base de comparables directamente desde la web. La misma información que utilizas en AppValúo.
-      </p>
+.btn-primary {
+  background: linear-gradient(90deg, #00b0ff, #0077ff);
+  color: #021024;
+  box-shadow: 0 5px 25px rgba(0,176,255,.4);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
 
-      <div class="kpi-grid">
-        <div class="kpi-card">
-          <span class="kpi-label">Enfoque</span>
-          <span class="kpi-value">Mercado</span>
-        </div>
-        <div class="kpi-card">
-          <span class="kpi-label">Cobertura</span>
-          <span class="kpi-value">Tepic & alrededores</span>
-        </div>
-        <div class="kpi-card">
-          <span class="kpi-label">Actualización</span>
-          <span class="kpi-value">Bajo demanda</span>
-        </div>
-      </div>
+.btn-secondary {
+  border: 2px solid var(--dorado);
+  color: var(--dorado);
+}
+.btn-secondary:hover {
+  background-color: var(--dorado);
+  color: #021024;
+}
 
-      <div class="tabla-mercado-wrapper">
-        <iframe
-          class="tabla-mercado"
-          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRGUQ7tY9sXdumhL6ipZTBQYEGgnkNjZ5k2gyCnw5BneVJD5gBRzdUUY3bufoc8Bpg574sKV9lIBAZW/pubhtml?gid=411938610&single=true"
-          loading="lazy"
-        ></iframe>
-      </div>
-    </div>
-  </section>
+/* ==============================
+   LISTA HERO
+================================= */
+.hero-list {
+  list-style: none;
+  margin-top: 30px;
+}
+.hero-list li {
+  color: #cfd8dc;
+  font-size: 15px;
+  margin: 8px 0;
+}
 
-  <!-- TUTORIALES -->
-  <section class="seccion" id="tutoriales">
-    <div class="container">
-      <h2 class="section-title">Tutoriales</h2>
-      <p class="section-intro">
-        Revisa los tutoriales para dominar el flujo de trabajo de AppValúo:
-        desde la captura de datos hasta la visualización final del avalúo.
-      </p>
+/* ==============================
+   SECCIONES GENERALES
+================================= */
+.seccion {
+  padding: 70px 0;
+  background-color: #020817;
+}
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  color: var(--azul-principal);
+  margin-bottom: 15px;
+}
+.section-intro {
+  text-align: center;
+  color: #b0bec5;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
 
-      <div class="videos">
-        <div class="video-youtube">
-          <iframe
-            width="100%"
-            height="315"
-            src="https://www.youtube.com/embed/e0M9Pb3Gw-c"
-            title="Tutorial AppValúo Parte 2"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
-        </div>
+/* ==============================
+   TARJETAS CORPORATIVAS
+================================= */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+}
+.card {
+  background: linear-gradient(180deg, #06142b, #020817);
+  border: 1px solid #0a2a4d;
+  border-radius: 16px;
+  padding: 30px 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.4);
+}
+.card h3 {
+  color: var(--dorado);
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.card p {
+  color: #cfd8dc;
+  font-size: 14px;
+}
 
-        <div class="video-youtube">
-          <iframe
-            width="100%"
-            height="315"
-            src="https://www.youtube.com/embed/IE48D5Vsnmo"
-            title="Tutorial AppValúo Parte 3"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
-        </div>
+/* ==============================
+   KPIs
+================================= */
+.kpi-grid {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+.kpi-card {
+  background: #06142b;
+  border: 1px solid #0a2a4d;
+  border-radius: 16px;
+  padding: 20px 35px;
+  text-align: center;
+}
+.kpi-label {
+  font-size: 12px;
+  color: #90caf9;
+}
+.kpi-value {
+  font-size: 20px;
+  color: var(--azul-principal);
+  font-weight: bold;
+}
 
-      </div>
-    </div>
-  </section>
+/* ==============================
+   TABLA MERCADO
+================================= */
+.tabla-mercado-wrapper {
+  margin-top: 30px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 50px rgba(0,0,0,.45);
+}
+.tabla-mercado {
+  width: 100%;
+  height: 520px;
+  border: none;
+  background: #fff;
+}
 
-  <!-- CONTACTO -->
-  <section class="seccion" id="contacto">
-    <div class="container contacto-content">
-      <h2 class="section-title">Contacto</h2>
-      <p class="section-intro">
-        ¿Tienes dudas o quieres implementar AppValúo en tu despacho o municipio?
-        Ponte en contacto para una demostración personalizada.
-      </p>
-      <ul class="contacto-list">
-        <li><strong>Correo:</strong> contacto@appvaluo.com</li>
-      </ul>
-    </div>
-  </section>
+/* ==============================
+   VIDEOS
+================================= */
+.videos {
+  display: grid;
+  gap: 30px;
+}
+.video-youtube iframe {
+  border-radius: 20px;
+  border: 2px solid #0a2a4d;
+  box-shadow: 0 12px 40px rgba(0,0,0,.6);
+}
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <p>© <span id="anio-actual"></span> AppValúo. Todos los derechos reservados.</p>
-      <p class="footer-small">AppValúo – Innovando la manera de valuar.</p>
-    </div>
-  </footer>
+/* ==============================
+   CONTACTO
+================================= */
+.contacto-content {
+  text-align: center;
+}
+.contacto-list {
+  list-style: none;
+  margin-top: 20px;
+}
+.contacto-list li {
+  font-size: 15px;
+  color: #cfd8dc;
+}
 
-  <script>
-    document.getElementById('anio-actual').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+/* ==============================
+   FOOTER
+================================= */
+.footer {
+  background: #020817;
+  border-top: 2px solid var(--azul-principal);
+  padding: 40px 20px;
+  text-align: center;
+}
+.footer p {
+  font-size: 13px;
+  color: #90caf9;
+}
+.footer-small {
+  font-size: 12px;
+  margin-top: 5px;
+  color: #607d8b;
+}
+
+/* ==============================
+   RESPONSIVE
+================================= */
+@media (min-width: 768px) {
+  .videos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
