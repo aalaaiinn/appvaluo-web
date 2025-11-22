@@ -22,7 +22,12 @@
       </nav>
 
       <!-- Ajusta este enlace a tu AppSheet si quieres -->
-      <a href="#" class="btn-cta-header">Abrir AppValúo</a>
+     <a href="https://www.appsheet.com/template/AppDef?appName=AppVal%C3%BAo-380800148&appId=11913076-3908-4fb1-84c3-1f4e786327a4&quickStart=False" 
+   class="btn-cta-header" 
+   target="_blank">
+  Abrir AppValúo
+</a>
+
     </div>
   </header>
 
@@ -41,12 +46,17 @@
           <li>Cálculos automáticos y reducción de errores.</li>
           <li>Visualización del avalúo antes de imprimir.</li>
         </ul>
+<div class="hero-buttons">
+  <a href="https://www.appsheet.com/template/AppDef?appName=AppVal%C3%BAo-380800148&appId=11913076-3908-4fb1-84c3-1f4e786327a4&quickStart=False"
+     class="btn-primary"
+     target="_blank">
+    Abrir AppValúo
+  </a>
 
-        <div class="hero-buttons">
-          <a href="#" class="btn-primary">Abrir AppValúo</a>
-          <a href="#mercado" class="btn-secondary">Ver mercado de propiedades</a>
-        </div>
-      </div>
+  <a href="#mercado" class="btn-secondary">
+    Ver mercado de propiedades
+  </a>
+</div>
 
       <div class="hero-right">
         <div class="hero-card">
