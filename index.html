@@ -4,162 +4,208 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AppValúo | Plataforma para valuadores inmobiliarios</title>
-  <meta
-    name="description"
-    content="AppValúo es una plataforma para valuadores inmobiliarios que integra enfoque de mercado, deméritos Ross-Heidecke, construcciones, clasificación de zona y plano con valores en un solo sistema."
-  />
+  <meta name="description" content="AppValúo es una plataforma para valuadores inmobiliarios que integra enfoque de mercado, deméritos Ross-Heidecke, construcciones, clasificación de zona y plano con valores en un solo sistema.">
   <link rel="stylesheet" href="estilos.css" />
 </head>
 <body>
 
-  <!-- ENCABEZADO / MENÚ -->
+  <!-- ENCABEZADO -->
   <header class="main-header">
-    <div class="logo">AppValúo</div>
-    <nav class="main-nav">
-      <a href="#inicio">Inicio</a>
-      <a href="#mercado">Mercado</a>
-      <a href="#tutoriales">Tutoriales</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
+    <div class="container header-content">
+      <div class="logo">AppValúo</div>
+
+      <nav class="main-nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#mercado">Mercado</a>
+        <a href="#tutoriales">Tutoriales</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <!-- Ajusta este enlace a tu AppSheet si quieres -->
+      <a href="#" class="btn-cta-header">Abrir AppValúo</a>
+    </div>
   </header>
 
   <!-- HERO / PORTADA -->
   <section class="hero" id="inicio">
     <div class="container hero-content">
-      <div class="hero-text">
-        <h1>AppValúo</h1>
+      <div class="hero-left">
+        <h1>Plataforma para valuadores inmobiliarios</h1>
         <p class="hero-subtitle">
-          Plataforma diseñada para valuadores inmobiliarios que integra
-          enfoque de mercado, deméritos Ross-Heidecke, construcciones,
-          clasificación de zona y plano con valores en un solo sistema.
+          Integra enfoque de mercado, deméritos Ross-Heidecke, construcciones, clasificación de zona y plano con valores en un solo sistema.
         </p>
-        <div class="hero-actions">
-          <!-- Ajusta este enlace a tu app de AppSheet -->
-          <a class="btn btn-primary" href="https://www.appsheet.com/start/11913076-3908-4fb1-84c3-1f4e786327a4" target="_blank" rel="noopener">
-            Abrir AppValúo
-          </a>
-          <a class="btn btn-outline" href="#mercado">
-            Ver mercado de propiedades
-          </a>
+
+        <ul class="hero-list">
+          <li>Captura de comparables y antecedentes en un solo lugar.</li>
+          <li>Cálculos automáticos y reducción de errores.</li>
+          <li>Visualización del avalúo antes de imprimir.</li>
+        </ul>
+
+        <div class="hero-buttons">
+          <a href="#" class="btn-primary">Abrir AppValúo</a>
+          <a href="#mercado" class="btn-secondary">Ver mercado de propiedades</a>
         </div>
       </div>
-      <div class="hero-side">
+
+      <div class="hero-right">
         <div class="hero-card">
           <h2>Innovando la manera de valuar</h2>
-          <ul class="hero-list">
-            <li>Captura y control de comparables en un solo lugar.</li>
-            <li>Rastreo de antecedentes y deméritos por avalúo.</li>
-            <li>Fotos, plano y clasificación de zona integrados.</li>
+          <p>
+            Pensado para peritos y valuadores que quieren dejar atrás las hojas de cálculo sueltas
+            y trabajar en un solo flujo, ordenado y auditable.
+          </p>
+          <ul>
+            <li>Deméritos Ross-Heidecke integrados.</li>
+            <li>Control de reportes fotográficos.</li>
+            <li>Histórico de avalúos por cliente o inmueble.</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-<!-- SECCIÓN MERCADO -->
-<section class="section mercado" id="mercado">
-  <div class="container">
-    <h2 class="section-title">Módulo de Mercado</h2>
-    <p class="section-subtitle">
-      Comparables inmobiliarios en tiempo real para respaldar tus avalúos con datos sólidos y verificables.
-    </p>
-
-    <!-- Tarjetas resumen -->
-    <div class="mercado-grid">
-
-      <div class="mercado-card">
-        <h3>Captura de comparables</h3>
-        <p>Registra operaciones de venta y renta de manera estructurada, lista para análisis.</p>
-      </div>
-
-      <div class="mercado-card">
-        <h3>Base viva de datos</h3>
-        <p>La tabla se alimenta desde Google Sheets / AppValúo, sin editar nada en la web.</p>
-      </div>
-
-      <div class="mercado-card">
-        <h3>Análisis inmediato</h3>
-        <p>Consulta valores unitarios, superficies y rangos de mercado al momento.</p>
-      </div>
-
-    </div>
-
-    <!-- TABLA REAL DE MERCADO (GOOGLE SHEETS) -->
-    <h3 class="tabla-mercado-titulo">Base de datos de comparables</h3>
-    <p class="tabla-mercado-subtitulo">
-      Esta tabla se actualiza directamente desde tu hoja de cálculo de AppValúo (hoja: Mercado).
-    </p>
-
-    <div class="tabla-mercado-wrapper">
-      <iframe
-        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRGUQ7tY9sXdumhL6ipZTBQYEGgnkNjZ5k2gyCnw5BneVJD5gBRzdUUY3bufoc8Bpg574sKV9lIBAZW/pubhtml?gid=411938610&single=true&widget=true&headers=false"
-        loading="lazy">
-      </iframe>
-    </div>
-
-    <p class="tabla-mercado-nota">
-      *Puedes desplazarte dentro de la tabla para ver todas las columnas y registros disponibles.
-    </p>
-
-  </div>
-</section>
-
- <!-- SECCIÓN TUTORIALES -->
-<section class="section tutoriales" id="tutoriales">
-  <div class="container">
-    <h2 class="section-title">Tutoriales de AppValúo</h2>
-    <p class="section-subtitle">
-      Capacitación práctica para el uso profesional de AppValúo.
-    </p>
-
-    <div class="tutoriales-grid">
-
-      <!-- VIDEO 1 -->
-      <article class="video-card">
-        <div class="video-wrapper">
-          <iframe
-            src="https://www.youtube.com/embed/IE48D5Vsnmo"
-            title="Introducción a AppValúo"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <h3>Introducción a AppValúo</h3>
-        <p>Presentación general de la plataforma y su estructura operativa.</p>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-
-  <!-- SECCIÓN CONTACTO -->
-  <section class="section section-alt" id="contacto">
+  <!-- MÓDULOS PRINCIPALES -->
+  <section class="section features">
     <div class="container">
-      <h2>Contacto</h2>
-      <p class="section-intro">
-        Si te interesa implementar AppValúo en tu despacho, colegio o dependencia,
-        puedes ponerte en contacto para agendar una demo o cotizar licencias.
+      <h2 class="section-title">Módulos integrados en AppValúo</h2>
+      <p class="section-subtitle">
+        Todo el flujo de trabajo del valuador en una sola plataforma, desde el mercado de comparables hasta el plano con valores.
       </p>
 
-      <div class="grid-2">
-        <div class="card contact-card">
-          <h3>Datos de contacto</h3>
-          <ul class="contact-list">
-            <li><strong>Marca:</strong> AppValúo – Innovando la manera de valuar.</li>
-            <li><strong>Correo:</strong> <a href="mailto:contacto@appvaluo.com">contacto@appvaluo.com</a></li>
-            <li><strong>Ubicación:</strong> Tepic, Nayarit, México.</li>
+      <div class="features-grid">
+        <article class="feature-card">
+          <h3>Mercado de propiedades</h3>
+          <p>Captura y consulta de comparables con valores unitarios, superficies y URL de respaldo.</p>
+        </article>
+
+        <article class="feature-card">
+          <h3>Deméritos Ross-Heidecke</h3>
+          <p>Aplicación sistemática de deméritos con cálculos automáticos y trazabilidad.</p>
+        </article>
+
+        <article class="feature-card">
+          <h3>Construcciones</h3>
+          <p>Registro de tipos de construcción, calidades, edades y estados de conservación.</p>
+        </article>
+
+        <article class="feature-card">
+          <h3>Clasificación de zona</h3>
+          <p>Identificación de la zona y entorno para reflejar la realidad del mercado.</p>
+        </article>
+
+        <article class="feature-card">
+          <h3>Plano con valores</h3>
+          <p>Integración del croquis y las superficies con los valores por metro cuadrado.</p>
+        </article>
+
+        <article class="feature-card">
+          <h3>Reporte fotográfico</h3>
+          <p>Organización de las fotografías del inmueble dentro del mismo flujo del avalúo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN MERCADO -->
+  <section class="section mercado" id="mercado">
+    <div class="container">
+      <h2 class="section-title">Mercado de propiedades</h2>
+      <p class="section-subtitle">
+        Aquí se concentra el enfoque de mercado de AppValúo. Se registran comparables de casas y terrenos con sus datos principales y la URL completa de la oferta, para que cada avalúo tenga un respaldo claro y verificable.
+      </p>
+
+      <div class="mercado-layout">
+        <!-- Columna izquierda: flujo -->
+        <div class="mercado-panel">
+          <h3>Flujo de trabajo del valuador</h3>
+          <ol class="mercado-steps">
+            <li>Desde la app, presionas el botón “Ir al navegador”.</li>
+            <li>Buscas comparables en los portales y anuncios de tu preferencia.</li>
+            <li>Capturas precio, colonia, superficie, tipo de inmueble y enlace completo.</li>
+            <li>La información se concentra en esta base de datos para consulta y auditoría.</li>
+          </ol>
+
+          <h4>Ventajas</h4>
+          <ul class="mercado-benefits">
+            <li>Base de datos histórica de comparables propios.</li>
+            <li>Transparencia: cada registro con URL de respaldo.</li>
+            <li>Orden: un solo formato para terreno y construcción.</li>
           </ul>
         </div>
-        <div class="card contact-card">
-          <h3>Servicios</h3>
-          <ul class="contact-list">
-            <li>Licencias individuales para valuadores.</li>
-            <li>Planes para despachos y colegios de valuadores.</li>
-            <li>Capacitación y acompañamiento en la implementación.</li>
-          </ul>
+
+        <!-- Columna derecha: tabla -->
+        <div class="mercado-panel">
+          <h3>Base de datos de comparables</h3>
+          <p class="tabla-mercado-subtitulo">
+            Esta tabla se alimenta directamente desde tu hoja “Mercado” de Google Sheets conectada con AppValúo.
+          </p>
+
+          <div class="tabla-mercado-wrapper">
+            <iframe
+              src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRGUQ7tY9sXdumhL6ipZTBQYEGgnkNjZ5k2gyCnw5BneVJD5gBRzdUUY3bufoc8Bpg574sKV9lIBAZW/pubhtml?gid=411938610&single=true&widget=true&headers=false"
+              loading="lazy">
+            </iframe>
+          </div>
+
+          <p class="tabla-mercado-nota">
+            *Puedes desplazarte dentro de la tabla para ver todas las columnas y registros disponibles.
+          </p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN TUTORIALES -->
+  <section class="section tutoriales" id="tutoriales">
+    <div class="container">
+      <h2 class="section-title">Tutoriales de AppValúo</h2>
+      <p class="section-subtitle">
+        Capacitación práctica para el uso profesional de AppValúo, desde la captura hasta el avalúo final listo para imprimir.
+      </p>
+
+      <div class="tutoriales-grid">
+        <!-- VIDEO 1 -->
+        <article class="video-card">
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/IE48D5Vsnmo"
+              title="Introducción a AppValúo"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <h3>Introducción a AppValúo</h3>
+          <p>Presentación general de la plataforma y explicación del flujo de trabajo básico.</p>
+        </article>
+
+        <!-- Aquí después se pueden añadir más videos -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section contacto" id="contacto">
+    <div class="container contacto-content">
+      <div class="contacto-text">
+        <h2 class="section-title">Contacto</h2>
+        <p class="section-subtitle">
+          Si eres valuador, perito o forma parte de un colegio y te interesa conocer AppValúo,
+          puedes solicitar una demostración o más información.
+        </p>
+
+        <ul class="contacto-list">
+          <li>Demostraciones uno a uno.</li>
+          <li>Posibles planes por usuario o por avalúo.</li>
+          <li>Soporte básico para la puesta en marcha.</li>
+        </ul>
+      </div>
+
+      <div class="contacto-card">
+        <h3>Datos de contacto</h3>
+        <p>Envíanos un mensaje con tus datos y la zona donde trabajas.</p>
+        <p class="contacto-item"><strong>Correo:</strong> contacto@appvaluo.mx</p>
+        <p class="contacto-item"><strong>Mensaje:</strong> Indica si eres perito, valuador independiente o despacho.</p>
       </div>
     </div>
   </section>
@@ -172,10 +218,11 @@
     </div>
   </footer>
 
-  <!-- Script año del footer -->
+  <!-- Script año dinámico -->
   <script>
     document.getElementById('anio-actual').textContent = new Date().getFullYear();
   </script>
 
 </body>
 </html>
+
