@@ -1,6 +1,6 @@
-/* ==============================
-   RESET CORPORATIVO
-================================= */
+/* =========================================
+   RESET
+========================================= */
 * {
   margin: 0;
   padding: 0;
@@ -8,8 +8,8 @@
 }
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: #0b1020;
-  color: #ffffff;
+  background: #020617;          /* fondo general oscuro */
+  color: #e5e7eb;
   line-height: 1.6;
 }
 .container {
@@ -18,23 +18,28 @@ body {
   margin: 0 auto;
 }
 
-/* ==============================
-   COLORES CORPORATIVOS
-================================= */
+/* =========================================
+   COLORES BASE (ajustados al logo)
+========================================= */
 :root {
-  --azul-principal: #00b0ff;
-  --dorado: #f2b705;
-  --azul-oscuro: #020817;
-  --gris-claro: #eaeaea;
+  --azul-neon: #38bdf8;        /* azul brillante */
+  --azul-profundo: #020617;    /* fondo principal */
+  --azul-medio: #0f172a;       /* paneles */
+  --azul-oscuro: #020617;
+  --acento: #facc15;           /* dorado */
+  --texto-suave: #9ca3af;
 }
 
-/* ==============================
+/* =========================================
    HEADER
-================================= */
+========================================= */
 .main-header {
-  background: linear-gradient(90deg, #020817, #0b1d3a);
-  border-bottom: 2px solid var(--azul-principal);
-  padding: 15px 0;
+  background: radial-gradient(circle at left, #0f172a, #020617 55%);
+  border-bottom: 1px solid #1f2933;
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 .header-content {
   display: flex;
@@ -42,231 +47,196 @@ body {
   align-items: center;
 }
 .logo img {
-  height: 55px;
+  height: 44px;
 }
 .main-nav a {
-  color: var(--gris-claro);
+  color: #e5e7eb;
   text-decoration: none;
-  margin-left: 25px;
-  font-weight: bold;
+  margin-left: 20px;
   font-size: 14px;
-  letter-spacing: 1px;
   text-transform: uppercase;
+  letter-spacing: 1px;
 }
 .main-nav a:hover {
-  color: var(--azul-principal);
+  color: var(--azul-neon);
 }
 
-/* ==============================
-   HERO
-================================= */
+/* =========================================
+   HERO – PORTADA
+========================================= */
 .hero {
-  background: radial-gradient(circle, #0b1d3a 0%, #020817 100%);
-  padding: 90px 0 70px;
+  background: radial-gradient(circle at top, #0b1120 0%, #020617 70%);
+  padding: 80px 0 60px;
+}
+.hero-content {
   text-align: center;
 }
 .hero h1 {
-  font-size: 48px;
-  color: var(--azul-principal);
+  font-size: 40px;
+  color: var(--azul-neon);
   letter-spacing: 1px;
 }
 .hero-subtitle {
-  font-size: 20px;
-  color: var(--dorado);
-  margin: 10px 0 20px;
+  font-size: 18px;
+  color: var(--acento);
+  margin-top: 8px;
+  margin-bottom: 18px;
 }
 .hero-copy {
-  font-size: 16px;
-  color: #cfd8dc;
   max-width: 720px;
   margin: 0 auto 30px;
+  color: var(--texto-suave);
+  font-size: 15px;
 }
 
-/* ==============================
-   BOTONES
-================================= */
+/* BOTONES HERO */
+.hero-buttons {
+  margin-bottom: 25px;
+}
 .hero-buttons a {
   display: inline-block;
-  margin: 6px 12px;
-  padding: 14px 30px;
-  border-radius: 50px;
+  padding: 12px 26px;
+  margin: 4px 8px;
+  border-radius: 999px;
+  font-size: 13px;
   font-weight: bold;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 13px;
   letter-spacing: 1px;
 }
-
 .btn-primary {
-  background: linear-gradient(90deg, #00b0ff, #0077ff);
-  color: #021024;
-  box-shadow: 0 5px 25px rgba(0,176,255,.4);
+  background: linear-gradient(90deg, #fb923c, #f97316);
+  color: #111827;
+  box-shadow: 0 8px 24px rgba(248, 113, 22, 0.4);
 }
 .btn-primary:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
-
 .btn-secondary {
-  border: 2px solid var(--dorado);
-  color: var(--dorado);
+  border: 1px solid var(--azul-neon);
+  color: var(--azul-neon);
+  background: transparent;
 }
 .btn-secondary:hover {
-  background-color: var(--dorado);
-  color: #021024;
+  background: rgba(56, 189, 248, 0.1);
 }
 
-/* ==============================
-   LISTA HERO
-================================= */
+/* LISTA HERO (si la usas después) */
 .hero-list {
   list-style: none;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .hero-list li {
-  color: #cfd8dc;
-  font-size: 15px;
-  margin: 8px 0;
+  color: var(--texto-suave);
+  font-size: 14px;
+  margin: 5px 0;
 }
 
-/* ==============================
+/* =========================================
    SECCIONES GENERALES
-================================= */
+========================================= */
 .seccion {
-  padding: 70px 0;
-  background-color: #020817;
+  padding: 60px 0;
 }
 .section-title {
   text-align: center;
-  font-size: 32px;
-  color: var(--azul-principal);
-  margin-bottom: 15px;
+  font-size: 26px;
+  color: var(--azul-neon);
+  margin-bottom: 10px;
 }
 .section-intro {
   text-align: center;
-  color: #b0bec5;
-  font-size: 16px;
-  margin-bottom: 40px;
+  color: var(--texto-suave);
+  font-size: 15px;
+  max-width: 720px;
+  margin: 0 auto 35px;
 }
 
-/* ==============================
-   TARJETAS CORPORATIVAS
-================================= */
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 25px;
+/* =========================================
+   MERCADO – PANEL A OSCURAS
+========================================= */
+#mercado {
+  background: #020617;
 }
-.card {
-  background: linear-gradient(180deg, #06142b, #020817);
-  border: 1px solid #0a2a4d;
-  border-radius: 16px;
-  padding: 30px 20px;
-  box-shadow: 0 10px 40px rgba(0,0,0,.4);
-}
-.card h3 {
-  color: var(--dorado);
-  font-size: 18px;
-  margin-bottom: 15px;
-}
-.card p {
-  color: #cfd8dc;
-  font-size: 14px;
-}
-
-/* ==============================
-   KPIs
-================================= */
-.kpi-grid {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
-}
-.kpi-card {
-  background: #06142b;
-  border: 1px solid #0a2a4d;
-  border-radius: 16px;
-  padding: 20px 35px;
-  text-align: center;
-}
-.kpi-label {
-  font-size: 12px;
-  color: #90caf9;
-}
-.kpi-value {
-  font-size: 20px;
-  color: var(--azul-principal);
-  font-weight: bold;
-}
-
-/* ==============================
-   TABLA MERCADO
-================================= */
 .tabla-mercado-wrapper {
-  margin-top: 30px;
-  border-radius: 20px;
+  margin-top: 20px;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 15px 50px rgba(0,0,0,.45);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+  border: 1px solid #1f2933;
 }
 .tabla-mercado {
   width: 100%;
   height: 520px;
   border: none;
-  background: #fff;
 }
 
-/* ==============================
-   VIDEOS
-================================= */
+/* =========================================
+   TUTORIALES – TARJETAS VIDEOS
+========================================= */
+#tutoriales {
+  background: linear-gradient(180deg, #020617, #020617);
+}
 .videos {
   display: grid;
-  gap: 30px;
+  grid-template-columns: 1fr;
+  gap: 28px;
 }
-.video-youtube iframe {
-  border-radius: 20px;
-  border: 2px solid #0a2a4d;
-  box-shadow: 0 12px 40px rgba(0,0,0,.6);
+.videos iframe {
+  width: 100%;
+  height: 320px;
+  border: none;
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.8);
+  background: #000;
 }
 
-/* ==============================
+/* =========================================
    CONTACTO
-================================= */
+========================================= */
+#contacto {
+  background: #020617;
+}
 .contacto-content {
   text-align: center;
+}
+.contacto-content p {
+  margin-top: 12px;
+  color: var(--texto-suave);
 }
 .contacto-list {
   list-style: none;
   margin-top: 20px;
 }
 .contacto-list li {
-  font-size: 15px;
-  color: #cfd8dc;
+  margin: 6px 0;
 }
 
-/* ==============================
+/* =========================================
    FOOTER
-================================= */
+========================================= */
 .footer {
-  background: #020817;
-  border-top: 2px solid var(--azul-principal);
-  padding: 40px 20px;
+  background: #020617;
+  border-top: 1px solid #1f2933;
+  padding: 20px 0 25px;
   text-align: center;
-}
-.footer p {
   font-size: 13px;
-  color: #90caf9;
+  color: #6b7280;
 }
 .footer-small {
+  margin-top: 4px;
   font-size: 12px;
-  margin-top: 5px;
-  color: #607d8b;
+  color: #4b5563;
 }
 
-/* ==============================
+/* =========================================
    RESPONSIVE
-================================= */
+========================================= */
 @media (min-width: 768px) {
+  .hero-content {
+    max-width: 800px;
+  }
   .videos {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr; /* dos videos lado a lado */
   }
 }
