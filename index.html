@@ -56,62 +56,53 @@
     </div>
   </section>
 
-  <!-- SECCIÓN MERCADO -->
-  <section class="section" id="mercado">
-    <div class="container">
-      <h2>Mercado de propiedades</h2>
-      <p class="section-intro">
-        Aquí se concentra el enfoque de mercado de AppValúo. Se registran los comparables
-        de casas y terrenos con sus datos principales y la URL completa de la oferta,
-        para que cada avalúo tenga un respaldo claro y verificable.
-      </p>
+<!-- SECCIÓN MERCADO -->
+<section class="section mercado" id="mercado">
+  <div class="container">
+    <h2 class="section-title">Módulo de Mercado</h2>
+    <p class="section-subtitle">
+      Comparables inmobiliarios en tiempo real para respaldar tus avalúos con datos sólidos y verificables.
+    </p>
 
-      <div class="grid-2">
-        <!-- Resumen / explicación -->
-        <div class="card market-summary">
-          <h3>Flujo de trabajo del valuador</h3>
-          <ol class="steps-list">
-            <li>Desde la app, presionas el botón <strong>“Ir al navegador”</strong>.</li>
-            <li>Buscas comparables en los portales y anuncios de tu preferencia.</li>
-            <li>Capturas precio, colonia, superficie, tipo de inmueble y enlace completo.</li>
-            <li>La información se concentra en esta base de datos para consulta y auditoría.</li>
-          </ol>
+    <!-- Tarjetas resumen -->
+    <div class="mercado-grid">
 
-          <h3>Ventajas</h3>
-          <ul class="benefits-list">
-            <li>Base de datos histórica de comparables propios.</li>
-            <li>Transparencia: cada registro con URL de respaldo.</li>
-            <li>Orden: un solo formato para terreno y construcción.</li>
-          </ul>
-
-          <!-- Botón para regresar a la app si quieres mantenerlo -->
-          <a class="btn btn-secondary" href="https://www.appsheet.com/start/11913076-3908-4fb1-84c3-1f4e786327a4" target="_blank" rel="noopener">
-            Ir a la app AppValúo
-          </a>
-        </div>
-
-        <!-- Tabla de Google Sheets embebida -->
-        <div class="card market-table-card">
-          <h3>Base de datos de comparables</h3>
-          <p class="card-note">
-            Esta tabla se alimenta directamente de la hoja <strong>“Mercado”</strong> de Google Sheets conectada con AppValúo.
-          </p>
-
-          <div class="table-wrapper">
-            <iframe
-              class="sheet-iframe"
-              src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRGUQ7tY9sXdumhL6ipZTBQYEGgnkNjZ5k2gyCnw5BneVJD5gBRzdUUY3bufoc8Bpg574sKV9lIBAZW/pubhtml?gid=411938610&single=true"
-              frameborder="0"
-            ></iframe>
-          </div>
-
-          <p class="card-small">
-            Para actualizar la información, solo capturas en la app. La página se mantiene sincronizada con la hoja de cálculo.
-          </p>
-        </div>
+      <div class="mercado-card">
+        <h3>Captura de comparables</h3>
+        <p>Registra operaciones de venta y renta de manera estructurada, lista para análisis.</p>
       </div>
+
+      <div class="mercado-card">
+        <h3>Base viva de datos</h3>
+        <p>La tabla se alimenta desde Google Sheets / AppValúo, sin editar nada en la web.</p>
+      </div>
+
+      <div class="mercado-card">
+        <h3>Análisis inmediato</h3>
+        <p>Consulta valores unitarios, superficies y rangos de mercado al momento.</p>
+      </div>
+
     </div>
-  </section>
+
+    <!-- TABLA REAL DE MERCADO (GOOGLE SHEETS) -->
+    <h3 class="tabla-mercado-titulo">Base de datos de comparables</h3>
+    <p class="tabla-mercado-subtitulo">
+      Esta tabla se actualiza directamente desde tu hoja de cálculo de AppValúo (hoja: Mercado).
+    </p>
+
+    <div class="tabla-mercado-wrapper">
+      <iframe
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRGUQ7tY9sXdumhL6ipZTBQYEGgnkNjZ5k2gyCnw5BneVJD5gBRzdUUY3bufoc8Bpg574sKV9lIBAZW/pubhtml?gid=411938610&single=true&widget=true&headers=false"
+        loading="lazy">
+      </iframe>
+    </div>
+
+    <p class="tabla-mercado-nota">
+      *Puedes desplazarte dentro de la tabla para ver todas las columnas y registros disponibles.
+    </p>
+
+  </div>
+</section>
 
  <!-- SECCIÓN TUTORIALES -->
 <section class="section tutoriales" id="tutoriales">
