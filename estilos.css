@@ -12,20 +12,20 @@ html, body {
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background-color: #020617; /* fondo oscuro, como el logo */
+  background-color: #020617; /* fondo principal oscuro como el logo */
   color: #e5e7eb;
   line-height: 1.6;
 }
 
-/* ===== PALETA (COLORES DEL LOGO) ===== */
+/* ===== PALETA (COINCIDE CON EL LOGO) ===== */
 :root {
   --bg-main: #020617;
   --bg-soft: #050b16;
   --bg-card: #0b1220;
   --bg-card-soft: #111827;
 
-  --primary: #1d9cfb;       /* azul del texto AppValúo */
-  --primary-soft: #38bdf8;  /* azul brillante / glow */
+  --primary: #1d9cfb;       /* azul principal texto AppValúo */
+  --primary-soft: #38bdf8;  /* azul claro de brillo */
   --accent: #fbbf24;        /* dorado del slogan */
   --border-soft: #1f2937;
 
