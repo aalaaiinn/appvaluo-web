@@ -1,272 +1,103 @@
-/* ==============================
-   RESET CORPORATIVO
-================================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #0b1020;
-  color: #ffffff;
-  line-height: 1.6;
-}
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AppValúo</title>
 
-/* ==============================
-   COLORES CORPORATIVOS
-================================= */
-:root {
-  --azul-principal: #00b0ff;
-  --dorado: #f2b705;
-  --azul-oscuro: #020817;
-  --gris-claro: #eaeaea;
-}
+  <!-- ENLACE AL CSS -->
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
 
-/* ==============================
-   HEADER
-================================= */
-.main-header {
-  background: linear-gradient(90deg, #020817, #0b1d3a);
-  border-bottom: 2px solid var(--azul-principal);
-  padding: 15px 0;
-}
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.logo img {
-  height: 55px;
-}
-.main-nav a {
-  color: var(--gris-claro);
-  text-decoration: none;
-  margin-left: 25px;
-  font-weight: bold;
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-.main-nav a:hover {
-  color: var(--azul-principal);
-}
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="container header-content">
+      <div class="logo">
+        <img src="logo.png" alt="AppValúo">
+      </div>
+      <nav class="main-nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#mercado">Mercado</a>
+        <a href="#tutoriales">Tutoriales</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
 
-/* ==============================
-   HERO
-================================= */
-.hero {
-  background: radial-gradient(circle, #0b1d3a 0%, #020817 100%);
-  padding: 90px 0 70px;
-  text-align: center;
-}
-.hero h1 {
-  font-size: 48px;
-  color: var(--azul-principal);
-  letter-spacing: 1px;
-}
-.hero-subtitle {
-  font-size: 20px;
-  color: var(--dorado);
-  margin: 10px 0 20px;
-}
-.hero-copy {
-  font-size: 16px;
-  color: #cfd8dc;
-  max-width: 720px;
-  margin: 0 auto 30px;
-}
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="container hero-content">
+      <h1>AppValúo</h1>
+      <p class="hero-subtitle">Innovando la manera de valuar</p>
 
-/* ==============================
-   BOTONES
-================================= */
-.hero-buttons a {
-  display: inline-block;
-  margin: 6px 12px;
-  padding: 14px 30px;
-  border-radius: 50px;
-  font-weight: bold;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 13px;
-  letter-spacing: 1px;
-}
+      <div class="hero-buttons">
+        <a 
+          href="https://www.appsheet.com/template/AppDef?appName=AppVal%C3%BAo-380800148&appId=11913076-3908-4fb1-84c3-1f4e786327a4&quickStart=False"
+          class="btn-primary"
+          target="_blank"
+        >
+          Abrir AppValúo
+        </a>
+        <a href="#mercado" class="btn-secondary">
+          Ir a Mercado de Propiedades
+        </a>
+      </div>
+    </div>
+  </section>
 
-.btn-primary {
-  background: linear-gradient(90deg, #00b0ff, #0077ff);
-  color: #021024;
-  box-shadow: 0 5px 25px rgba(0,176,255,.4);
-}
-.btn-primary:hover {
-  transform: translateY(-2px);
-}
+  <!-- MERCADO -->
+  <section class="seccion" id="mercado">
+    <div class="container">
+      <h2 class="section-title">Mercado de Propiedades</h2>
 
-.btn-secondary {
-  border: 2px solid var(--dorado);
-  color: var(--dorado);
-}
-.btn-secondary:hover {
-  background-color: var(--dorado);
-  color: #021024;
-}
+      <iframe
+        class="tabla-mercado"
+        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRGUQ7tY9sXdumhL6ipZTBQYEGgnkNjZ5k2gyCnw5BneVJD5gBRzdUUY3bufoc8Bpg574sKV9lIBAZW/pubhtml?gid=411938610&single=true">
+      </iframe>
+    </div>
+  </section>
 
-/* ==============================
-   LISTA HERO
-================================= */
-.hero-list {
-  list-style: none;
-  margin-top: 30px;
-}
-.hero-list li {
-  color: #cfd8dc;
-  font-size: 15px;
-  margin: 8px 0;
-}
+  <!-- TUTORIALES -->
+  <section class="seccion" id="tutoriales">
+    <div class="container">
+      <h2 class="section-title">Tutoriales</h2>
 
-/* ==============================
-   SECCIONES GENERALES
-================================= */
-.seccion {
-  padding: 70px 0;
-  background-color: #020817;
-}
-.section-title {
-  text-align: center;
-  font-size: 32px;
-  color: var(--azul-principal);
-  margin-bottom: 15px;
-}
-.section-intro {
-  text-align: center;
-  color: #b0bec5;
-  font-size: 16px;
-  margin-bottom: 40px;
-}
+      <div class="videos">
+        <iframe 
+          width="100%" height="315"
+          src="https://www.youtube.com/embed/e0M9Pb3Gw-c"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
 
-/* ==============================
-   TARJETAS CORPORATIVAS
-================================= */
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 25px;
-}
-.card {
-  background: linear-gradient(180deg, #06142b, #020817);
-  border: 1px solid #0a2a4d;
-  border-radius: 16px;
-  padding: 30px 20px;
-  box-shadow: 0 10px 40px rgba(0,0,0,.4);
-}
-.card h3 {
-  color: var(--dorado);
-  font-size: 18px;
-  margin-bottom: 15px;
-}
-.card p {
-  color: #cfd8dc;
-  font-size: 14px;
-}
+        <iframe 
+          width="100%" height="315"
+          src="https://www.youtube.com/embed/IE48D5Vsnmo"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
 
-/* ==============================
-   KPIs
-================================= */
-.kpi-grid {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
-}
-.kpi-card {
-  background: #06142b;
-  border: 1px solid #0a2a4d;
-  border-radius: 16px;
-  padding: 20px 35px;
-  text-align: center;
-}
-.kpi-label {
-  font-size: 12px;
-  color: #90caf9;
-}
-.kpi-value {
-  font-size: 20px;
-  color: var(--azul-principal);
-  font-weight: bold;
-}
+  <!-- CONTACTO -->
+  <section class="seccion" id="contacto">
+    <div class="container contacto-content">
+      <h2 class="section-title">Contacto</h2>
+      <p>Correo: contacto@appvaluo.com</p>
+    </div>
+  </section>
 
-/* ==============================
-   TABLA MERCADO
-================================= */
-.tabla-mercado-wrapper {
-  margin-top: 30px;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 15px 50px rgba(0,0,0,.45);
-}
-.tabla-mercado {
-  width: 100%;
-  height: 520px;
-  border: none;
-  background: #fff;
-}
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© <span id="anio-actual"></span> AppValúo. Todos los derechos reservados.</p>
+  </footer>
 
-/* ==============================
-   VIDEOS
-================================= */
-.videos {
-  display: grid;
-  gap: 30px;
-}
-.video-youtube iframe {
-  border-radius: 20px;
-  border: 2px solid #0a2a4d;
-  box-shadow: 0 12px 40px rgba(0,0,0,.6);
-}
+  <script>
+    document.getElementById('anio-actual').textContent = new Date().getFullYear();
+  </script>
 
-/* ==============================
-   CONTACTO
-================================= */
-.contacto-content {
-  text-align: center;
-}
-.contacto-list {
-  list-style: none;
-  margin-top: 20px;
-}
-.contacto-list li {
-  font-size: 15px;
-  color: #cfd8dc;
-}
-
-/* ==============================
-   FOOTER
-================================= */
-.footer {
-  background: #020817;
-  border-top: 2px solid var(--azul-principal);
-  padding: 40px 20px;
-  text-align: center;
-}
-.footer p {
-  font-size: 13px;
-  color: #90caf9;
-}
-.footer-small {
-  font-size: 12px;
-  margin-top: 5px;
-  color: #607d8b;
-}
-
-/* ==============================
-   RESPONSIVE
-================================= */
-@media (min-width: 768px) {
-  .videos {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+</body>
+</html>
