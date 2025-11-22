@@ -1383,5 +1383,41 @@ a.btn.btn-outline.btn-full:hover {
   font-size: 0.95rem;
   font-weight: bold;
 }
+/* ===== TABLA DE MERCADO ===== */
 
+.tabla-mercado-titulo {
+  margin-top: 20px;
+  margin-bottom: 6px;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+.tabla-mercado-subtitulo {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.tabla-mercado-wrapper {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+  background: #ffffff;
+  border: 2px solid #e1e6eb;
+  margin-top: 10px;
+}
+
+.tabla-mercado-wrapper iframe {
+  width: 100%;
+  height: 650px;
+  border: none;
+}
+
+.tabla-mercado-nota {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+   
 
