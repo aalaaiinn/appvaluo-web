@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-@  <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AppValúo</title>
 
-  <!-- ENLACE AL CSS -->
+  <!-- ENLACE AL CSS PRINCIPAL -->
   <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
@@ -25,10 +25,7 @@
       </nav>
     </div>
   </header>
-<link rel="stylesheet" href="tabla-mercado.css">
- <div class="tabla-mercado-container">
-   <iframe src="TU_LINK_DE_GOOGLE_SHEETS_O_APPSHEET"></iframe>
- </div>
+
   <!-- HERO -->
   <section class="hero" id="inicio">
     <div class="container hero-content">
@@ -49,39 +46,33 @@
       </div>
     </div>
   </section>
+
   <!-- MERCADO DE PROPIEDADES -->
   <section class="seccion" id="mercado">
     <div class="container">
       <h2 class="section-title">Mercado de Propiedades</h2>
       <p class="section-intro">
-        Desde esta sección puedes consultar la base de datos de comparables que alimenta el
-        enfoque de mercado dentro de AppValúo. Es la misma información que se utiliza en la app.
+        Base de datos de comparables utilizada por AppValúo para el enfoque de mercado.
       </p>
 
-      <!-- BOTONES DE ACCESO -->
       <div class="hero-buttons" style="text-align:center; margin-bottom:25px;">
-        <!-- LLEVA AL MÓDULO DE MERCADO DENTRO DE APPSHEET (APP) -->
         <a
           href="https://www.appsheet.com/template/AppDef?appName=AppVal%C3%BAo-380800148&appId=11913076-3908-4fb1-84c3-1f4e786327a4&quickStart=False"
           class="btn-primary"
           target="_blank"
-          rel="noopener noreferrer"
         >
           Abrir AppValúo (Mercado)
         </a>
 
-        <!-- ABRE LA BASE DE DATOS EN GOOGLE SHEETS (VISTA WEB) -->
         <a
           href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRGUQ7tY9sXdumhL6ipZTBQYEGgnkNjZ5k2gyCnw5BneVJD5gBRzdUUY3bufoc8Bpg574sKV9lIBAZW/pubhtml?gid=411938610&single=true"
           class="btn-secondary"
           target="_blank"
-          rel="noopener noreferrer"
         >
-          Abrir base de datos en Google Sheets
+          Ver base en Google Sheets
         </a>
       </div>
 
-      <!-- TABLA EMBEBIDA -->
       <div class="tabla-mercado-wrapper">
         <iframe
           class="tabla-mercado"
@@ -99,14 +90,12 @@
 
       <div class="videos">
         <iframe 
-          width="100%" height="315"
           src="https://www.youtube.com/embed/e0M9Pb3Gw-c"
           frameborder="0"
           allowfullscreen>
         </iframe>
 
         <iframe 
-          width="100%" height="315"
           src="https://www.youtube.com/embed/IE48D5Vsnmo"
           frameborder="0"
           allowfullscreen>
