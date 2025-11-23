@@ -268,3 +268,18 @@ body {
     grid-template-columns: 1fr 1fr; /* dos videos lado a lado */
   }
 }
+/* Mejor separación entre secciones */
+.seccion {
+  margin-bottom: 40px;
+}
+
+/* Mejor altura del iframe */
+.tabla-mercado {
+  height: 600px;
+}
+
+/* Centrado más limpio del hero */
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
