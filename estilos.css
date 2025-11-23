@@ -283,3 +283,17 @@ body {
   max-width: 900px;
   margin: 0 auto;
 }
+/* Botón Construcción — Naranja corporativo AppValúo */
+.btn-outline.btn-full {
+  background-color: #ffffff !important;
+  border: 2px solid #ff7a00 !important; /* Naranja */
+  color: #ff7a00 !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+/* Hover */
+.btn-outline.btn-full:hover {
+  background-color: #fff4e6 !important; /* Naranja pastel */
+}
