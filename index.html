@@ -49,22 +49,49 @@
       </div>
     </div>
   </section>
-
-  <!-- MERCADO -->
+  <!-- MERCADO DE PROPIEDADES -->
   <section class="seccion" id="mercado">
     <div class="container">
       <h2 class="section-title">Mercado de Propiedades</h2>
+      <p class="section-intro">
+        Desde esta sección puedes consultar la base de datos de comparables que alimenta el
+        enfoque de mercado dentro de AppValúo. Es la misma información que se utiliza en la app.
+      </p>
 
-      <iframe
-        class="tabla-mercado"
-        src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRGUQ7tY9sXdumhL6ipZTBQYEGgnkNjZ5k2gyCnw5BneVJD5gBRzdUUY3bufoc8Bpg574sKV9lIBAZW/pubhtml?gid=411938610&single=true">
-      </iframe>
+      <!-- BOTONES DE ACCESO -->
+      <div class="hero-buttons" style="text-align:center; margin-bottom:25px;">
+        <!-- LLEVA AL MÓDULO DE MERCADO DENTRO DE APPSHEET (APP) -->
+        <a
+          href="https://www.appsheet.com/template/AppDef?appName=AppVal%C3%BAo-380800148&appId=11913076-3908-4fb1-84c3-1f4e786327a4&quickStart=False"
+          class="btn-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Abrir AppValúo (Mercado)
+        </a>
+
+        <!-- ABRE LA BASE DE DATOS EN GOOGLE SHEETS (VISTA WEB) -->
+        <a
+          href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRGUQ7tY9sXdumhL6ipZTBQYEGgnkNjZ5k2gyCnw5BneVJD5gBRzdUUY3bufoc8Bpg574sKV9lIBAZW/pubhtml?gid=411938610&single=true"
+          class="btn-secondary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Abrir base de datos en Google Sheets
+        </a>
+      </div>
+
+      <!-- TABLA EMBEBIDA -->
+      <div class="tabla-mercado-wrapper">
+        <iframe
+          class="tabla-mercado"
+          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRGUQ7tY9sXdumhL6ipZTBQYEGgnkNjZ5k2gyCnw5BneVJD5gBRzdUUY3bufoc8Bpg574sKV9lIBAZW/pubhtml?gid=411938610&single=true"
+          loading="lazy"
+        ></iframe>
+      </div>
     </div>
   </section>
-<link rel="stylesheet" href="tabla-mercado.css">
-  <div class="tabla-mercado-container">
-   <iframe src="TU_LINK_AQUI"></iframe>
-</div>
+
   <!-- TUTORIALES -->
   <section class="seccion" id="tutoriales">
     <div class="container">
