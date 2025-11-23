@@ -48,40 +48,50 @@
   </section>
 
   <!-- MERCADO DE PROPIEDADES -->
-  <section class="seccion" id="mercado">
-    <div class="container">
-      <h2 class="section-title">Mercado de Propiedades</h2>
-      <p class="section-intro">
-        Base de datos de comparables utilizada por AppValúo para el enfoque de mercado.
-      </p>
+<section class="section section-alt" id="mercado">
+  <div class="container">
+    <h2>Mercado de Propiedades</h2>
+    <p class="section-intro">
+      Base de datos de comparables utilizada por AppValúo para el enfoque de mercado.
+      Aquí puedes consultar los registros y abrir el módulo de mercado en la app.
+    </p>
 
-      <div class="hero-buttons" style="text-align:center; margin-bottom:25px;">
-        <a
-          href="https://www.appsheet.com/template/AppDef?appName=AppVal%C3%BAo-380800148&appId=11913076-3908-4fb1-84c3-1f4e786327a4&quickStart=False"
-          class="btn-primary"
-          target="_blank"
-        >
-          Abrir AppValúo (Mercado)
-        </a>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Acciones rápidas</h3>
+        <p>Elige cómo quieres trabajar con el mercado:</p>
 
-        <a
-          href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRGUQ7tY9sXdumhL6ipZTBQYEGgnkNjZ5k2gyCnw5BneVJD5gBRzdUUY3bufoc8Bpg574sKV9lIBAZW/pubhtml?gid=411938610&single=true"
-          class="btn-secondary"
-          target="_blank"
-        >
-          Ver base en Google Sheets
-        </a>
+        <div class="market-actions-pro">
+          <!-- Abrir módulo Mercado dentro de AppValúo -->
+          <a href="https://www.appsheet.com/start/11913076-3908-4fb1-84c3-1f4e786327a4#control=11FormularioEnfoquemercadoterreno_Form"
+             target="_blank" class="btn btn-primary btn-full">
+            Abrir módulo Mercado en AppValúo
+          </a>
+
+          <!-- Ver base en Google Sheets -->
+          <a href="https://TU_URL_DE_SHEETS_AQUI"
+             target="_blank" class="btn btn-outline btn-full">
+            Ver base en Google Sheets
+          </a>
+        </div>
       </div>
 
-      <div class="tabla-mercado-wrapper">
+      <div class="card table-card">
+        <h3>Vista rápida de comparables</h3>
+        <p class="table-note">
+          Fragmento de la base de datos de mercado. Para trabajar a detalle,
+          usa el módulo de AppValúo o abre la hoja completa en Google Sheets.
+        </p>
+        <!-- Aquí va tu iframe de Google Sheets -->
         <iframe
-          class="tabla-mercado"
-          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRGUQ7tY9sXdumhL6ipZTBQYEGgnkNjZ5k2gyCnw5BneVJD5gBRzdUUY3bufoc8Bpg574sKV9lIBAZW/pubhtml?gid=411938610&single=true"
-          loading="lazy"
-        ></iframe>
+          src="https://TU_IFRAME_DE_SHEETS_AQUI"
+          width="100%" height="350" style="border:0;">
+        </iframe>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- TUTORIALES -->
   <section class="seccion" id="tutoriales">
