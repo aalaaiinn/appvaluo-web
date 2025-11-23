@@ -95,8 +95,8 @@ body {
 }
 .hero-buttons a {
   display: inline-block;
-  padding: 12px 26px;
-  margin: 4px 8px;
+  padding: 10px 22px;
+  margin: 4px 6px;
   border-radius: 999px;
   font-size: 13px;
   font-weight: bold;
@@ -152,6 +152,22 @@ body {
   margin: 0 auto 35px;
 }
 
+/* Listas y subtítulos dentro de secciones (beneficios / flujo) */
+.seccion h3 {
+  font-size: 18px;
+  color: var(--acento);
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+.seccion ul {
+  margin: 8px 0 8px 20px;
+}
+.seccion ul li {
+  margin-bottom: 6px;
+  color: #d1d5db;
+  font-size: 14px;
+}
+
 /* =========================================
    MERCADO – PANEL A OSCURAS
 ========================================= */
@@ -159,7 +175,9 @@ body {
   background: #020617;
 }
 .tabla-mercado-wrapper {
-  margin-top: 20px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 10px;
   border-radius: 18px;
   overflow: hidden;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
@@ -227,6 +245,16 @@ body {
   margin-top: 4px;
   font-size: 12px;
   color: #4b5563;
+}
+
+/* =========================================
+   AJUSTES FINOS
+========================================= */
+.hero {
+  margin-top: 0;
+}
+body {
+  margin-top: 0;
 }
 
 /* =========================================
