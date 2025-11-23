@@ -297,3 +297,16 @@ body {
 .btn-outline.btn-full:hover {
   background-color: #fff4e6 !important; /* Naranja pastel */
 }
+
+.tabla-demeritos-card {
+  background: #050814;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.tabla-demeritos-card iframe {
+  width: 100%;
+  border-radius: 8px;
+}
