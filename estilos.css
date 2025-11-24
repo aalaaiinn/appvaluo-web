@@ -450,3 +450,16 @@ body {
   margin-top: 40px;
   margin-bottom: 12px;
 }
+/* Centrar botones del bloque Mercado */
+.mercado-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;     /* centra horizontalmente */
+  gap: 16px;               /* separa los botones */
+}
+
+/* Para que el botón no se expanda a toda la pantalla */
+.mercado-buttons a {
+  width: auto !important;
+  text-align: center;
+}
