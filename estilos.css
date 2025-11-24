@@ -397,3 +397,31 @@ body {
 
   border: none;
 }
+/* TITULOS CENTRADOS */
+#mercado h2,
+#mercado h3,
+#acerca h2,
+#acerca h3 {
+  text-align: center !important;
+}
+
+/* TEXTOS JUSTIFICADOS (párrafos y listas) */
+#mercado p,
+#mercado ul,
+#acerca p,
+#acerca ul {
+  text-align: justify !important;
+}
+
+/* AJUSTAR CONTENEDOR DE TEXTO PARA QUE NO QUEDE MUY ANCHO */
+#mercado .grid-2 > div:first-child,
+#acerca .grid-2 > div:first-child {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* LISTAS JUSTIFICADAS */
+#mercado li,
+#acerca li {
+  text-align: justify !important;
+}
