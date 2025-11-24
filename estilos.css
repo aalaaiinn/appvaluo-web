@@ -463,7 +463,8 @@ body {
   width: auto !important;
   text-align: center;
 }
-/* Separar "Mercado de Propiedades" del bloque anterior */
-#mercado .mercado-title {
-  margin-top: 88px;   /* prueba con 48px, si lo quieres más, súbelo a 64px o 80px */
+/* ESPACIO ENTRE “¿Qué aporta AppValúo?” y “Mercado de Propiedades” */
+.bloque-appvaluo {
+  margin-bottom: 60px !important;   /* Puedes subirlo a 80px si quieres */
 }
+1
