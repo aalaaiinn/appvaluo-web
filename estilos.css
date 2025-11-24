@@ -465,5 +465,5 @@ body {
 }
 /* Separar "Mercado de Propiedades" del bloque anterior */
 #mercado .mercado-title {
-  margin-top: 48px;   /* prueba con 48px, si lo quieres más, súbelo a 64px o 80px */
+  margin-top: 88px;   /* prueba con 48px, si lo quieres más, súbelo a 64px o 80px */
 }
