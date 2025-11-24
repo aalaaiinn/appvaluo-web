@@ -425,3 +425,14 @@ body {
 #acerca li {
   text-align: justify !important;
 }
+/* ESPACIO ENTRE BLOQUES / SECCIONES */
+section.section,
+section.section-alt {
+  margin-top: 60px !important;
+  margin-bottom: 60px !important;
+}
+
+/* Ajuste adicional para que no quede todo pegado al héroe */
+#mercado {
+  margin-top: 80px !important;
+}
