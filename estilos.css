@@ -425,23 +425,27 @@ body {
 #acerca li {
   text-align: justify !important;
 }
-/* ESPACIO ENTRE BLOQUES / SECCIONES */
-section.section,
-section.section-alt {
-  margin-top: 60px !important;
-  margin-bottom: 60px !important;
+/* Títulos centrados */
+.appvaluo-title,
+.titulo-aporta,
+.mercado-title {
+  text-align: center;
 }
 
-/* Ajuste adicional para que no quede todo pegado al héroe */
-#mercado {
-  margin-top: 80px !important;
+/* Texto justificado dentro del bloque */
+.bloque-appvaluo p,
+.bloque-appvaluo ul,
+.bloque-appvaluo li {
+  text-align: justify;
 }
 
-/* Aumentar separación entre los dos títulos principales */
-#mercado h3:nth-of-type(2) {
-  margin-top: 200px !important;  /* antes 40px — ahora el doble */
+/* Separación entre "¿Qué es AppValúo?" y el texto de abajo */
+.appvaluo-title {
+  margin-bottom: 16px;
 }
-/* Aumentar separación entre los dos títulos principales */
-#mercado h3:nth-of-type(2) {
-  margin-top: 80px !important;  /* antes 40px — ahora el doble */
+
+/* Separación fuerte antes de "¿Qué aporta AppValúo?" */
+.titulo-aporta {
+  margin-top: 40px;
+  margin-bottom: 12px;
 }
