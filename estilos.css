@@ -463,3 +463,7 @@ body {
   width: auto !important;
   text-align: center;
 }
+/* Separar "Mercado de Propiedades" del bloque anterior */
+#mercado .mercado-title {
+  margin-top: 48px;   /* prueba con 48px, si lo quieres más, súbelo a 64px o 80px */
+}
