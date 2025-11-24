@@ -439,5 +439,5 @@ section.section-alt {
 
 /* Separación entre "¿Qué es AppValúo?" y "¿Qué aporta AppValúo?" */
 #mercado h3 + p + p + h3 {
-  margin-top: 40px !important; /* separa los dos bloques */
+  margin-top: 100px !important; /* separa los dos bloques */
 }
