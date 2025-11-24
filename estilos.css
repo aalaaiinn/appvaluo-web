@@ -389,3 +389,8 @@ body {
   height: 420px;
   border: none;
 }
+/* OCULTAR LA TABLA PEQUEÑA */
+iframe[src*="pubhtml"]:first-of-type {
+  display: none !important;
+}
+
