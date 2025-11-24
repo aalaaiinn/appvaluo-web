@@ -382,10 +382,18 @@ body {
   background: #000000;
   border-radius: 12px;
   overflow: hidden;
+
+  /* CONTROL DEL ANCHO */
+  max-width: 620px;   /* más angosta */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .mercado-iframe-wrapper iframe {
   width: 100%;
-  height: 420px;
+
+  /* CONTROL DE LA ALTURA */
+  height: 850px;      /* más larga verticalmente */
+
   border: none;
 }
