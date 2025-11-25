@@ -32,13 +32,8 @@
       <p class="hero-subtitle">Innovando la manera de valuar</p>
 
       <div class="hero-buttons">
-       <a 
-  href="https://www.appsheet.com/start/11913076-3908-4fb1-84c3-1f4e786327a4"
-  class="btn-primary"
-  target="_blank"
->
-  Abrir AppValúo
-</a>
+ <a id="btn-appvaluo" class="btn-primary">Abrir AppValúo</a>
+
 
         <a href="#mercado" class="btn-secondary">
           Ir a Mercado de Propiedades
@@ -204,6 +199,63 @@
   <script>
     document.getElementById('anio-actual').textContent = new Date().getFullYear();
   </script>
+<script>
+// Detectar plataforma
+function detectarSistema() {
+    const ua = navigator.userAgent.toLowerCase();
+    if (ua.includes("android")) return "android";
+    if (ua.includes("iphone") || ua.includes("ipad") || ua.includes("ios")) return "ios";
+    return "pc";
+}
+
+// IDs de app
+const APP_ID = "11913076-3908-4fb1-84c3-1f4e786327a4";
+
+// URLs inteligentes
+const urls = {
+    android: {
+        abrir: `intent://appsheet.com/start/${APP_ID}#Intent;package=com.appsheet;scheme=https;end`,
+        store: "https://play.google.com/store/apps/details?id=com.appsheet.whitelabel"
+    },
+    ios: {
+        abrir: `https://www.appsheet.com/start/${APP_ID}`,
+        store: "https://apps.apple.com/us/app/appsheet/id1097316872"
+    },
+    pc: {
+        abrir: `https://www.appsheet.com/start/${APP_ID}`
+    }
+};
+
+// Acción del botón
+document.getElementById("btn-appvaluo").addEventListener("click", () => {
+    let sistema = detectarSistema();
+
+    if (sistema === "android") {
+        // Intenta abrir la app
+        window.location.href = urls.android.abrir;
+
+        // Si no abre en 1 segundo → lleva a Play Store
+        setTimeout(() => {
+            window.location.href = urls.android.store;
+        }, 1200);
+    }
+
+    else if (sistema === "ios") {
+        // Intenta abrir la app
+        window.location.href = urls.ios.abrir;
+        
+        // Si no abre en 1 segundo → App Store
+        setTimeout(() => {
+            window.location.href = urls.ios.store;
+        }, 1200);
+    }
+
+    else {
+        // PC → abre versión web
+        window.open(urls.pc.abrir, "_blank");
+    }
+});
+</script>
 
 </body>
 </html>
