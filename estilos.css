@@ -696,8 +696,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;     /* antes 40px */
-  margin-top: 10px;
+  gap: 5px;     
+ 
 }
 
 
