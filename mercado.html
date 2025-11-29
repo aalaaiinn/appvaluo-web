@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AppValúo – Mercado de Propiedades</title>
+
+  <!-- Usa el mismo CSS -->
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="container header-content">
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo.png" alt="AppValúo" />
+        </a>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html#inicio">Inicio</a>
+        <a href="mercado.html" class="active">Mercado</a>
+        <a href="index.html#tutoriales">Tutoriales</a>
+        <a href="index.html#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO MERCADO -->
+  <section class="hero hero-mercado">
+    <div class="container hero-content">
+      <h1>Mercado de Propiedades</h1>
+      <p class="hero-subtitle">
+        Panel en línea para consultar terrenos y construcciones comparables integrados con AppValúo.
+      </p>
+
+      <div class="hero-buttons">
+        <a 
+          href="https://www.appsheet.com/template/AppDef?appName=AppVal%C3%BAo-380800148&appId=11913076-3908-4fb1-84c3-1f4e786327a4&quickStart=False"
+          class="btn-primary"
+          target="_blank"
+        >
+          Abrir AppValúo
+        </a>
+        <a 
+          href="https://www.appsheet.com/template/AppDef?appName=AppVal%C3%BAo-380800148&appId=11913076-3908-4fb1-84c3-1f4e786327a4&quickStart=False#view=Enfoque%20de%20mercado"
+          class="btn-secondary"
+          target="_blank"
+        >
+          Capturar comparable
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- KPIs BÁSICOS -->
+  <section class="section section-alt">
+    <div class="container kpi-grid">
+      <div class="card kpi-card">
+        <h3>Precio promedio</h3>
+        <p class="kpi-value">$– / operación</p>
+        <p class="kpi-note">Dato referencial según tu base de comparables.</p>
+      </div>
+      <div class="card kpi-card">
+        <h3>Valor m² terreno</h3>
+        <p class="kpi-value">$– / m²</p>
+        <p class="kpi-note">Calculado con tus registros de mercado.</p>
+      </div>
+      <div class="card kpi-card">
+        <h3>Valor m² construcción</h3>
+        <p class="kpi-value">$– / m²</p>
+        <p class="kpi-note">Útil para homologar avalúos rápidamente.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABLA DE MERCADO (GOOGLE SHEETS) -->
+  <section class="section section-mercado" id="mercado">
+    <div class="container">
+      <h2>Tabla en vivo de mercado</h2>
+      <p class="section-intro">
+        Esta tabla se alimenta directamente de tu hoja de cálculo de mercado.
+        Mantienes trazabilidad de cada comparable registrado en AppValúo.
+      </p>
+
+      <div class="card table-card">
+        <!-- SUSTITUYE EL SRC POR LA URL PÚBLICA DE TU GOOGLE SHEET -->
+        <iframe
+          src="AQUI_VA_LA_URL_PUBLICA_DE_TU_GOOGLE_SHEET"
+          width="100%"
+          height="650"
+          frameborder="0"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <p>Correo: <a href="mailto:contacto@appvaluo.com">contacto@appvaluo.com</a></p>
+      <p>© 2025 AppValúo. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
