@@ -690,3 +690,35 @@ body {
 
 
    
+/* ==== ICONOS DE CONTACTO SOLO ÍCONO ==== */
+
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.icon-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border-radius: 12px;
+  padding: 6px;
+  transition: 0.25s;
+}
+
+.icon-img {
+  width: 85px;
+  height: 85px;
+  object-fit: contain;
+  transition: 0.25s;
+}
+
+/* Hover efecto profesional */
+.icon-btn:hover .icon-img {
+  transform: scale(1.12);
+  filter: drop-shadow(0px 0px 12px rgba(255,255,255,0.25));
+}
