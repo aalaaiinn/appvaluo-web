@@ -696,9 +696,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
-  margin-top: 30px;
+  gap: 15px;     /* antes 40px */
+  margin-top: 10px;
 }
+
 
 .icon-btn {
   display: flex;
