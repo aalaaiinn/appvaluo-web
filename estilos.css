@@ -80,14 +80,14 @@ body {
 }
 
 .decor-img img {
-  width: 240px;
+  width: 20px;
   border-radius: 14px;
   box-shadow: 0 8px 22px rgba(0,0,0,0.18);
   object-fit: cover;
 }
 
 /* posiciones estratégicas */
-.decor1 { top: 80px; right: 40px; transform: rotate(2deg); }
+.decor1 { top: 80px; center: 40px; transform: rotate(2deg); }
 .decor2 { top: 420px; left: 30px; transform: rotate(-3deg); }
 .decor3 { top: 900px; right: 12%; transform: rotate(1deg); }
 .decor4 { top: 1350px; left: 15%; transform: rotate(-2deg); }
@@ -843,7 +843,7 @@ body {
 
 /* Imagen alineada a la izquierda */
 .img-folleto.izq {
-  float: left;
+  float: none;
   margin: 0 26px 18px 0;
 }
 
