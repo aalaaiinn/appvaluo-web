@@ -11,7 +11,10 @@ body {
   background: #020617;          /* fondo general oscuro */
   color: #e5e7eb;
   line-height: 1.6;
+  position: relative;           /* necesario para posicionar imágenes */
+  overflow-x: hidden;           /* evita scroll horizontal */
 }
+
 .container {
   width: 90%;
   max-width: 1200px;
@@ -22,11 +25,11 @@ body {
    COLORES BASE (ajustados al logo)
 ========================================= */
 :root {
-  --azul-neon: #38bdf8;        /* azul brillante */
-  --azul-profundo: #020617;    /* fondo principal */
-  --azul-medio: #0f172a;       /* paneles */
+  --azul-neon: #38bdf8;
+  --azul-profundo: #020617;
+  --azul-medio: #0f172a;
   --azul-oscuro: #020617;
-  --acento: #facc15;           /* dorado */
+  --acento: #facc15;
   --texto-suave: #9ca3af;
 }
 
@@ -41,14 +44,17 @@ body {
   top: 0;
   z-index: 50;
 }
+
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .logo img {
   height: 100px;
 }
+
 .main-nav a {
   color: #e5e7eb;
   text-decoration: none;
@@ -57,8 +63,46 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+
 .main-nav a:hover {
   color: var(--azul-neon);
+}
+
+/* =====================================================
+   IMÁGENES DECORATIVAS ESPARCIDAS POR LA PÁGINA
+===================================================== */
+
+.decor-img {
+  position: absolute;
+  z-index: -1;          
+  opacity: 0.14;        
+  pointer-events: none;
+}
+
+.decor-img img {
+  width: 240px;
+  border-radius: 14px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+  object-fit: cover;
+}
+
+/* posiciones estratégicas */
+.decor1 { top: 80px; right: 40px; transform: rotate(2deg); }
+.decor2 { top: 420px; left: 30px; transform: rotate(-3deg); }
+.decor3 { top: 900px; right: 12%; transform: rotate(1deg); }
+.decor4 { top: 1350px; left: 15%; transform: rotate(-2deg); }
+.decor5 { top: 1850px; right: 20%; transform: rotate(3deg); }
+
+@media (max-width: 768px) {
+  .decor-img img {
+    width: 160px;
+  }
+
+  .decor1 { top: 90px; right: 10px; }
+  .decor2 { top: 520px; left: 10px; }
+  .decor3 { top: 1050px; right: 20px; }
+  .decor4 { top: 1600px; left: 20px; }
+  .decor5 { top: 2100px; right: 30px; }
 }
 
 /* =========================================
