@@ -811,3 +811,48 @@ body {
   .decor4 { top: 1600px; right: 20px; }
   .decor5 { top: 2100px; left: 50px; }
 }
+/* ======================================================
+   BLOQUES DE TEXTO CON IMÁGENES A LOS LADOS (ESTILO WIKI)
+====================================================== */
+
+/* Contenedor que permite que el texto rodee la imagen */
+.bloque-texto {
+  position: relative;
+}
+
+/* Clearfix para evitar que la imagen flotada "invada" otras secciones */
+.bloque-texto::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Estilo general de las fotos */
+.img-folleto {
+  max-width: 260px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  object-fit: cover;
+}
+
+/* Imagen alineada a la derecha */
+.img-folleto.der {
+  float: right;
+  margin: 0 0 18px 26px;
+}
+
+/* Imagen alineada a la izquierda */
+.img-folleto.izq {
+  float: left;
+  margin: 0 26px 18px 0;
+}
+
+/* Responsivo en celular: foto centrada arriba y texto debajo */
+@media (max-width: 768px) {
+  .img-folleto {
+    float: none !important;
+    display: block;
+    margin: 0 auto 18px auto;
+    max-width: 100%;
+  }
+}
