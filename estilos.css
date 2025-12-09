@@ -11,8 +11,8 @@ body {
   background: #020617;          /* fondo general oscuro */
   color: #e5e7eb;
   line-height: 1.6;
-  position: relative;           /* necesario para posicionar imágenes */
-  overflow-x: hidden;           /* evita scroll horizontal */
+  position: relative;
+  overflow-x: hidden;
 }
 
 .container {
@@ -68,52 +68,18 @@ body {
   color: var(--azul-neon);
 }
 
-/* =====================================================
-   IMÁGENES DECORATIVAS ESPARCIDAS POR LA PÁGINA
-===================================================== */
-
-.decor-img {
-  position: absolute;
-  z-index: -1;          
-  opacity: 0.14;        
-  pointer-events: none;
-}
-
-.decor-img img {
-  width: 20px;
-  border-radius: 14px;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.18);
-  object-fit: cover;
-}
-
-/* posiciones estratégicas */
-.decor1 { top: 80px; center: 40px; transform: rotate(2deg); }
-.decor2 { top: 420px; left: 30px; transform: rotate(-3deg); }
-.decor3 { top: 900px; right: 12%; transform: rotate(1deg); }
-.decor4 { top: 1350px; left: 15%; transform: rotate(-2deg); }
-.decor5 { top: 1850px; right: 20%; transform: rotate(3deg); }
-
-@media (max-width: 768px) {
-  .decor-img img {
-    width: 160px;
-  }
-
-  .decor1 { top: 90px; right: 10px; }
-  .decor2 { top: 520px; left: 10px; }
-  .decor3 { top: 1050px; right: 20px; }
-  .decor4 { top: 1600px; left: 20px; }
-  .decor5 { top: 2100px; right: 30px; }
-}
-
 /* =========================================
    HERO – PORTADA
 ========================================= */
 .hero {
   background: radial-gradient(circle at top, #0b1120 0%, #020617 70%);
   padding: 80px 0 60px;
+  margin-top: 0;
 }
 .hero-content {
   text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
 .hero h1 {
   font-size: 40px;
@@ -165,7 +131,7 @@ body {
   background: rgba(56, 189, 248, 0.1);
 }
 
-/* LISTA HERO (si la usas después) */
+/* LISTA HERO */
 .hero-list {
   list-style: none;
   margin-top: 20px;
@@ -181,6 +147,7 @@ body {
 ========================================= */
 .seccion {
   padding: 60px 0;
+  margin-bottom: 40px;
 }
 .section-title {
   text-align: center;
@@ -195,8 +162,6 @@ body {
   max-width: 720px;
   margin: 0 auto 35px;
 }
-
-/* Listas y subtítulos dentro de secciones (beneficios / flujo) */
 .seccion h3 {
   font-size: 18px;
   color: var(--acento);
@@ -218,144 +183,10 @@ body {
 #mercado {
   background: #020617;
 }
-.tabla-mercado-wrapper {
-  margin-top: 25px;
-  margin-bottom: 25px;
-  padding: 10px;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
-  border: 1px solid #1f2933;
-}
-.tabla-mercado {
-  width: 300%;
-  height: 520px;
-  border: none;
-}
 
-/* =========================================
-   TUTORIALES – TARJETAS VIDEOS
-========================================= */
-#tutoriales {
-  background: linear-gradient(180deg, #020617, #020617);
-}
-.videos {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 28px;
-}
-iframe {
-  width: 100%;
-  max-width: 560px;
-  height: 315px;
-  border: none;
-  display: block;
-  margin: auto;
-/* =========================================
-   CONTACTO
-========================================= */
-#contacto {
-  background: #020617;
-}
-.contacto-content {
-  text-align: center;
-}
-.contacto-content p {
-  margin-top: 12px;
-  color: var(--texto-suave);
-}
-.contacto-list {
-  list-style: none;
-  margin-top: 20px;
-}
-.contacto-list li {
-  margin: 6px 0;
-}
-
-/* =========================================
-   FOOTER
-========================================= */
-.footer {
-  background: #020617;
-  border-top: 1px solid #1f2933;
-  padding: 20px 0 25px;
-  text-align: center;
-  font-size: 13px;
-  color: #6b7280;
-}
-.footer-small {
-  margin-top: 4px;
-  font-size: 12px;
-  color: #4b5563;
-}
-
-/* =========================================
-   AJUSTES FINOS
-========================================= */
-.hero {
-  margin-top: 0;
-}
-body {
-  margin-top: 0;
-}
-
-/* =========================================
-   RESPONSIVE
-========================================= */
-@media (min-width: 768px) {
-  .hero-content {
-    max-width: 800px;
-  }
-  .videos {
-    grid-template-columns: 1fr 1fr; /* dos videos lado a lado */
-  }
-}
-/* Mejor separación entre secciones */
-.seccion {
-  margin-bottom: 40px;
-}
-
-/* Mejor altura del iframe */
-.tabla-mercado {
-  height: 600px;
-}
-
-/* Centrado más limpio del hero */
-.hero-content {
-  max-width: 900px;
-  margin: 0 auto;
-}
-/* Botón Construcción — Naranja corporativo AppValúo */
-.btn-outline.btn-full {
-  background-color: #ffffff !important;
-  border: 2px solid #ff7a00 !important; /* Naranja */
-  color: #ff7a00 !important;
-  opacity: 1 !important;
-  pointer-events: auto !important;
-  cursor: pointer !important;
-}
-
-/* Hover */
-.btn-outline.btn-full:hover {
-  background-color: #fff4e6 !important; /* Naranja pastel */
-}
-
-.tabla-demeritos-card {
-  background: #050814;
-  padding: 1.5rem;
-  border-radius: 16px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
-  overflow: hidden;
-}
-
-.tabla-demeritos-card iframe {
-  width: 100%;
-  border-radius: 8px;
-}
 .section-mercado {
   margin-top: 4rem;
 }
-
 
 .mercado-title {
   text-align: center;
@@ -394,8 +225,14 @@ body {
 
 .mercado-buttons {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.mercado-buttons a {
+  width: auto !important;
+  text-align: center;
 }
 
 .btn-mercado-secundario,
@@ -425,26 +262,18 @@ body {
   background: #000000;
   border-radius: 12px;
   overflow: hidden;
-
-  /* CONTROL DEL ANCHO */
-  max-width: 1200px;      /* más ancha: caben muchas más columnas */
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .mercado-iframe-wrapper iframe {
   width: 100%;
-  height: 700px;          /* más alto para que se vea cómoda */
+  height: 700px;
   border: 0;
 }
 
-
-  /* CONTROL DE LA ALTURA */
-  height: 850px;      /* más larga verticalmente */
-
-  border: none;
-}
-/* TITULOS CENTRADOS */
+/* TITULOS CENTRADOS / TEXTOS JUSTIFICADOS EN ACERCA Y MERCADO */
 #mercado h2,
 #mercado h3,
 #acerca h2,
@@ -452,7 +281,6 @@ body {
   text-align: center !important;
 }
 
-/* TEXTOS JUSTIFICADOS (párrafos y listas) */
 #mercado p,
 #mercado ul,
 #acerca p,
@@ -460,59 +288,86 @@ body {
   text-align: justify !important;
 }
 
-/* AJUSTAR CONTENEDOR DE TEXTO PARA QUE NO QUEDE MUY ANCHO */
 #mercado .grid-2 > div:first-child,
 #acerca .grid-2 > div:first-child {
   max-width: 800px;
   margin: 0 auto;
 }
 
-/* LISTAS JUSTIFICADAS */
 #mercado li,
 #acerca li {
   text-align: justify !important;
 }
-/* Títulos centrados */
+
+/* Títulos centrados generales */
 .appvaluo-title,
 .titulo-aporta,
 .mercado-title {
   text-align: center;
 }
 
-/* Texto justificado dentro del bloque */
+/* Texto justificado en bloque AppValúo */
 .bloque-appvaluo p,
 .bloque-appvaluo ul,
 .bloque-appvaluo li {
   text-align: justify;
 }
 
-/* Separación entre "¿Qué es AppValúo?" y el texto de abajo */
+/* Separaciones AppValúo */
 .appvaluo-title {
   margin-bottom: 16px;
 }
-
-/* Separación fuerte antes de "¿Qué aporta AppValúo?" */
 .titulo-aporta {
   margin-top: 40px;
   margin-bottom: 12px;
 }
-/* Centrar botones del bloque Mercado */
-.mercado-buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;     /* centra horizontalmente */
-  gap: 16px;               /* separa los botones */
+
+/* Espacio entre “¿Qué aporta AppValúo?” y “Mercado de Propiedades” */
+.bloque-appvaluo {
+  margin-bottom: 60px !important;
 }
 
-/* Para que el botón no se expanda a toda la pantalla */
-.mercado-buttons a {
-  width: auto !important;
-  text-align: center;
+/* =========================================
+   TABLA MERCADO ANTIGUA (si la usas)
+========================================= */
+.tabla-mercado-wrapper {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 10px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+  border: 1px solid #1f2933;
 }
-/* ESPACIO ENTRE “¿Qué aporta AppValúo?” y “Mercado de Propiedades” */
-.bloque-appvaluo {
-  margin-bottom: 60px !important;   /* Puedes subirlo a 80px si quieres */
+.tabla-mercado {
+  width: 300%;
+  height: 600px;
+  border: none;
 }
+
+/* =========================================
+   TUTORIALES – VIDEOS
+========================================= */
+#tutoriales {
+  background: linear-gradient(180deg, #020617, #020617);
+}
+.videos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+iframe {
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+  border: none;
+  display: block;
+  margin: auto;
+}
+
+/* =========================================
+   DEMÉRITOS – TABLAS
+========================================= */
 
 .tabla-demeritos {
   width: fit-content;
@@ -522,114 +377,17 @@ body {
 }
 
 .tabla-demeritos iframe {
-  width: 500px;        
+  width: 500px;
   height: 650px;
-  display: Block;
-}
-
-/* ============================
-   TABLA DE DEMÉRITOS
-   ============================ */
-
-#demeritos .table-card {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1.5rem 1.75rem;
-  background: #020617;              /* fondo oscuro dentro de tu esquema */
-  border-radius: 14px;
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.7);
-  border: 1px solid rgba(148, 163, 184, 0.25);
-}
-
-#demeritos h3 {
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-/* Tabla base */
-.tabla-demeritos {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.9rem;
-}
-
-/* Encabezados */
-.tabla-demeritos thead tr {
-  background: linear-gradient(90deg, #1d4ed8, #38bdf8);
-}
-
-.tabla-demeritos th {
-  color: #f9fafb;
-  text-align: center;
-  padding: 0.75rem 0.9rem;
-  font-weight: 600;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.8);
-}
-
-/* Celdas */
-.tabla-demeritos td {
-  padding: 0.6rem 0.9rem;
-  text-align: center;
-  color: #e5e7eb;
-  border-bottom: 1px solid rgba(51, 65, 85, 0.7);
-}
-
-/* Filas alternadas */
-.tabla-demeritos tbody tr:nth-child(even) {
-  background: #020617;
-}
-
-.tabla-demeritos tbody tr:nth-child(odd) {
-  background: #02081f;
-}
-
-/* Hover */
-.tabla-demeritos tbody tr:hover {
-  background: rgba(59, 130, 246, 0.18);
-  transition: background 0.2s ease;
-}
-
-/* Columnas numéricas un poco más estrechas (opcional) */
-.tabla-demeritos th:nth-child(1),
-.tabla-demeritos td:nth-child(1),
-.tabla-demeritos th:nth-child(2),
-.tabla-demeritos td:nth-child(2) {
-  width: 20%;
+  display: block;
 }
 
 /* Caja premium para tablas embebidas */
 .tabla-demeritos-box {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
-    background: #0d1b2a;
-    border-radius: 12px;
-    box-shadow: 0px 4px 20px rgba(0,0,0,0.4);
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-/* Marco para que la tabla no se pegue al borde */
-.tabla-demeritos-scroll {
-    overflow-x: auto;
-    padding: 10px;
-    border-radius: 10px;
-    background: #112240;
-}
-
-/* Ajuste del iframe */
-.tabla-demeritos-box iframe {
-    width: 100%;
-    height: 420px;
-    border: none;
-    display: block;
-    border-radius: 10px;
-   /* Caja elegante para la tabla de deméritos */
-.tabla-demeritos-box {
   max-width: 850px;
   margin: 0 auto 40px;
-  padding: 0;                        /* evita el borde blanco arriba */
-  background: transparent;           /* que el fondo sea limpio */
+  padding: 0;
+  background: transparent;
   border-radius: 12px;
 }
 
@@ -638,10 +396,10 @@ body {
   width: 100%;
   max-height: 420px;
   overflow-y: auto;
-  overflow-x: hidden;               /* quita barra horizontal */
+  overflow-x: hidden;
   border-radius: 10px;
-  box-shadow: 0 4px 25px rgba(0,0,0,0.35); 
-  background: #ffffff;              /* fondo blanco para que la tabla luzca */
+  box-shadow: 0 4px 25px rgba(0,0,0,0.35);
+  background: #ffffff;
 }
 
 /* Iframe ajustado al contenedor */
@@ -651,6 +409,29 @@ body {
   border: none;
   display: block;
 }
+
+/* =========================================
+   CONTACTO
+========================================= */
+#contacto {
+  background: #020617;
+}
+.contacto-content {
+  text-align: center;
+}
+.contacto-content p {
+  margin-top: 12px;
+  color: var(--texto-suave);
+}
+.contacto-list {
+  list-style: none;
+  margin-top: 20px;
+}
+.contacto-list li {
+  margin: 6px 0;
+}
+
+/* Items de contacto en fila/columna */
 .contacto-items {
   display: flex;
   flex-direction: column;
@@ -686,7 +467,7 @@ body {
   text-decoration: underline;
 }
 
-/* ==== BOTONES DE CONTACTO ==== */
+/* ==== BOTONES DE CONTACTO (con texto) ==== */
 
 .contact-buttons {
   display: flex;
@@ -736,18 +517,14 @@ body {
   box-shadow: 0px 0px 18px rgba(37, 211, 102, 0.6);
 }
 
-
-   
 /* ==== ICONOS DE CONTACTO SOLO ÍCONO ==== */
 
 .contact-buttons {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;     
- 
+  gap: 5px;
 }
-
 
 .icon-btn {
   display: flex;
@@ -772,87 +549,53 @@ body {
   filter: drop-shadow(0px 0px 12px rgba(255,255,255,0.25));
 }
 
-   @media (max-width: 600px) {
+/* =========================================
+   FOOTER
+========================================= */
+.footer {
+  background: #020617;
+  border-top: 1px solid #1f2933;
+  padding: 20px 0 25px;
+  text-align: center;
+  font-size: 13px;
+  color: #6b7280;
+}
+.footer-small {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #4b5563;
+}
+
+/* =========================================
+   BOTÓN CONSTRUCCIÓN
+========================================= */
+.btn-outline.btn-full {
+  background-color: #ffffff !important;
+  border: 2px solid #ff7a00 !important;
+  color: #ff7a00 !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+.btn-outline.btn-full:hover {
+  background-color: #fff4e6 !important;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (min-width: 768px) {
+  .hero-content {
+    max-width: 800px;
+  }
+  .videos {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
   .hero-content h1 { font-size: 1.8rem; }
   .main-header { padding: 10px 0; }
   iframe { height: 350px; }
-}
-
-/* Imágenes decorativas flotantes */
-.decor-img {
-  position: absolute;
-  z-index: -1;                 /* se van al fondo */
-  opacity: 0.12;               /* tenue y elegante */
-  pointer-events: none;        /* no afectan interacción */
-}
-
-.decor-img img {
-  width: 260px;
-  border-radius: 14px;
-  filter: saturate(0.9) contrast(1.1);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-/* Posiciones estratégicas */
-.decor1 { top: 120px; left: 40px; transform: rotate(-3deg); }
-.decor2 { top: 500px; right: 50px; transform: rotate(2deg); }
-.decor3 { top: 900px; left: 10%; transform: rotate(-2deg); }
-.decor4 { top: 1400px; right: 12%; transform: rotate(1deg); }
-.decor5 { top: 1800px; left: 65%; transform: rotate(-4deg); }
-
-/* Ajustes mobile */
-@media(max-width: 768px) {
-  .decor-img img {
-    width: 170px;
-  }
-  .decor1 { top: 100px; left: 10px; }
-  .decor2 { top: 600px; right: 10px; }
-  .decor3 { top: 1100px; left: 20px; }
-  .decor4 { top: 1600px; right: 20px; }
-  .decor5 { top: 2100px; left: 50px; }
-}
-/* ======================================================
-   BLOQUES DE TEXTO CON IMÁGENES A LOS LADOS (ESTILO WIKI)
-====================================================== */
-
-/* Contenedor que permite que el texto rodee la imagen */
-.bloque-texto {
-  position: relative;
-}
-
-/* Clearfix para evitar que la imagen flotada "invada" otras secciones */
-.bloque-texto::after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-/* Estilo general de las fotos */
-.img-folleto {
-  max-width: 12px;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-  object-fit: cover;
-}
-
-/* Imagen alineada a la derecha */
-.img-folleto.der {
-  float: right;
-  margin: 0 0 18px 26px;
-}
-
-/* Imagen alineada a la izquierda */
-.img-folleto.izq {
-  float: none;
-  margin: 0 26px 18px 0;
-}
-
-/* Responsivo en celular: foto centrada arriba y texto debajo */
-@media (max-width: 768px) {
-  .img-folleto {
-    float: none !important;
-    display: block;
-    margin: 0 auto 18px auto;
-    max-width: 100%;
-  }
 }
