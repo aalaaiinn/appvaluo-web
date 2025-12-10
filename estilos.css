@@ -604,3 +604,21 @@ body {
   .main-header { padding: 10px 0; }
   #tutoriales iframe { height: 350px; }
 }
+
+.feature-appvaluo {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.feature-appvaluo h2 {
+  font-size: 26px;
+  margin-bottom: 25px;
+  color: #38bdf8;
+}
+
+.feature-img {
+  width: 100%;
+  max-width: 580px;
+  border-radius: 14px;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.35);
+}
