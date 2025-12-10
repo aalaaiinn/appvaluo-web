@@ -615,10 +615,21 @@ body {
   margin-bottom: 25px;
   color: #38bdf8;
 }
-
-.feature-img {
+.imagen-web-appvaluo {
   width: 100%;
-  max-width: 580px;
-  border-radius: 14px;
-  box-shadow: 0 6px 28px rgba(0,0,0,0.35);
+  text-align: center;
+  margin: 40px 0;
 }
+
+.imagen-web-appvaluo img {
+  width: 100%;
+  max-width: 850px;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.45);
+  transition: transform .25s ease;
+}
+
+.imagen-web-appvaluo img:hover {
+  transform: scale(1.02);
+}
+
