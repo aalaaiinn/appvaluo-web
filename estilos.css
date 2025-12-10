@@ -633,3 +633,21 @@ body {
   transform: scale(1.02);
 }
 
+/* Imagen corporativa debajo de "Captura, analiza y valúa desde campo" */
+.captura-imagen-wrapper {
+  width: 100%;
+  text-align: center;
+  margin: 30px 0 50px;
+}
+
+.captura-imagen {
+  width: 100%;
+  max-width: 850px;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.45);
+  transition: transform .25s ease;
+}
+
+.captura-imagen:hover {
+  transform: scale(1.02);
+}
