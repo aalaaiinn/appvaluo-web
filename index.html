@@ -2,233 +2,379 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>AppValúo | Herramienta para Valuadores</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="AppValúo es la plataforma para valuadores que integra mercado, tablas y reportes en un solo lugar.">
-  <link rel="stylesheet" href="styles.css">
-</head>
+  <title>AppValúo</title>
+  
+<meta name="description" content="AppValúo: plataforma para avalúos inmobiliarios con mercado, deméritos, construcciones y planos integrados.">
+<meta name="author" content="Alain Olmos">
+ <!-- FAVICON -->
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <!-- ENLACE AL CSS PRINCIPAL -->
+  <link rel="stylesheet" href="estilos.css">
+    </head>
+
+
+
+
+  
+  <body>
+
 <body>
+
   <!-- HEADER -->
   <header class="main-header">
     <div class="container header-content">
-      <div class="logo-block">
-        <img src="img/logo-appvaluo.png" alt="Logo AppValúo" class="logo-img">
-        <div class="logo-text">
-          <span class="logo-title">AppValúo</span>
-          <span class="logo-subtitle">Innovando la manera de valuar</span>
-        </div>
+      <div class="logo">
+        <img src="logo.png" alt="AppValúo">
       </div>
       <nav class="main-nav">
         <a href="#inicio">Inicio</a>
-        <a href="#que-es">¿Qué es?</a>
-        <a href="#beneficios">Beneficios</a>
-        <a href="#mercado">Mercado</a>
-        <a href="#tablas">Tablas</a>
-        <a href="#tutoriales">Tutoriales</a>
+        <!-- más menús -->
       </nav>
     </div>
   </header>
 
-  <main>
-    <!-- HERO -->
-    <section id="inicio" class="hero">
-      <div class="container hero-content">
-        <div class="hero-text">
-          <h1>AppValúo: la forma profesional de valuar inmuebles</h1>
-          <p>Digitaliza tu flujo de trabajo, reduce errores y genera reportes con un solo sistema, desde cualquier dispositivo.</p>
-          <div class="hero-actions">
-            <a href="https://www.appsheet.com/start/URL_DE_TU_APP" class="btn btn-primary" target="_blank" rel="noopener">
-              Abrir AppValúo
-            </a>
-            <a href="#tutoriales" class="btn btn-secondary">
-              Ver cómo funciona
-            </a>
-          </div>
-        </div>
-        <div class="hero-image-wrapper">
-          <img src="img/imagen-pagina-web-2.jpeg"
-               alt="Perito usando AppValúo en campo"
-               class="hero-image">
-        </div>
-      </div>
-    </section>
+   
+  
+  
 
-    <!-- ¿QUÉ ES APPVALÚO? -->
-    <section id="que-es" class="section section-quees">
-      <div class="container section-grid">
-        <div class="section-text">
-          <h2>¿Qué es AppValúo?</h2>
-          <p>
-            AppValúo es una plataforma creada para valuadores, peritos y despachos que
-            necesitan procesos estandarizados, rápidos y sin pérdida de información.
-          </p>
-          <p>
-            Captura datos, fotos, tablas de mercado, deméritos y construcciones en un
-            solo flujo. Toda la información queda respaldada en la infraestructura de
-            Google Cloud.
-          </p>
-        </div>
-        <div class="section-card">
-          <h3>En una sola herramienta</h3>
-          <ul class="check-list">
-            <li>Captura de antecedentes y datos generales</li>
-            <li>Mercado de propiedades y comparables</li>
-            <li>Tablas de deméritos y construcciones</li>
-            <li>Exportación a PDF y Excel</li>
-          </ul>
-        </div>
-      </div>
-    </section>
 
-    <!-- BENEFICIOS -->
-    <section id="beneficios" class="section section-beneficios">
-      <div class="container">
-        <h2>¿Qué resuelve AppValúo?</h2>
-        <p class="section-intro">
-          Pensado para el trabajo diario del valuador, con enfoque práctico y conservador:
-        </p>
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="container hero-content">
+      <h1>AppValúo</h1>
+      <p class="hero-subtitle">Innovando la manera de valuar</p>
 
-        <div class="cards-grid">
-          <article class="card">
-            <h3>Procesos estandarizados</h3>
-            <p>
-              Métodos valuatorios estructurados para reducir criterios dispersos y
-              tener expedientes consistentes.
-            </p>
-          </article>
+      <div class="hero-buttons">
+ <a id="btn-appvaluo" class="btn-primary">Abrir AppValúo</a>
 
-          <article class="card">
-            <h3>Menos errores operativos</h3>
-            <p>
-              Fórmulas, validaciones y campos obligatorios que disminuyen capturas
-              incompletas y cálculos repetidos.
-            </p>
-          </article>
 
-          <article class="card">
-            <h3>Todo en un solo lugar</h3>
-            <p>
-              Fotografías, tablas, cálculos, notas y reportes conectados; sin archivos
-              sueltos en carpetas distintas.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
+       <a href="mercado.html" class="btn-secondary">
+  Ir a Mercado de Propiedades
+</a>
 
-    <!-- MERCADO DE PROPIEDADES -->
-    <section id="mercado" class="section section-mercado">
-      <div class="container">
-        <div class="section-header-inline">
-          <div>
-            <h2>Mercado de Propiedades</h2>
-            <p class="section-intro">
-              Consulta y alimenta tu base de comparables con valores reales de terrenos y construcciones.
-            </p>
-          </div>
-          <a href="https://docs.google.com/spreadsheets/d/ID_DE_TU_SHEET/edit"
-             class="btn btn-outline"
-             target="_blank"
-             rel="noopener">
-            Capturar comparable
-          </a>
-        </div>
-
-        <div class="iframe-card">
-          <!-- Reemplaza el src con tu hoja real -->
-          <iframe
-            src="https://docs.google.com/spreadsheets/d/ID_DE_TU_SHEET/preview"
-            loading="lazy">
-          </iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- TABLAS (DEMÉRITOS, CONSTRUCCIONES, ETC.) -->
-    <section id="tablas" class="section section-tablas">
-      <div class="container">
-        <h2>Tablas de trabajo valuatorio</h2>
-        <p class="section-intro">
-          Deméritos, construcciones, clasificaciones y apoyos numéricos diseñados para el día a día del valuador.
-        </p>
-
-        <div class="cards-grid cards-grid-2">
-          <article class="card card-table">
-            <h3>Tabla de Deméritos</h3>
-            <p class="card-subtitle">Basada en Ross-Heidecke y criterios de práctica profesional.</p>
-            <div class="iframe-card small">
-              <iframe
-                src="https://docs.google.com/spreadsheets/d/ID_TABLA_DEMERITOS/preview"
-                loading="lazy">
-              </iframe>
-            </div>
-          </article>
-
-          <article class="card card-table">
-            <h3>Construcciones y Valores Unitarios</h3>
-            <p class="card-subtitle">Apoyo para cálculo de costo nuevo y depreciado.</p>
-            <div class="iframe-card small">
-              <iframe
-                src="https://docs.google.com/spreadsheets/d/ID_TABLA_CONSTRUCCIONES/preview"
-                loading="lazy">
-              </iframe>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- TUTORIALES -->
-    <section id="tutoriales" class="section section-tutoriales">
-      <div class="container">
-        <h2>Tutoriales en video</h2>
-        <p class="section-intro">
-          Muestra estos videos durante presentaciones o a valuadores nuevos para que entiendan el flujo completo.
-        </p>
-
-        <div class="cards-grid cards-grid-2">
-          <article class="card card-video">
-            <h3>1. Flujo general de AppValúo</h3>
-            <div class="video-wrapper">
-              <!-- Reemplaza el src de YouTube -->
-              <iframe
-                src="https://www.youtube.com/embed/VIDEO_ID_1"
-                title="Flujo general de AppValúo"
-                loading="lazy"
-                allowfullscreen>
-              </iframe>
-            </div>
-          </article>
-
-          <article class="card card-video">
-            <h3>2. Captura de comparables</h3>
-            <div class="video-wrapper">
-              <iframe
-                src="https://www.youtube.com/embed/VIDEO_ID_2"
-                title="Captura de comparables en AppValúo"
-                loading="lazy"
-                allowfullscreen>
-              </iframe>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="main-footer">
-    <div class="container footer-content">
-      <div>
-        <p class="footer-brand">AppValúo</p>
-        <p class="footer-slogan">Innovando la manera de valuar.</p>
-      </div>
-      <div class="footer-contact">
-        <p><strong>Web:</strong> appvaluo.com</p>
-        <p><strong>Correo:</strong> contacto@appvaluo.com</p>
-        <p><strong>WhatsApp:</strong> +52 XXX XXX XXXX</p>
       </div>
     </div>
+  </section>
+
+  
+
+  
+<section id="que-es">
+  <!-- TEXTO PRINCIPAL: QUÉ ES APPVALÚO -->
+  <div class="container bloque-appvaluo bloque-texto">
+    <h2 class="appvaluo-title">¿Qué es AppValúo?</h2>
+
+    <p>
+      AppValúo es una plataforma diseñada para agilizar la elaboración de avalúos inmobiliarios
+      comerciales, fiscales o bancarios. Permite capturar datos en campo, procesarlos en oficina
+      y generar reportes listos para entregar al cliente o institución.
+    </p>
+
+    <p>
+      Todo está conectado: mercado, construcciones, deméritos, clasificación de zona y plano con valores.
+      Con esto, reduces tiempo, evitas errores y mantienes un criterio uniforme en tus avalúos.
+    </p>
+  </div>
+</section>
+
+<!-- IMAGEN 1-->
+<section class="seccion-captura">
+  <div class="captura-imagen-wrapper">
+    <img src="img/imagen-pagina-web-2.jpeg" 
+         alt="Perito valorando inmueble con AppValúo" 
+         class="captura-imagen">
+  </div>
+</section>
+
+        <section id="que-aporta">
+  <div class="container bloque-texto">
+    <h2 class="appvaluo-title">¿Qué aporta AppValúo?</h2>
+
+  
+    <p>
+      AppValúo reduce tiempos muertos, evita errores comunes y estandariza tu trabajo,
+      permitiendo que la información de cada avalúo esté organizada, respaldada y lista
+      para entregar en cualquier momento.
+    </p>
+
+    <p>
+      Sus módulos trabajan en conjunto: mercado, deméritos, construcciones, clasificación
+      de zona y plano de valores. El resultado es un proceso más limpio, claro y profesional.
+    </p>
+  </div>
+</section>
+
+
+
+<!-- ========================================================= -->
+<!-- SECCIÓN MERCADO DE PROPIEDADES -->
+<!-- ========================================================= -->
+
+<section class="section" id="mercado">
+  <div class="container bloque-texto">
+
+    <h2 class="mercado-title">Mercado de Propiedades</h2>
+
+ 
+    <p class="mercado-subtitle">
+      Base de datos de comparables utilizada por AppValúo para el enfoque de mercado.
+    </p>
+
+    <div class="mercado-buttons">
+      <a href="https://www.appsheet.com/start/11913076-3908-4fb1-84c3-1f4e786327a4?platform=desktop#appName=AppVal%C3%BAo-380800148&vss=H4sIAAAAAAAAA6XOsQ7CIBQF0H-5M1_AahyMqYvGRRwQXhNiC02h1Ybw775qjXPjyCXnvpsxOnockzZ3yEv-vfY0QSIrnKaOFKTCJvjUh0ZBKBx0-wkr6o22QaGgXMWXJ4qQeZWWf90WcJZ8crWjfq6aIVcsjL9nxMFCUATaIelbQ--1TErhrA5miGTPPGT9gLjz22enva2C5cZaN5HKCzPIyg5gAQAA&view=Mercado"
+         target="_blank"
+         class="btn-mercado-secundario">
+        Abrir módulo Mercado en AppValúo
+      </a>
+    </div>
+
+    <!-- Vista rápida -->
+    <div class="mercado-box">
+      <h3 class="mercado-heading">Vista rápida de comparables</h3>
+      <p class="table-note">
+        Fragmento de la base de datos de mercado. Para trabajar a detalle,
+        usa el módulo de AppValúo o abre la hoja completa en Google Sheets.
+      </p>
+
+      <div class="mercado-iframe-wrapper">
+        <iframe
+          src=https://docs.google.com/spreadsheets/d/e/2PACX-1vRGUQ7tY9sXdumhL6ipZTBQYEGgnkNjZ5k2gyCnw5BneVJD5gBRzdUUY3bufoc8Bpg574sKV9lIBAZW/pubhtml?gid=1380703242&single=true>
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+ <!-- DEMÉRITOS ROSS-HEIDECKE (TABLA EJEMPLO) -->
+<section class="section section-alt" id="demeritos">
+  <div class="container bloque-texto">
+
+    <h2>Deméritos Ross-Heidecke</h2>
+
+  
+
+    <p class="section-intro">
+      Esta tabla permite determinar la depreciación de una edificación considerando edad,
+      estado de conservación y vida útil. AppValúo integra la tabla completa y aplica
+      automáticamente el demérito proporcional.
+    </p>
+
+    <div class="tabla-demeritos-box">
+      <div class="tabla-demeritos-scroll">
+        <iframe
+          src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRGUQ7tY9sXdumhL6ipZTBQYEGgnkNjZ5k2gyCnw5BneVJD5gBRzdUUY3bufoc8Bpg574sKV9lIBAZW/pubhtml?gid=709340150&single=true"
+          frameborder="0">
+        </iframe>
+      </div>
+    </div>
+
+    <p class="table-note">
+      En AppValúo se usa la tabla completa con los coeficientes exactos que ya tienes configurados;
+      esto es solo una referencia visual para explicar el criterio.
+    </p>
+
+  </div>
+</section>
+
+<!-- SECCIÓN PLANO Y CLASIFICACIÓN DE ZONA -->
+<section class="section" id="plano-zona">
+  <div class="container bloque-texto">
+
+    <h2 class="appvaluo-title">Plano y Clasificación de Zona</h2>
+
+    
+    <p>
+      AppValúo integra un módulo de plano que permite visualizar áreas libres, áreas construidas,
+      medidas internas y externas, y valores unitarios aplicados según la normativa correspondiente.
+      Todo se genera listo para impresión.
+    </p>
+
+    <p>
+      La clasificación de zona permite describir el entorno, equipamiento urbano, densidad,
+      vialidades y nivel socioeconómico, logrando reportes coherentes y comparables entre valuadores.
+    </p>
+
+  </div>
+</section>
+
+
+  <!-- TUTORIALES -->
+  <section class="section" id="tutoriales">
+    <div class="container">
+      <h2 class="section-title">Tutoriales</h2>
+
+      <div class="video-grid">
+
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/a8Ly8kad3No"
+          title="Tutorial 1 AppValúo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+
+      <iframe
+        
+  src="https://www.youtube.com/embed/kxWhpVwYrd0"
+  title="Tutorial 2 AppValúo"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen>
+</iframe>
+
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/yHr-O1SkCcA"
+          title="Tutorial 3 AppValúo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/kiNXXoB7YmU"
+          title="Tutorial 4 AppValúo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+<section class="section" id="contacto">
+  <div class="container contacto-content">
+    <h2 class="section-title">Contacto</h2>
+
+    <div class="contact-buttons">
+
+      <!-- Botón Gmail solo ícono -->
+      <a href="mailto:alainolmos52@gmail.com" class="icon-btn">
+        <img src="gmail.png" class="icon-img" alt="Correo">
+      </a>
+
+      <!-- Botón WhatsApp solo ícono -->
+      <a href="https://wa.me/5213111079324" target="_blank" class="icon-btn">
+        <img src="whats.png" class="icon-img" alt="WhatsApp">
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© <span id="anio-actual"></span> AppValúo. Todos los derechos reservados.</p>
   </footer>
+
+  <script>
+    document.getElementById('anio-actual').textContent = new Date().getFullYear();
+  </script>
+<script>
+// Detectar plataforma
+function detectarSistema() {
+    const ua = navigator.userAgent.toLowerCase();
+    if (ua.includes("android")) return "android";
+    if (ua.includes("iphone") || ua.includes("ipad") || ua.includes("ios")) return "ios";
+    return "pc";
+}
+
+// IDs de app
+const APP_ID = "11913076-3908-4fb1-84c3-1f4e786327a4";
+
+// URLs inteligentes
+const urls = {
+    android: {
+        abrir: intent://appsheet.com/start/${APP_ID}#Intent;package=com.appsheet;scheme=https;end,
+        store: "https://play.google.com/store/apps/details?id=com.appsheet.whitelabel"
+    },
+    ios: {
+        abrir: https://www.appsheet.com/start/${APP_ID},
+        store: "https://apps.apple.com/us/app/appsheet/id1097316872"
+    },
+    pc: {
+        abrir: https://www.appsheet.com/start/${APP_ID}
+    }
+};
+
+// Acción del botón
+document.getElementById("btn-appvaluo").addEventListener("click", () => {
+    let sistema = detectarSistema();
+
+    if (sistema === "android") {
+        // Intenta abrir la app
+        window.location.href = urls.android.abrir;
+
+        // Si no abre en 1 segundo → lleva a Play Store
+        setTimeout(() => {
+            window.location.href = urls.android.store;
+        }, 1200);
+    }
+
+    else if (sistema === "ios") {
+        // Intenta abrir la app
+        window.location.href = urls.ios.abrir;
+        
+        // Si no abre en 1 segundo → App Store
+        setTimeout(() => {
+            window.location.href = urls.ios.store;
+        }, 1200);
+    }
+
+    else {
+        // PC → abre versión web
+        window.open(urls.pc.abrir, "_blank");
+    }
+});
+</script>
+
 </body>
+
+    <div class="decor-img decor1">
+  <img src="img/imgfolleto-1.png">
+</div>
+
+<div class="decor-img decor2">
+  <img src="img/imgfolleto-2.png">
+</div>
+
+<div class="decor-img decor3">
+  <img src="img/imgfolleto-3.png">
+</div>
+
+<div class="decor-img decor4">
+  <img src="img/imgfolleto-4.png">
+</div>
+
+<div class="decor-img decor5">
+  <img src="img/imgfolleto-5.png">
+</div>
+
 </html>
+
+<style>
+  .tabla-demeritos {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow-x: auto;
+  }
+
+  .tabla-demeritos iframe {
+    width: 650px;
+    height: 400px;
+    display: block;
+  }
+</style>
