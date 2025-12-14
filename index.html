@@ -21,18 +21,63 @@
 
 <body>
 
-  <!-- HEADER -->
-  <header class="main-header">
-    <div class="container header-content">
-      <div class="logo">
-        <img src="logo.png" alt="AppValúo">
-      </div>
-      <nav class="main-nav">
-        <a href="#inicio">Inicio</a>
-        <!-- más menús -->
-      </nav>
-    </div>
-  </header>
+<!-- ===== HEADER ===== -->
+<header class="main-header" id="top">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label="AppValúo">
+      <span class="brand-name">AppValúo</span>
+    </a>
+
+    <!-- Botón Menú (móvil) -->
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- MENÚ (informativo) -->
+    <nav class="main-nav" id="mainNav" aria-label="Menú principal">
+      <a href="#que-es">Qué es</a>
+      <a href="#que-incluye">Qué incluye</a>
+      <a href="#mercado">Mercado</a>
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#planes">Planes</a>
+      <a href="#tutoriales">Tutoriales</a>
+      <a href="#contacto">Contacto</a>
+
+      <!-- CTA (lleva a AppSheet / login) -->
+      <a class="nav-cta" href="https://www.appsheet.com/start/11913076-3908-4fb1-84c3-1f4e786327a4" target="_blank" rel="noopener">
+        Abrir AppValúo
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== SECCIONES (pon estos IDs en tus secciones existentes) ===== -->
+<section id="que-es"></section>
+<section id="que-incluye"></section>
+<section id="mercado"></section>
+<section id="como-funciona"></section>
+<section id="planes"></section>
+<section id="tutoriales"></section>
+<section id="contacto"></section>
+
+<!-- ===== JS (pegalo antes de </body>) ===== -->
+<script>
+  const btn = document.getElementById("menuBtn");
+  const nav = document.getElementById("mainNav");
+
+  btn.addEventListener("click", () => {
+    const open = nav.classList.toggle("open");
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+
+  // Cierra el menú al dar click en un link (móvil)
+  nav.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", () => {
+      nav.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+    });
+  });
+</script>
 
    
   
