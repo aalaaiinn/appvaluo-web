@@ -645,6 +645,97 @@ body {
   transition: transform .25s ease;
 }
 
+/* ===== HEADER + MENÚ ===== */
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:14px 0;
+}
+
+.brand{
+  text-decoration:none;
+  color:#e5e7eb;
+  font-weight:800;
+  letter-spacing:.4px;
+}
+.brand-name{ font-size:16px; }
+
+.main-nav{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+.main-nav a{
+  color:#e5e7eb;
+  text-decoration:none;
+  font-weight:700;
+  font-size:12px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  opacity:.9;
+}
+.main-nav a:hover{ opacity:1; }
+
+.nav-cta{
+  padding:10px 14px;
+  border-radius:999px;
+  background:linear-gradient(90deg,#fb923c,#f97316);
+  color:#111827 !important;
+  box-shadow:0 10px 26px rgba(249,115,22,.25);
+}
+
+/* Botón hamburguesa */
+.menu-btn{
+  display:none;
+  width:42px;
+  height:42px;
+  border:1px solid rgba(56,189,248,.35);
+  background:rgba(2,6,23,.6);
+  border-radius:12px;
+  cursor:pointer;
+}
+.menu-btn span{
+  display:block;
+  height:2px;
+  margin:6px 10px;
+  background:#e5e7eb;
+  border-radius:2px;
+}
+
+/* ===== MÓVIL ===== */
+@media (max-width: 860px){
+  .menu-btn{ display:block; }
+
+  .main-nav{
+    position:absolute;
+    left:0;
+    right:0;
+    top:68px; /* ajusta si tu header es más alto */
+    display:none;
+    flex-direction:column;
+    align-items:stretch;
+    gap:10px;
+    padding:14px;
+    background:rgba(2,6,23,.96);
+    border-top:1px solid rgba(56,189,248,.18);
+    backdrop-filter: blur(10px);
+  }
+  .main-nav.open{ display:flex; }
+
+  .main-nav a{
+    padding:12px 12px;
+    border-radius:12px;
+    background:rgba(15,23,42,.55);
+  }
+  .nav-cta{
+    text-align:center;
+    background:linear-gradient(90deg,#fb923c,#f97316);
+  }
+
+  .main-header{ position:relative; z-index:50; }
+   }
 .captura-imagen:hover {
   transform: scale(1.02);
 }
