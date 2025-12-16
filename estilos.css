@@ -357,3 +357,69 @@ img, iframe { max-width: 100%; }
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contacto-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.contacto-card {
+  background: #0f172a;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.contacto-card h3 {
+  margin-bottom: 8px;
+  color: #38bdf8;
+}
+
+.contacto-card p {
+  color: #9ca3af;
+  margin-bottom: 15px;
+}
+
+/* Links */
+.link-simple {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.link-simple:hover {
+  text-decoration: underline;
+}
+
+/* WhatsApp */
+.whatsapp-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  font-weight: 600;
+  color: #25D366;
+  text-decoration: none;
+}
+
+.whatsapp-link img {
+  width: 22px;
+  height: 22px;
+}
+
+.whatsapp-link:hover {
+  text-decoration: underline;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .contacto-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
