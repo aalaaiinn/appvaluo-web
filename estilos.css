@@ -305,3 +305,23 @@ body{
 @media (max-width: 600px){
   .logo-appvaluo{height:32px;}
 }
+/* Preview imagen tabla comparables - responsive (sin scroll lateral) */
+.preview-comparables{
+  width: 100%;
+  max-width: 1200px;
+  margin: 18px auto 0;
+  padding: 12px;
+  border-radius: 16px;
+  background: rgba(15,23,42,.55);
+  border: 1px solid rgba(56,189,248,.18);
+  overflow: hidden; /* clave: evita desbordes */
+}
+
+.preview-comparables img{
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+  border-radius: 12px;
+  object-fit: contain;
+}
