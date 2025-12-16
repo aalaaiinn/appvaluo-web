@@ -324,4 +324,8 @@ body{
   max-width: 100%;
   border-radius: 12px;
   object-fit: contain;
-}
+   }
+
+/* Para que no haga scroll laterl y la imagen se ajuste al tamaño */
+html, body { overflow-x: hidden; }
+img, iframe { max-width: 100%; }
