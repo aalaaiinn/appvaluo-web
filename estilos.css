@@ -512,8 +512,10 @@ img, iframe { max-width: 100%; }
 
 .btn-planes:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 14px rgba(250, 140, 40, 0.75);
-}
-#que-es h2 {
+    box-shadow: 0 0 14px rgba(250, 140, 40, 0.75
+                             .bloque-appvaluo h2,
+.bloque-appvaluo h3,
+.section h2,
+.section h3 {
   color: #38bdf8;
-}
+} 
