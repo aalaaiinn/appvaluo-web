@@ -514,3 +514,6 @@ img, iframe { max-width: 100%; }
     transform: scale(1.05);
     box-shadow: 0 0 14px rgba(250, 140, 40, 0.75);
 }
+#que-es h2 {
+  color: #38bdf8;
+}
