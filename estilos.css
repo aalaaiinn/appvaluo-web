@@ -102,9 +102,9 @@ body{
   max-width:900px;
 }
 .hero h1{
-  font-size:56px;
-  font-weight:900;
-  letter-spacing:.5px;
+  font-size:1.8rem;
+  font-weight:800;
+  letter-spacing:.4px;
   color: var(--azul-neon);
 }
 .hero-sub{
