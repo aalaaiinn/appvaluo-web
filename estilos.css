@@ -567,6 +567,15 @@ h1 span.highlight {
   letter-spacing: 0.5px;
 }
 
+/* Base del título: neutro */
+h1 { color: rgba(56,189,248,.75); }  /* azul más suave */
+/* Resaltado: naranja */
+h1 span.highlight {
+  color: #ff7a18;
+  text-shadow: 0 0 14px rgba(255,122,24,.55);
+  font-weight: 800;
+}
+
 
 
 
