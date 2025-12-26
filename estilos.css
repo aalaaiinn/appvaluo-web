@@ -576,6 +576,20 @@ h1 span.highlight {
   font-weight: 800;
 }
 
+h1 {
+  color: #e5e7eb;           /* base clara */
+}
+
+h1 .highlight {
+  color: #ff7a18;           /* naranja AppValúo */
+  font-weight: 800;
+}
+
+h1 .subtext {
+  font-size: 0.7em;         /* MÁS PEQUEÑO */
+  font-weight: 600;
+  color: #38bdf8;           /* azul suave */
+}
 
 
 
