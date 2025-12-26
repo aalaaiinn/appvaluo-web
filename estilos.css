@@ -552,9 +552,9 @@ img, iframe { max-width: 100%; }
 
 /* Resaltado */
 .hero h1 span.highlight {
-  color: #ff7a18;
-  text-shadow: 0 0 8px rgba(255, 122, 24, 0.35);
+  color: red !important;
 }
+
 
 
 /* Slogan */
