@@ -533,33 +533,35 @@ img, iframe { max-width: 100%; }
 }
 
 /* HERO */
-/* HERO */
-.hero h1{
-  font-size:1.1rem;      /* MÁS PEQUEÑO que el slogan */
-  line-height:1.3;
-  color:#e5e7eb;
-  font-weight:400;
-}
-
-.hero h1 span.highlight{
-  color:#ff7a18;
-  text-shadow:0 0 14px rgba(255,122,24,.55);
-  font-weight:700;
-}
-
-/* Slogan */
-.hero-sub {
-  color: #facc15;
-  font-size: 1.6rem;     /* MÁS GRANDE */
+/* SLOGAN – debe ser el protagonista */
+.hero-sub{
+  font-size: 1.8rem;     /* MÁS GRANDE */
   font-weight: 700;
+  color: #facc15;
   margin-bottom: 6px;
-  letter-spacing: 0.5px;
 }
 
+/* TÍTULO TÉCNICO – secundario */
+.hero h1{
+  font-size: 1.2rem;     /* MÁS PEQUEÑO que el slogan */
+  line-height: 1.3;
+  font-weight: 400;
+  color: #e5e7eb;
+}
 
+/* Parte resaltada */
+.hero h1 .highlight{
+  color:#ff7a18;
+  font-weight:700;
+  text-shadow:0 0 12px rgba(255,122,24,.45);
+}
 
-
-
+/* Subtexto */
+.hero h1 .subtext{
+  display:block;
+  font-size:1rem;
+  color:#9ca3af;
+}
 
 
 
