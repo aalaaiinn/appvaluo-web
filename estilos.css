@@ -538,11 +538,11 @@ img, iframe { max-width: 100%; }
 }
 
 
-.hero h1 {
+.hero h4 {
   color: #ffffff; /* texto base */
 }
 
-.hero h1 .highlight {
+.hero h4 .highlight {
   color: #ff7a18; /* naranja AppValúo */
 }
 
