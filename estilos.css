@@ -545,10 +545,16 @@ img, iframe { max-width: 100%; }
   margin: 10px 0 20px;
 }
 
-/* Resaltado de “Software de avalúos” */
-.hero h1 span.highlight {
-  color: #ff7a18; /* naranja AppValúo */
+/* Título principal */
+.hero h1 {
+  color: #38bdf8;              /* azul base */
 }
+
+/* Resaltado */
+.hero h1 span.highlight {
+  color: #ff7a18;              /* naranja AppValúo */
+}
+
 
 /* Slogan */
 .hero-sub {
