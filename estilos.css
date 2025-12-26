@@ -541,6 +541,6 @@ img, iframe { max-width: 100%; }
 
 .hero h1 {
   font-size: 1.2rem;
-  margin: 16px 0 8px;
-  font-weight: 300;
+  margin: 10px 0 6px;
+  font-weight: 100;
 }
