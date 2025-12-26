@@ -102,7 +102,7 @@ body{
   max-width:900px;
 }
 .hero h1{
-  font-size:1.8rem;
+  font-size:1rem;
   font-weight:800;
   letter-spacing:.4px;
   color: var(--azul-neon);
