@@ -544,15 +544,13 @@ img, iframe { max-width: 100%; }
   font-weight: 700;
   margin: 10px 0 20px;
 }
-
-/* Título principal */
-.hero h1 {
-  color: #38bdf8;              /* azul base */
-}
-
 /* Resaltado */
 .hero h1 span.highlight {
   color: red !important;
+}
+/* Título principal */
+.hero h1 {
+  color: #38bdf8;              /* azul base */
 }
 
 
