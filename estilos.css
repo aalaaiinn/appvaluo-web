@@ -591,6 +591,16 @@ h1 .subtext {
   color: #38bdf8;           /* azul suave */
 }
 
+h1 {
+  font-size: 1.6rem;
+  line-height: 1.25;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 1.9rem;
+  }
+}
 
 
 
