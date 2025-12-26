@@ -303,12 +303,12 @@ body{
 
 .hero h1 .highlight{
   font-size:20px;    /* SOLO "Software de avalúos" */
-   COLOR: #67a3a3;
+   COLOR:#67a3a3;
 }
 
 .hero h1 .subtext{
   font-size:17px;    /* texto descriptivo */
-COLOR: #a3ebc9;
+COLOR:#a3ebc9;
 }
 @media (max-width: 600px){
   .logo-appvaluo{height:32px;}
