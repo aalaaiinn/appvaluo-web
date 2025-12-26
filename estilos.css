@@ -303,14 +303,13 @@ body{
 
 .hero h1 .highlight{
   font-size:20px;    /* SOLO "Software de avalúos" */
-   
+   COLOR: #67a3a3;
 }
 
 .hero h1 .subtext{
   font-size:17px;    /* texto descriptivo */
-
+COLOR: #a3ebc9;
 }
-
 @media (max-width: 600px){
   .logo-appvaluo{height:32px;}
 }
@@ -546,8 +545,4 @@ img, iframe { max-width: 100%; }
   box-shadow: 0 0 24px rgba(255, 120, 30, 0.7);
 }
 
-.hero h1 .highlight{
-  color: #38bdf8 !important;   /* azul visible y corporativo */
-  font-weight: 700;
-  text-shadow: 0 0 12px rgba(56,189,248,.6);
-}
+
