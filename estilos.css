@@ -293,8 +293,7 @@ body{
   .videos{grid-template-columns:1fr;}
   .video-card iframe{height:280px;}
   .contacto-grid{grid-template-columns:1fr;}
-  .hero h1{font-size:44px;}
-  .hero-sub{font-size:26px;}
+
 }
 
 @media (max-width: 600px){
