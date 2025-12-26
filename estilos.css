@@ -550,8 +550,6 @@ img, iframe { max-width: 100%; }
   color: #ff7a18; /* naranja AppValúo */
 }
 
-}
-
 /* Slogan */
 .hero-sub {
   color: #facc15;              /* amarillo/dorado */
@@ -560,4 +558,5 @@ img, iframe { max-width: 100%; }
   margin-bottom: 6px;
   letter-spacing: 0.5px;
 }
+
 
