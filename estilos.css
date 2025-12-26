@@ -538,9 +538,12 @@ img, iframe { max-width: 100%; }
 }
 
 
-
 .hero h1 {
-  font-size: 56px;
-  margin: 10px 0 6px;
-  font-weight: 100;
+  color: #ffffff; /* texto base */
 }
+
+.hero h1 .highlight {
+  color: #ff7a18; /* naranja AppValúo */
+}
+
+
