@@ -547,26 +547,30 @@ img, iframe { max-width: 100%; }
 
 
 
-/* Resaltado */
-.hero .hero-content h1 span.highlight {
-  color: #ff7a18;
-}
-
-
 /* Título principal */
-.hero h1 {
-  color: #38bdf8;              /* azul base */
+h1 {
+  color: #38bdf8; /* azul base */
 }
 
-
+/* Resaltado */
+h1 span.highlight {
+  color: #ff7a18; /* naranja AppValúo */
+  text-shadow: 0 0 8px rgba(255, 122, 24, 0.35);
+}
 
 /* Slogan */
 .hero-sub {
-  color: #facc15;              /* amarillo/dorado */
+  color: #facc15; /* amarillo/dorado */
   font-size: 1rem;
   font-weight: 500;
   margin-bottom: 6px;
   letter-spacing: 0.5px;
 }
+
+
+
+
+
+
 
 
