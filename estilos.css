@@ -101,12 +101,7 @@ body{
   text-align:center;
   max-width:900px;
 }
-.hero h1{
-  font-size:1rem;
-  font-weight:800;
-  letter-spacing:.4px;
-  color: var(--azul-neon);
-}
+
 .hero-sub{
   margin-top:12px;
   font-size:32px;
@@ -538,24 +533,16 @@ img, iframe { max-width: 100%; }
 }
 
 /* HERO */
-.hero h1 {
-  color: #ffffff;              /* texto base */
-  font-size: 2.4rem;           /* ajusta si lo quieres más grande o chico */
-  font-weight: 700;
-  margin: 10px 0 20px;
+.hero h1{
+  font-size:1.8rem;
+  line-height:1.25;
+  color:#e5e7eb;
 }
 
-
-
-/* Título principal */
-h1 {
-  color: #38bdf8; /* azul base */
-}
-
-/* Resaltado */
-h1 span.highlight {
-  color: #ff7a18; /* naranja AppValúo */
-  text-shadow: 0 0 8px rgba(255, 122, 24, 0.35);
+.hero h1 span.highlight{
+  color:#ff7a18;
+  text-shadow:0 0 14px rgba(255,122,24,.55);
+  font-weight:800;
 }
 
 /* Slogan */
@@ -567,40 +554,6 @@ h1 span.highlight {
   letter-spacing: 0.5px;
 }
 
-/* Base del título: neutro */
-h1 { color: rgba(56,189,248,.75); }  /* azul más suave */
-/* Resaltado: naranja */
-h1 span.highlight {
-  color: #ff7a18;
-  text-shadow: 0 0 14px rgba(255,122,24,.55);
-  font-weight: 800;
-}
-
-h1 {
-  color: #e5e7eb;           /* base clara */
-}
-
-h1 .highlight {
-  color: #ff7a18;           /* naranja AppValúo */
-  font-weight: 800;
-}
-
-h1 .subtext {
-  font-size: 0.6em;         /* MÁS PEQUEÑO */
-  font-weight: 600;
-  color: #38bdf8;           /* azul suave */
-}
-
-h1 {
-  font-size: 1.6rem;
-  line-height: 1.25;
-}
-
-@media (min-width: 768px) {
-  h1 {
-    font-size: 1.9rem;
-  }
-}
 
 
 
