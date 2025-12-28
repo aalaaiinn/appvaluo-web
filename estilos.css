@@ -548,3 +548,11 @@ img, iframe { max-width: 100%; }
 }
 
 
+/* BOTONERA MERCADO */
+.botonera-mercado{
+  display:flex;
+  gap:20px;
+  justify-content:center;
+  margin-top:30px;
+  flex-wrap:wrap;
+}
