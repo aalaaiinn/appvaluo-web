@@ -286,7 +286,7 @@ body{
   }
   .nav-cta{text-align:center;}
 }
-
+}
 @media (max-width: 900px){
   .cards-grid{grid-template-columns:1fr;}
   .planes-grid{grid-template-columns:1fr;}
@@ -519,13 +519,10 @@ img, iframe { max-width: 100%; }
 }
 
 .btn-planes:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 14px rgba(250, 140, 40, 0.75
-                             .bloque-appvalúo h2,
-.bloque-appvalúo h3,
-.section h2,{
-   color:155ce9
-         }                   
+  transform: scale(1.05);
+  box-shadow: 0 0 14px rgba(250, 140, 40, 0.75);  
+   
+   
 .section h3 {
   color: #38bdf8;
 } 
