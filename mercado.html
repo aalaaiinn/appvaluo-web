@@ -1,81 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Mercado inmobiliario y comparables para avalúos | AppValúo</title>
-  <meta name="description" content="Consulta comparables de mercado inmobiliario para avalúos de terreno y construcción. Información práctica para valuadores, peritos y despachos con AppValúo." />
-
-  <link rel="canonical" href="https://appvalúo.com/mercado.html" />
-
-  <!-- FAVICON -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mercado inmobiliario y comparables | AppValÃºo</title>
+  <meta name="description" content="Consulta comparables de mercado inmobiliario para avalÃºos de terreno y construcciÃ³n con AppValÃºo." />
+  <meta name="theme-color" content="#06111f" />
   <link rel="icon" href="favicon.png" type="image/png" />
-
-  <!-- CSS -->
   <link rel="stylesheet" href="estilos.css" />
 </head>
 
 <body>
-  <!-- HEADER -->
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <header class="main-header">
-    <div class="container header-content">
-      <div class="logo">
-        <a href="index.html">
-          <img src="img/logo.png" alt="AppValúo" />
-        </a>
-      </div>
-
-      <nav class="main-nav">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="AppValÃºo, inicio"><img src="img/appvaluo-logo.png" alt="AppValÃºo" class="logo-principal" /></a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menÃº" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button>
+      <nav class="main-nav" id="mainNav" aria-label="MenÃº principal">
         <a href="index.html#top">Inicio</a>
-        <a href="mercado.html" class="active">Mercado</a>
+        <a href="mercado.html" aria-current="page">Mercado</a>
+        <a href="index.html#como-funciona-appvalÃºo">CÃ³mo funciona</a>
         <a href="index.html#tutoriales">Tutoriales</a>
         <a href="index.html#contacto">Contacto</a>
+        <a class="nav-cta" href="https://www.appsheet.com/start/11913076-3908-4fb1-84c3-1f4e786327a4" target="_blank" rel="noopener">Abrir AppValÃºo <span aria-hidden="true">â†—</span></a>
       </nav>
     </div>
   </header>
 
-  <main id="inicio">
-    <!-- INTRO -->
-    <section class="section">
+  <main id="contenido">
+    <section class="market-page-hero">
       <div class="container">
-        <h1>Mercado inmobiliario y comparables para avalúos</h1>
-
-        <p class="section-intro">
-          Consulta comparables de terreno y construcción para análisis de mercado y elaboración de avalúos en AppValúo.
-        </p>
-
-        <div class="botonera-mercado">
-          <a
-            href="https://www.appsheet.com/start/11913076-3908-4fb1-84c3-1f4e786327a4"
-            class="btn-appvalúo"
-            target="_blank"
-            rel="noopener"
-          >ABRIR APPVALÚO</a>
-        </div>
+        <p class="eyebrow"><span class="eyebrow-dot"></span> mÃ³dulo de mercado</p>
+        <h1>Mercado inmobiliario <em>y comparables para avalÃºos.</em></h1>
+        <p class="section-lead">Consulta referencias de terreno y construcciÃ³n para anÃ¡lisis de mercado y elaboraciÃ³n de avalÃºos con un criterio mÃ¡s claro.</p>
+        <a class="btn-primary" href="https://www.appsheet.com/start/11913076-3908-4fb1-84c3-1f4e786327a4" target="_blank" rel="noopener">Abrir AppValÃºo <span aria-hidden="true">â†—</span></a>
       </div>
     </section>
 
-    <!-- KPIs -->
     <section class="section section-alt">
       <div class="container kpi-grid">
-        <div class="card kpi-card">
-          <h2 class="kpi-title">Precio promedio</h2>
-          <p class="kpi-value">$– / operación</p>
-          <p class="kpi-note">Dato referencial según tu base de comparables.</p>
-        </div>
+        <article class="kpi-card"><h2>Precio promedio</h2><p class="kpi-value">$â€” / operaciÃ³n</p><p class="kpi-note">Dato referencial segÃºn tu base de comparables.</p></article>
+        <article class="kpi-card"><h2>Valor mÂ² terreno</h2><p class="kpi-value">$â€” / mÂ²</p><p class="kpi-note">Calculado con tus registros de mercado.</p></article>
+        <article class="kpi-card"><h2>Valor mÂ² construcciÃ³n</h2><p class="kpi-value">$â€” / mÂ²</p><p class="kpi-note">Ãštil para homologar avalÃºos rÃ¡pidamente.</p></article>
+      </div>
+    </section>
 
-        <div class="card kpi-card">
-          <h2 class="kpi-title">Valor m² terreno</h2>
-          <p class="kpi-value">$– / m²</p>
-          <p class="kpi-note">Calculado con tus registros de mercado.</p>
-        </div>
+    <section class="section">
+      <div class="container">
+        <div class="section-intro"><p class="eyebrow">vista previa</p><h2>InformaciÃ³n para <em>decidir mejor.</em></h2><p>La tabla completa vive dentro de AppValÃºo. Esta muestra permite entender la forma en que se organiza la referencia de mercado.</p></div>
+        <figure class="market-table-card"><img src="img/Tabla-Comparables.png" alt="Vista previa de comparables de mercado en AppValÃºo" loading="lazy" /></figure>
+        <div class="center-cta"><a class="btn-primary" href="https://www.appsheet.com/start/11913076-3908-4fb1-84c3-1f4e786327a4" target="_blank" rel="noopener">Acceder desde AppValÃºo <span aria-hidden="true">â†—</span></a></div>
+      </div>
+    </section>
 
-        <div class="card kpi-card">
-          <h2 class="kpi-title">Valor m² construcción</h2>
-          <p class="kpi-value">$– / m²</p>
-          <p class="kpi-note">Útil para homologar avalúos rápidamente.</p>
+    <section class="section section-alt">
+      <div class="container split-section">
+        <div class="section-heading"><p class="eyebrow">quÃ© puedes respaldar</p><h2>Comparables con <em>contexto.</em></h2></div>
+        <div class="mini-points">
+          <div><span>01</span><p><strong>Rangos</strong><br />Ubica referencias Ãºtiles para cada operaciÃ³n.</p></div>
+          <div><span>02</span><p><strong>Tendencias</strong><br />Compara seÃ±ales antes de concluir.</p></div>
+          <div><span>03</span><p><strong>Criterio</strong><br />Documenta mejor la decisiÃ³n valuatoria.</p></div>
         </div>
       </div>
-    </section
+    </section>
+  </main>
 
+  <footer class="main-footer">
+    <div class="container footer-inner"><img src="img/appvaluo-logo.png" alt="AppValÃºo" class="footer-logo" /><p>Â© <span id="year"></span> AppValÃºo. Innovando la manera de valuar.</p><a href="index.html">Volver a inicio â†‘</a></div>
+  </footer>
+  <script>
+    const btn = document.getElementById("menuBtn");
+    const nav = document.getElementById("mainNav");
+    btn.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => {
+      nav.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+    }));
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
