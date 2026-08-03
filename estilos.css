@@ -1,22 +1,22 @@
 :root {
-  --bg: #040b16;
-  --bg-soft: #071425;
-  --panel: rgba(11, 24, 42, .82);
-  --panel-solid: #0c1a2d;
-  --line: rgba(132, 193, 224, .18);
-  --line-strong: rgba(132, 193, 224, .34);
-  --text: #eef7fb;
-  --muted: #9eb0bc;
-  --cyan: #55d8ff;
-  --cyan-strong: #20bde9;
-  --gold: #f5cf5c;
-  --orange: #ff9144;
-  --shadow: 0 24px 70px rgba(0, 0, 0, .3);
+  --bg: #03101f;
+  --bg-soft: #071a2c;
+  --panel: rgba(10, 29, 49, .86);
+  --panel-solid: #0b1e33;
+  --line: rgba(127, 207, 235, .2);
+  --line-strong: rgba(127, 207, 235, .38);
+  --text: #f1faff;
+  --muted: #a9bdc8;
+  --cyan: #63e6ff;
+  --cyan-strong: #1bc7df;
+  --gold: #f7d56a;
+  --orange: #ff8a42;
+  --shadow: 0 26px 76px rgba(0, 0, 0, .34);
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; background: var(--bg); }
-body { margin: 0; overflow-x: hidden; background: var(--bg); color: var(--text); font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+body { margin: 0; overflow-x: hidden; background: var(--bg); color: var(--text); font-family: "DM Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; font-size: 16px; line-height: 1.68; -webkit-font-smoothing: antialiased; }
 img { display: block; max-width: 100%; }
 a { color: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
@@ -41,11 +41,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .eyebrow { display: inline-flex; align-items: center; gap: 8px; margin: 0; color: var(--gold); font-size: .68rem; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; }
 .eyebrow-dot { width: 7px; height: 7px; border-radius: 50%; background: #4de29a; box-shadow: 0 0 0 4px rgba(77, 226, 154, .13); }
 h1, h2, h3, p { margin-top: 0; }
-h1, h2, h3 { line-height: 1.08; }
-h2 { margin-bottom: 16px; color: var(--cyan); font-size: clamp(1.8rem, 4vw, 3.1rem); letter-spacing: -.055em; }
+h1, h2, h3 { font-family: "Space Grotesk", "DM Sans", ui-sans-serif, system-ui, sans-serif; line-height: 1.08; }
+h2 { margin-bottom: 16px; color: var(--cyan); font-size: clamp(1.95rem, 4.2vw, 3.25rem); letter-spacing: -.055em; }
 h2 em { color: #edf7fa; font-style: normal; }
-.section-lead { max-width: 700px; color: var(--muted); font-size: 1.02rem; line-height: 1.75; }
-.btn-primary, .btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border-radius: 999px; padding: 13px 19px; font-size: .77rem; font-weight: 900; letter-spacing: .07em; text-decoration: none; text-transform: uppercase; transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease; }
+.section-lead { max-width: 700px; color: var(--muted); font-size: 1.06rem; line-height: 1.78; }
+.btn-primary, .btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border-radius: 999px; padding: 14px 22px; font-size: .8rem; font-weight: 900; letter-spacing: .065em; text-decoration: none; text-transform: uppercase; transition: transform .2s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease; }
 .btn-primary { border: 1px solid var(--orange); background: linear-gradient(135deg, #ffad67, var(--orange)); color: #091321; box-shadow: 0 13px 30px rgba(255, 145, 68, .2); }
 .btn-secondary { border: 1px solid var(--line-strong); background: rgba(9, 25, 43, .66); color: var(--cyan); }
 .btn-primary:hover, .btn-secondary:hover { transform: translateY(-2px); box-shadow: 0 15px 34px rgba(0, 0, 0, .28); }
@@ -147,6 +147,8 @@ h2 em { color: #edf7fa; font-style: normal; }
 .contact-card strong { color: var(--text); font-size: .82rem; }
 .contact-card small { margin-top: 2px; color: var(--muted); font-size: .72rem; }
 .contact-card > span:last-child { color: var(--cyan); font-size: 1.05rem; }
+.contact-card-whatsapp .contact-icon { background: rgba(77, 226, 154, .12); color: #57e39b; }
+.contact-card-whatsapp:hover { border-color: #57e39b; }
 
 /* Pie */
 .main-footer { border-top: 1px solid rgba(132, 193, 224, .13); background: #030914; padding: 24px 0; }
