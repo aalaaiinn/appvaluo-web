@@ -94,37 +94,40 @@ h2 em { color: #edf7fa; font-style: normal; }
 .feature-card p { min-height: 76px; margin-bottom: 18px; color: var(--muted); font-size: .82rem; line-height: 1.55; }
 .feature-card a { color: var(--cyan); font-size: .74rem; font-weight: 900; text-decoration: none; }
 
-/* Mercado */
+/* Mapa dinámico */
 .market-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(380px, 1.1fr); gap: clamp(38px, 8vw, 110px); align-items: center; }
 .market-copy h2 { margin-top: 14px; }
 .market-pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 25px 0 27px; }
 .market-pills span, .preview-status { border: 1px solid var(--line); border-radius: 999px; color: #b9d6e0; padding: 6px 10px; font-size: .67rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; }
-.market-preview { overflow: hidden; margin: 0; border: 1px solid var(--line-strong); border-radius: 22px; background: var(--panel-solid); box-shadow: var(--shadow); }
 .preview-topline { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 17px 18px; color: var(--text); font-size: .75rem; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
 .preview-status { border-color: rgba(245, 207, 92, .25); color: var(--gold); font-size: .59rem; }
-.market-preview img { width: 100%; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #f4f6f7; }
-.market-preview figcaption { padding: 13px 18px 15px; color: var(--muted); font-size: .72rem; }
+.map-section { background: radial-gradient(800px 340px at 80% 35%, rgba(32, 189, 233, .1), transparent 70%); }
+.map-grid { display: grid; grid-template-columns: minmax(0, .86fr) minmax(420px, 1.14fr); gap: clamp(38px, 7vw, 94px); align-items: center; }
+.map-copy h2 { margin-top: 14px; }
+.map-preview { overflow: hidden; margin: 0; border: 1px solid var(--line-strong); border-radius: 22px; background: var(--panel-solid); box-shadow: var(--shadow); }
+.map-preview img { width: 100%; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: #d8ebee; }
+.map-preview figcaption { padding: 14px 18px 16px; color: var(--muted); font-size: .74rem; line-height: 1.55; }
+.map-workflow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 40px; }
+.map-step { min-height: 196px; border: 1px solid var(--line); border-radius: 16px; background: linear-gradient(160deg, rgba(14, 32, 53, .9), rgba(7, 18, 32, .82)); padding: 20px; }
+.map-step > span { color: var(--gold); font-size: .7rem; font-weight: 900; letter-spacing: .12em; }
+.map-step h3 { margin: 27px 0 9px; color: var(--text); font-size: .98rem; }
+.map-step p { margin: 0; color: var(--muted); font-size: .78rem; line-height: 1.55; }
+.map-detail-grid { display: grid; grid-template-columns: minmax(260px, .78fr) minmax(0, 1.22fr); gap: clamp(42px, 8vw, 112px); align-items: start; }
+.map-detail-grid h2 { margin-top: 14px; }
+.map-detail-cards { display: grid; gap: 11px; }
+.map-detail-cards article { display: grid; grid-template-columns: auto 1fr; gap: 14px; border-bottom: 1px solid var(--line); padding: 0 0 17px; }
+.map-detail-cards article + article { padding-top: 7px; }
+.map-detail-cards article > span { color: var(--gold); font-size: .7rem; font-weight: 900; letter-spacing: .12em; }
+.map-detail-cards h3 { margin: 0 0 5px; color: var(--text); font-size: .96rem; }
+.map-detail-cards p { margin: 0; color: var(--muted); font-size: .8rem; line-height: 1.6; }
 
-/* Pasos y planes */
+/* Pasos */
 .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 .step-card { min-height: 192px; border-top: 2px solid rgba(85, 216, 255, .45); background: rgba(4, 15, 28, .62); padding: 20px; }
 .step-card > span { color: var(--gold); font-size: .7rem; font-weight: 900; letter-spacing: .12em; }
 .step-card h3 { margin: 30px 0 9px; color: var(--text); font-size: 1rem; }
 .step-card p { margin: 0; color: var(--muted); font-size: .82rem; line-height: 1.55; }
 .center-cta { display: flex; justify-content: center; margin-top: 33px; }
-.plans-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 13px; }
-.plan-card { position: relative; min-height: 310px; border: 1px solid var(--line); border-radius: 18px; background: linear-gradient(160deg, rgba(14, 32, 53, .98), rgba(7, 18, 32, .9)); padding: 23px; }
-.plan-card-featured { border-color: rgba(245, 207, 92, .64); box-shadow: 0 19px 42px rgba(245, 207, 92, .08); }
-.plan-recommended { position: absolute; top: 14px; right: 14px; border-radius: 999px; background: var(--gold); color: #071321; padding: 5px 8px; font-size: .56rem; font-weight: 900; letter-spacing: .05em; text-transform: uppercase; }
-.plan-label { margin: 0 0 22px; color: var(--cyan); font-size: .7rem; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
-.plan-card h3 { margin: 0; color: var(--text); font-size: 2rem; letter-spacing: -.06em; }
-.plan-card h3 small { color: var(--muted); font-size: .68rem; letter-spacing: 0; }
-.plan-period { margin: 3px 0 22px; color: var(--muted); font-size: .74rem; }
-.plan-folios { color: var(--gold); font-size: 1.7rem; font-weight: 900; letter-spacing: -.04em; }
-.plan-folios span { color: var(--muted); font-size: .72rem; font-weight: 700; letter-spacing: 0; }
-.plan-description { min-height: 42px; margin: 9px 0 16px; color: #c4d2d8; font-size: .78rem; }
-.plan-card ul { margin: 0; padding-left: 17px; color: var(--muted); font-size: .73rem; line-height: 1.8; }
-.plan-note { width: fit-content; max-width: 100%; margin: 18px auto 0; border: 1px solid rgba(245, 207, 92, .18); border-radius: 12px; background: rgba(245, 207, 92, .05); color: #bac8ce; padding: 10px 13px; font-size: .72rem; text-align: center; }
 
 /* Tutoriales y contacto */
 .video-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 13px; }
@@ -163,11 +166,12 @@ h2 em { color: #edf7fa; font-style: normal; }
 .kpi-value { margin: 0 0 4px; color: var(--gold); font-size: 1.75rem; font-weight: 900; letter-spacing: -.05em; }
 .kpi-note { margin: 0; color: var(--muted); font-size: .75rem; }
 .market-table-card { overflow: hidden; border: 1px solid var(--line-strong); border-radius: 20px; background: var(--panel-solid); box-shadow: var(--shadow); }
-.market-table-card img { width: 100%; background: white; }
+.market-table-card img { width: 100%; background: #d8ebee; }
+.market-table-card figcaption { padding: 14px 18px 16px; color: var(--muted); font-size: .75rem; line-height: 1.55; }
 
 @media (max-width: 1050px) {
   .main-nav a { padding-inline: 6px; font-size: .63rem; }
-  .feature-grid, .plans-grid, .video-grid, .steps-grid { grid-template-columns: repeat(2, 1fr); }
+  .feature-grid, .map-workflow, .video-grid, .steps-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 780px) {
@@ -179,7 +183,7 @@ h2 em { color: #edf7fa; font-style: normal; }
   .main-nav a, .main-nav .nav-cta { margin: 0; padding: 12px 11px; text-align: left; }
   .main-nav .nav-cta { margin-top: 6px; text-align: center; }
   .hero { padding-top: 62px; }
-  .hero-grid, .split-section, .market-grid, .contact-grid { grid-template-columns: 1fr; }
+  .hero-grid, .split-section, .market-grid, .map-grid, .map-detail-grid, .contact-grid { grid-template-columns: 1fr; }
   .hero-media { width: min(100%, 420px); justify-self: center; }
   .hero-copy h1 { font-size: clamp(2.65rem, 12vw, 4.3rem); }
   .hero-badge { right: -4px; }
@@ -188,7 +192,7 @@ h2 em { color: #edf7fa; font-style: normal; }
   .mini-points > div { display: grid; grid-template-columns: auto 1fr; gap: 11px; align-items: start; }
   .mini-points span { margin: 0; }
   .market-copy { order: 0; }
-  .market-preview { order: 1; }
+   .map-preview { order: 1; }
   .contact-grid { gap: 32px; }
   .contact-cards { width: 100%; }
 }
@@ -200,7 +204,7 @@ h2 em { color: #edf7fa; font-style: normal; }
   .hero-actions a { width: 100%; }
   .hero-image { border-width: 6px; border-radius: 23px; }
   .hero-badge { position: static; width: 100%; margin-top: 12px; }
-  .feature-grid, .plans-grid, .video-grid, .steps-grid, .kpi-grid { grid-template-columns: 1fr; }
-  .feature-card, .plan-card { min-height: auto; }
+  .map-workflow, .feature-grid, .video-grid, .steps-grid, .kpi-grid { grid-template-columns: 1fr; }
+  .feature-card { min-height: auto; }
   .footer-inner { align-items: flex-start; flex-direction: column; }
 }
