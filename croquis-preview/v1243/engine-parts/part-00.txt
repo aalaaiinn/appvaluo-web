@@ -1,0 +1,73 @@
+import * as THREE from 'https://esm.sh/three@0.180.0';
+import { OrbitControls } from 'https://esm.sh/three@0.180.0/examples/jsm/controls/OrbitControls.js';
+import { GLTFLoader } from 'https://esm.sh/three@0.180.0/examples/jsm/loaders/GLTFLoader.js';
+import { RoomEnvironment } from 'https://esm.sh/three@0.180.0/examples/jsm/environments/RoomEnvironment.js';
+import { RGBELoader } from 'https://esm.sh/three@0.180.0/examples/jsm/loaders/RGBELoader.js';
+import { EffectComposer } from 'https://esm.sh/three@0.180.0/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from 'https://esm.sh/three@0.180.0/examples/jsm/postprocessing/RenderPass.js';
+import { SSAOPass } from 'https://esm.sh/three@0.180.0/examples/jsm/postprocessing/SSAOPass.js';
+import { OutputPass } from 'https://esm.sh/three@0.180.0/examples/jsm/postprocessing/OutputPass.js';
+// AppValúo Croquis IA CAD · Convenio canónico 2D → 3D
+// CAD: X derecha, Y arriba lógico. THREE: X derecha, Y altura, Z profundidad.
+// Conversión oficial: X3D = Xcad, Y3D = elevación, Z3D = -Ycad.
+function cadToWorld(pt={}, elevation=0){
+  return {x:Number(pt.x)||0,y:Number(elevation)||0,z:-(Number(pt.y)||0)};
+}
+function worldToCad(v={}){
+  return {x:Number(v.x)||0,y:-(Number(v.z)||0)};
+}
+function cadAngleToWorld(angleRad=0){
+  // Three.js rotation.y positiva lleva +X hacia -Z, exactamente el giro positivo del CAD (+Y lógico).
+  return Number(angleRad)||0;
+}
+function cadDegreesToWorld(deg=0){
+  return (Number(deg)||0)*Math.PI/180;
+}
+function worldAngleToCad(angleRad=0){
+  return Number(angleRad)||0;
+}
+function cadPolygonToXZ(poly=[]){
+  return (Array.isArray(poly)?poly:[]).map(p=>({x:Number(p.x)||0,z:-(Number(p.y)||0)}));
+}
+function cadNorthAngleToWorld(angleDegClockwiseFromCadUp=0){
+  const r=(Number(angleDegClockwiseFromCadUp)||0)*Math.PI/180;
+  // 0° = +Y CAD => -Z mundo. 90° = +X CAD => +X mundo.
+  return {x:Math.sin(r),y:0,z:-Math.cos(r)};
+}
+function transformedBounds(points=[]){
+  const w=(Array.isArray(points)?points:[]).map(p=>cadToWorld(p,0));
+  if(!w.length)return{minX:-3,maxX:3,minZ:-5,maxZ:5,cx:0,cz:0,w:6,d:10};
+  const xs=w.map(p=>p.x),zs=w.map(p=>p.z),minX=Math.min(...xs),maxX=Math.max(...xs),minZ=Math.min(...zs),maxZ=Math.max(...zs);
+  return{minX,maxX,minZ,maxZ,cx:(minX+maxX)/2,cz:(minZ+maxZ)/2,w:Math.max(.1,maxX-minX),d:Math.max(.1,maxZ-minZ)};
+}
+
+
+const VERSION='12.24.3';
+const ASSETS={
+  sofa:{url:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/SheenWoodLeatherSofa/glTF-Binary/SheenWoodLeatherSofa.glb',name:'Sheen Wood Leather Sofa',license:'CC-BY-4.0 + CC0'},
+  chair:{url:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/SheenChair/glTF-Binary/SheenChair.glb',name:'Sheen Chair',license:'CC0-1.0'},
+  armchair:{url:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/ChairDamaskPurplegold/glTF-Binary/ChairDamaskPurplegold.glb',name:'Chair Damask Purplegold',license:'CC-BY-4.0'},
+  pouf:{url:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/SpecularSilkPouf/glTF-Binary/SpecularSilkPouf.glb',name:'Specular Silk Pouf',license:'CC-BY-4.0'},
+  car:{url:'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/main/Models/ToyCar/glTF-Binary/ToyCar.glb',name:'Toy Car',license:'CC0-1.0'}
+};
+const CANON={
+  car:{w:1.82,d:4.35,h:1.52}, sofa:{w:2.05,d:.92,h:.90}, chair:{w:.52,d:.55,h:.92}, armchair:{w:.82,d:.85,h:.96}, pouf:{w:.60,d:.60,h:.44}
+};
+const HDRI={studio:null,sunset:'https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/venice_sunset_1k.hdr',courtyard:'https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/kloppenheim_02_1k.hdr'};
+const S={quality:'realistic',cutHeight:1.40,roof:false,shadows:true,ao:true,environment:'studio',sun:'noon',camera:'perspective',stale:true,selected:null,renderRunning:false,renderCancelled:false,demo:false};
+let app,modal,stage,renderer,scene,projectRoot,furnitureRoot,contextRoot,helperRoot,lightRoot,persp,ortho,camera,controls,composer,ssao,renderPass,outputPass,anim=0,buildId=0;
+const loader=new GLTFLoader(),modelCache=new Map(),envCache=new Map(),raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2();let selectables=[];
+const $=(s,r=document)=>r.querySelector(s);const $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+window.__appvaluo3dCoords={cadToWorld,worldToCad,cadAngleToWorld,cadDegreesToWorld,worldAngleToCad,cadNorthAngleToWorld};
+
+boot();
+async function boot(){let n=0;while((!window.__croquisV11||!document.getElementById('view3dBtn'))&&n++<240)await sleep(100);app=window.__croquisV11;if(!app)return;injectCSS();createModal();replaceButton();hideLegacy();watchState();console.info(`[AppValúo V${VERSION}] listo`)}
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+function hideLegacy(){const st=document.createElement('style');st.textContent='#view3dModal,#v122Modal{display:none!important;visibility:hidden!important;pointer-events:none!important}';document.head.appendChild(st)}
+function replaceButton(){const old=document.getElementById('view3dBtn');if(!old)return;const b=old.cloneNode(true);b.id='view3dBtn';b.textContent='🏠 3D / RENDER';b.title=`AppValúo V${VERSION}`;old.replaceWith(b);b.onclick=e=>{e.preventDefault();e.stopPropagation();openViewer(false)};$$('[data-proxy-target="view3dBtn"]').forEach(x=>{x.textContent='3D / Render';x.onclick=()=>b.click()})}
+function watchState(){let last=fingerprint(app.state);setInterval(()=>{const f=fingerprint(app.state);if(f!==last){last=f;S.stale=true;setStatusBadge()}},700)}
+function fingerprint(s){try{return JSON.stringify({lot:s?.lot,z:s?.zones,w:s?.walls,o:s?.openings,f:s?.furniture}).length+':'+JSON.stringify({lot:s?.lot,z:s?.zones,w:s?.walls,o:s?.openings,f:s?.furniture}).slice(-300)}catch{return String(Date.now())}}
+
+function injectCSS(){const st=document.createElement('style');st.textContent=`
+.v1241{position:fixed;inset:0;z-index:300000;background:rgba(3,8,15,.90);display:none;align-items:center;justify-content:center;padding:10px}.v1241.open{display:flex}.v1241-card{width:min(1700px,99vw);height:min(990px,98vh);display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;background:#0d1724;color:#edf4ff;border:1px solid #29425c;border-radius:12px;overflow:hidden}.v1241-head{display:flex;align-items:center;gap:10px;justify-content:space-between;padding:8px 10px;border-bottom:1px solid #26384d;background:#111e2e}.v1241-head b{font-size:13px}.v1241-head small{font-siz
