@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-labelledby="t d">
+<title id="t">AppValúo Propiedades</title><desc id="d">Identidad visual profesional de AppValúo Propiedades.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#06111f"/><stop offset=".55" stop-color="#0a2239"/><stop offset="1" stop-color="#020a12"/></linearGradient>
+<linearGradient id="cyan" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#67efff"/><stop offset=".45" stop-color="#16cdf5"/><stop offset="1" stop-color="#087bb9"/></linearGradient>
+<linearGradient id="silver" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff"/><stop offset=".42" stop-color="#e8edf2"/><stop offset=".76" stop-color="#9eabb6"/><stop offset="1" stop-color="#f7fbff"/></linearGradient>
+<radialGradient id="glow"><stop stop-color="#16cdf5" stop-opacity=".35"/><stop offset="1" stop-color="#16cdf5" stop-opacity="0"/></radialGradient>
+<filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000" flood-opacity=".55"/></filter>
+<filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="16"/></filter>
+</defs>
+<rect width="1200" height="500" rx="34" fill="url(#bg)"/>
+<circle cx="285" cy="245" r="220" fill="url(#glow)"/>
+<g opacity=".18" stroke="#33dcff" stroke-width="1"><path d="M0 400H1200M0 435H1200M0 470H1200"/><path d="M80 500 310 270M250 500 390 270M420 500 470 270M980 500 790 270M1130 500 870 270"/></g>
+<g opacity=".22" fill="#8cdffc"><rect x="20" y="250" width="74" height="150"/><rect x="103" y="210" width="55" height="190"/><rect x="169" y="178" width="78" height="222"/><rect x="955" y="208" width="66" height="192"/><rect x="1035" y="160" width="90" height="240"/><rect x="1138" y="230" width="48" height="170"/></g>
+<g transform="translate(120 92)" filter="url(#shadow)">
+<path d="M30 170 155 50l125 120" fill="none" stroke="url(#silver)" stroke-width="34" stroke-linejoin="miter"/>
+<path d="M42 159 155 55l113 104" fill="none" stroke="url(#cyan)" stroke-width="18" stroke-linejoin="miter"/>
+<path d="M83 150v108h145V150" fill="#06192b" stroke="url(#silver)" stroke-width="8"/>
+<path d="M83 150v108h145" fill="none" stroke="url(#cyan)" stroke-width="5"/>
+<path d="M218 65v73" stroke="url(#silver)" stroke-width="22"/>
+<g fill="url(#silver)"><rect x="118" y="172" width="28" height="28" rx="3"/><rect x="157" y="172" width="28" height="28" rx="3"/><rect x="118" y="211" width="28" height="28" rx="3"/><rect x="157" y="211" width="28" height="28" rx="3"/></g>
+<path d="M10 246c79 77 235 84 345-5" fill="none" stroke="url(#silver)" stroke-width="18" stroke-linecap="round"/>
+<path d="M8 252c83 88 244 91 357-7" fill="none" stroke="url(#cyan)" stroke-width="8" stroke-linecap="round"/>
+</g>
+<g transform="translate(500 133)" font-family="Arial,Helvetica,sans-serif">
+<text x="0" y="96" font-size="104" font-weight="800" letter-spacing="-5"><tspan fill="url(#silver)">App</tspan><tspan fill="url(#cyan)">Valúo</tspan></text>
+<text x="6" y="158" font-size="42" font-weight="700" letter-spacing="18" fill="url(#silver)">PROPIEDADES</text>
+<rect x="6" y="181" width="594" height="4" rx="2" fill="url(#cyan)"/>
+<text x="7" y="226" font-size="28" fill="#dbe8ef" letter-spacing="2.2">Venta - Información con valor</text>
+</g>
+</svg>
