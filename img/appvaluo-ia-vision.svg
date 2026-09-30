@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-labelledby="t d">
+<title id="t">AppValúo IA Visión</title><desc id="d">Identidad visual de inteligencia visual inmobiliaria de AppValúo.</desc>
+<defs>
+<linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#040d18"/><stop offset=".5" stop-color="#0b2340"/><stop offset="1" stop-color="#04101c"/></linearGradient>
+<linearGradient id="cyan2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#6ef4ff"/><stop offset=".46" stop-color="#16cff6"/><stop offset="1" stop-color="#0a74bd"/></linearGradient>
+<linearGradient id="silver2" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff"/><stop offset=".4" stop-color="#eaf0f5"/><stop offset=".78" stop-color="#99a8b6"/><stop offset="1" stop-color="#f8fbff"/></linearGradient>
+<linearGradient id="gold2" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f8c94b"/><stop offset="1" stop-color="#f0a625"/></linearGradient>
+<radialGradient id="halo"><stop stop-color="#20ddff" stop-opacity=".38"/><stop offset="1" stop-color="#20ddff" stop-opacity="0"/></radialGradient>
+<filter id="sh" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000" flood-opacity=".6"/></filter>
+</defs>
+<rect width="1200" height="500" rx="34" fill="url(#bg2)"/>
+<circle cx="285" cy="250" r="230" fill="url(#halo)"/>
+<g opacity=".25" stroke="#29dbff" stroke-width="1.4" fill="none">
+<path d="M0 94c195 40 320 12 472 84s335 72 728 4"/><path d="M0 137c204 45 343 18 489 86s322 68 711 6"/>
+<circle cx="88" cy="115" r="4" fill="#7af2ff"/><circle cx="440" cy="179" r="4" fill="#7af2ff"/><circle cx="971" cy="187" r="4" fill="#7af2ff"/>
+</g>
+<g transform="translate(112 70)" filter="url(#sh)">
+<circle cx="180" cy="180" r="142" fill="#061828" stroke="url(#silver2)" stroke-width="10"/>
+<circle cx="180" cy="180" r="119" fill="none" stroke="url(#cyan2)" stroke-width="9"/>
+<g transform="translate(180 180)">
+<path d="M0-112 52-71 31-15-30-15-54-72Z" fill="url(#cyan2)" opacity=".9"/>
+<path d="M97-56 104 10 54 45 20-2 38-56Z" fill="url(#silver2)" opacity=".94"/>
+<path d="M97 56 43 98-13 79-8 21 44 3Z" fill="url(#cyan2)" opacity=".88"/>
+<path d="M0 112-58 83-64 24-7 7 35 44Z" fill="url(#silver2)" opacity=".94"/>
+<path d="M-98 55-108-7-58-48-18-4-38 51Z" fill="url(#cyan2)" opacity=".88"/>
+<path d="M-96-58-43-99 13-80 9-21-43-5Z" fill="url(#silver2)" opacity=".94"/>
+<circle r="48" fill="#061828" stroke="#7ff5ff" stroke-width="4"/>
+<path d="M-34 11 0-22 35 11" fill="none" stroke="#ecf9ff" stroke-width="8" stroke-linecap="round"/>
+<path d="M-22 7v26h45V7" fill="none" stroke="#2de3ff" stroke-width="6"/><rect x="-7" y="12" width="14" height="21" rx="2" fill="#edfaff"/>
+</g>
+<g fill="#f7c84b"><circle cx="52" cy="82" r="6"/><circle cx="305" cy="69" r="5"/><circle cx="326" cy="269" r="6"/></g>
+<g stroke="url(#gold2)" stroke-width="3" opacity=".8"><path d="M52 82 96 111"/><path d="M305 69 273 105"/><path d="M326 269 292 245"/></g>
+</g>
+<g transform="translate(500 117)" font-family="Arial,Helvetica,sans-serif">
+<text x="0" y="96" font-size="104" font-weight="800" letter-spacing="-5"><tspan fill="url(#silver2)">App</tspan><tspan fill="url(#cyan2)">Valúo</tspan></text>
+<text x="6" y="160" font-size="45" font-weight="700" letter-spacing="15" fill="url(#silver2)">IA VISIÓN</text>
+<rect x="6" y="184" width="545" height="4" rx="2" fill="url(#cyan2)"/>
+<text x="7" y="228" font-size="27" fill="#dce9f0" letter-spacing="1.6">Imagen · Diseño · Inteligencia visual</text>
+<text x="7" y="273" font-size="18" fill="#f3c84b" letter-spacing="4.5">PRESENTACIÓN INMOBILIARIA CON IA</text>
+</g>
+</svg>
