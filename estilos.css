@@ -77,7 +77,8 @@ h2 em { color: #edf7fa; font-style: normal; }
 .section-intro h2 { margin: 13px 0 12px; }
 .section-intro > p:last-child { margin-bottom: 0; color: var(--muted); }
 .branches-section { padding-top: clamp(68px, 8vw, 100px); background: radial-gradient(750px 320px at 50% 0%, rgba(32, 189, 233, .09), transparent 70%); }
-.branches-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.branches-section .container { width: min(1280px, calc(100% - 44px)); }
+.branches-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 .branch-card { display: flex; flex-direction: column; min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 22px; background: var(--panel-solid); text-decoration: none; box-shadow: 0 18px 42px rgba(0, 0, 0, .16); transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
 .branch-card:hover { transform: translateY(-5px); border-color: var(--cyan); box-shadow: var(--shadow); }
 .branch-card:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
@@ -86,6 +87,52 @@ h2 em { color: #edf7fa; font-style: normal; }
 .branch-properties .branch-image { background: #09243b; }
 .branch-visual .branch-image { background: #102742; }
 .branch-croquis .branch-image { background: #0c2838; }
+
+/* AppValúo Escrituración: cuarta aplicación del ecosistema */
+.branch-escrituracion .branch-image {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  background-color: #071d33;
+  background-image:
+    radial-gradient(ellipse at 28% 50%, rgba(56, 220, 220, .2), transparent 55%),
+    linear-gradient(145deg, #0e3e58 0%, #06172c 73%);
+}
+.branch-escrituracion .branch-image img {
+  width: 108px;
+  height: 108px;
+  flex: 0 0 auto;
+  object-fit: contain;
+  opacity: 1;
+  border-radius: 23px;
+  box-shadow: 0 10px 27px rgba(0, 0, 0, .35);
+}
+.branch-escrituracion .branch-banner-name {
+  min-width: 0;
+  color: #f1faff;
+  font-size: clamp(.98rem, 1.3vw, 1.4rem);
+  line-height: 1.25;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  letter-spacing: -.03em;
+}
+.branch-escrituracion .branch-banner-name b { color: #52d9e9; }
+.branch-escrituracion .branch-banner-name small {
+  display: block;
+  margin-top: 10px;
+  color: #abdae3;
+  font-family: "DM Sans", sans-serif;
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+@media (max-width: 1120px) {
+  .branches-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
 .branch-content { display: flex; flex: 1; flex-direction: column; gap: 12px; padding: 23px; color: var(--muted); font-size: .95rem; line-height: 1.5; }
 .branch-content strong { color: var(--text); font-family: "Space Grotesk", sans-serif; font-size: 1.55rem; line-height: 1.15; }
 .branch-label { color: var(--gold); font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
