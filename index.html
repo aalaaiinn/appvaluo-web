@@ -185,6 +185,65 @@
         btn.setAttribute("aria-label", "Abrir menú");
       }));
     }
+
+    // Botones de compartir independientes de la navegación de las tarjetas.
+    const appShareIcon = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.7 13.5 6.6 4m0-11-6.6 4"/></svg>';
+    let appShareToastTimeout;
+    function appvaluoShareToast(message) {
+      let toast = document.getElementById("app-share-toast");
+      if (!toast) {
+        toast = document.createElement("div");
+        toast.id = "app-share-toast";
+        toast.className = "app-share-toast";
+        toast.setAttribute("role", "status");
+        toast.setAttribute("aria-live", "polite");
+        document.body.appendChild(toast);
+      }
+      toast.textContent = message;
+      toast.classList.add("visible");
+      clearTimeout(appShareToastTimeout);
+      appShareToastTimeout = setTimeout(() => toast.classList.remove("visible"), 3000);
+    }
+    async function appvaluoShareApplication(title, url) {
+      const data = { title: "AppValúo · " + title, text: "Conoce " + title + " de AppValúo.", url };
+      if (navigator.share) {
+        try { await navigator.share(data); return; }
+        catch (error) { if (error && error.name === "AbortError") return; }
+      }
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(url);
+        } else {
+          const input = document.createElement("textarea");
+          input.value = url;
+          input.style.position = "fixed";
+          input.style.opacity = "0";
+          document.body.appendChild(input);
+          input.select();
+          const copied = document.execCommand("copy");
+          input.remove();
+          if (!copied) throw new Error("Clipboard unavailable");
+        }
+        appvaluoShareToast("Enlace copiado para compartir");
+      } catch (_) {
+        window.prompt("Copia el enlace para compartir:", url);
+      }
+    }
+    document.querySelectorAll(".branches-grid > a.branch-card").forEach(card => {
+      const container = document.createElement("div");
+      container.className = "branch-wrap";
+      card.parentNode.insertBefore(container, card);
+      container.appendChild(card);
+      const title = card.querySelector(".branch-content strong")?.textContent.trim() || "aplicación";
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "branch-share";
+      button.setAttribute("aria-label", "Compartir " + title);
+      button.title = "Compartir " + title;
+      button.innerHTML = appShareIcon + '<span>Compartir</span>';
+      button.addEventListener("click", () => appvaluoShareApplication(title, card.href));
+      container.appendChild(button);
+    });
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
