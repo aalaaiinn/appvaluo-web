@@ -406,3 +406,15 @@ a:focus-visible, button:focus-visible { outline:3px solid var(--gold); outline-o
  .hero { min-height:480px;padding:48px 0;background-image:linear-gradient(90deg,rgba(3,14,28,.94),rgba(3,14,28,.77)),url("img/arquitectura-portada-movil.webp");background-position:65% center; }
  .hero-copy { max-width:100%; }
 }
+
+
+/* Compartir cada aplicación sin modificar la acción de abrir su tarjeta */
+.branch-wrap { position: relative; min-width: 0; }
+.branch-wrap > .branch-card { height: 100%; box-sizing: border-box; }
+.branch-share { position: absolute; z-index: 3; top: 14px; right: 14px; display: inline-flex; align-items: center; justify-content: center; gap: 7px; padding: 9px 12px; border: 1px solid rgba(236, 206, 131, .58); border-radius: 999px; background: rgba(7, 23, 37, .93); color: #f5dfaa; font: 600 13px/1 "DM Sans", sans-serif; cursor: pointer; box-shadow: 0 5px 18px rgba(0, 0, 0, .28); backdrop-filter: blur(8px); transition: background .2s ease, transform .2s ease; }
+.branch-share:hover { background: #21415c; transform: translateY(-1px); }
+.branch-share:focus-visible { outline: 3px solid #e8bd64; outline-offset: 3px; }
+.branch-share svg { flex: none; }
+.app-share-toast { position: fixed; left: 50%; bottom: 24px; z-index: 999; max-width: calc(100vw - 36px); padding: 12px 18px; border-radius: 999px; background: #102a3d; color: #fff6df; font: 600 14px/1.4 "DM Sans", sans-serif; box-shadow: 0 14px 40px rgba(0, 0, 0, .4); opacity: 0; pointer-events: none; transform: translate(-50%, 12px); transition: opacity .2s, transform .2s; }
+.app-share-toast.visible { opacity: 1; transform: translate(-50%, 0); }
+@media (max-width: 480px) { .branch-share { top: 11px; right: 11px; padding: 8px 10px; font-size: 12px; } }
