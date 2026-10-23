@@ -241,7 +241,7 @@
       button.setAttribute("aria-label", "Compartir " + title);
       button.title = "Compartir " + title;
       button.innerHTML = appShareIcon + '<span>Compartir</span>';
-      button.addEventListener("click", () => appvaluoShareApplication(title, card.href));
+      button.addEventListener("click", () => appvaluoShareApplication(title, card.getAttribute("href") || card.href));
       container.appendChild(button);
     });
     document.getElementById("year").textContent = new Date().getFullYear();
