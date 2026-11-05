@@ -156,3 +156,66 @@ Consulta del inventario del equipo mediante API Vercel: **95 proyectos**. La cla
 - **Costos:** mantener plan actual hasta revisar cumplimiento y consumo. El número de proyectos no equivale a una suscripción por proyecto. El costo real de ejecución y los límites deben revisarse por uso.
 
 **Resultado de la auditoría:** clasificación preliminar completada, sin eliminar, fusionar ni desplegar nada.
+
+
+## Auditoría ampliada: dominios y dependencias
+**Revisión:** 5 de noviembre de 2026, segunda pasada, solo lectura.
+
+### Nueve accesos AppValúo: DNS confirmado, navegación pendiente
+La API de Vercel informó `misconfigured: false`, `configuredBy: CNAME`, sin conflictos y con desafío HTTP-01 aceptado para **cada uno** de estos subdominios:
+
+| Subdominio | DNS Vercel | Aplicación |
+|---|---|---|
+| `captura.appvalúo.com` | Correcto | Captura |
+| `propiedades.appvalúo.com` | Correcto | Propiedades |
+| `escrituracion.appvalúo.com` | Correcto | Escrituración |
+| `opinion.appvalúo.com` | Correcto | Opinión de Valor |
+| `mapa.appvalúo.com` | Correcto | Mapa Dinámico |
+| `croquis.appvalúo.com` | Correcto | Croquis IA CAD |
+| `catastral.appvalúo.com` | Correcto | Agente Catastral |
+| `control.appvalúo.com` | Correcto | Control de Trámites |
+| `visual.appvalúo.com` | Correcto | IA Visión |
+
+**Límite de la revisión:** `misconfigured: false` confirma la configuración DNS desde Vercel, **no** garantiza que el login, API ni cada pantalla funcione correctamente. El explorador público devolvió errores al intentar abrir subdominios: no se consideran pruebas de funcionalidad aprobadas. La raíz `appvalúo.com` sí respondió sirviendo la versión pública anterior de GitHub Pages, sin la tarjeta Captura aún.
+
+### Muestra de proyectos de soporte y pruebas (14 examinados)
+Los estados reflejan solo el despliegue informado por la API, no el tráfico real ni la existencia de dependencias. No se ha eliminado ningún proyecto.
+
+| Proyecto | Último despliegue observado | Riesgo preliminar / decisión |
+|---|---|---|
+| `mi-casa-backend` | READY / producción | **CRÍTICO: conservar**. El frontend de Propiedades utiliza este host como API por defecto |
+| `mi-casa-inmobiliaria` | READY / sin target | Revisar rutas antiguas y referencias antes de tocar |
+| `mi-casa-auth` | ERROR / producción | No eliminar: revisar si existe autenticación asociada |
+| `mi-casa-media` | READY / producción | No eliminar: investigar uso de imágenes y medios |
+| `mi-casa-assets` | READY / producción | No eliminar: investigar archivos y activos |
+| `appvaluo-pwa-staging-preview` | READY / producción | Posible entorno de prueba: revisar dependencias |
+| `appvaluo-verificacion` | READY / producción | Posible prueba: revisar uso |
+| `appvaluo-env-check` | READY / producción | Posible prueba: revisar uso |
+| `appvaluo-data-probe` | READY / sin target | Posible prueba: revisar uso |
+| `appvaluo-pdf-master-smoke` | READY / producción | Posible prueba PDF: revisar uso |
+| `croquis-ia-cad-online-v1246` | READY / producción | Posible versión histórica: comparar con Croquis activo |
+| `croquis-ia-cad-online-v1245` | READY / producción | Posible versión histórica: comparar con Croquis activo |
+| `micasa-storage-bootstrap` | READY / producción | Posible inicializador: revisar si aún es necesario |
+| `appvaluo-opinion-e2e-test` | READY / producción | Posible prueba: revisar uso |
+
+**Evidencia concreta de dependencia:** archivo `api/proxy.js` del repositorio `aalaaiinn/appvaluo-propiedades-frontend`, rama `main`:
+
+```js
+const DEFAULT_BACKEND_URL='https://mi-casa-backend.vercel.app';
+function backendUrl(){
+  return String(process.env.BACKEND_URL||DEFAULT_BACKEND_URL).trim().replace(/\\/+$/,'');
+}
+```
+
+El host puede ser reemplazado por una variable `BACKEND_URL` en producción; su valor no se ha consultado porque debe mantenerse confidencial. Hasta verificar su configuración, **conservar `mi-casa-backend`**.
+
+### Estado de publicación de Propiedades
+- PR #13 de `aalaaiinn/appvaluo-propiedades-frontend`: **abierto y no fusionado**, `mergeable: true`.
+- Commit HEAD observado: `e64afb2474316a24350e10f2aafc9bb310cb114e`.
+- GitHub status: `Vercel: failure`, con referencia `https://vercel.com/knowledge/why-is-my-account-deployment-blocked`.
+- No se encontraron GitHub Actions asociados al HEAD consultado.
+- La versión previa `READY` de producción es `adc35ea65d5fe646d6ee84a752d30b114d680572`, diferente del PR.
+- **No fusionar, no crear nuevos despliegues y no afirmar que el bloqueo se levantó**.
+
+### Próxima puerta de auditoría
+Aún falta revisar el tráfico/referencias y el uso de dominios `.vercel.app` de los candidatos, además de las variables y servicios dependientes **sin exponer secretos**. No reducir la lista de 95 todavía. Los nueve accesos DNS correctos pueden ser validados visualmente una vez que el navegador permita abrir cada pantalla.
