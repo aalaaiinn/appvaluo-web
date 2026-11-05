@@ -219,3 +219,35 @@ El host puede ser reemplazado por una variable `BACKEND_URL` en producción; su 
 
 ### Próxima puerta de auditoría
 Aún falta revisar el tráfico/referencias y el uso de dominios `.vercel.app` de los candidatos, además de las variables y servicios dependientes **sin exponer secretos**. No reducir la lista de 95 todavía. Los nueve accesos DNS correctos pueden ser validados visualmente una vez que el navegador permita abrir cada pantalla.
+
+## Comprobación adicional: correspondencia de dominios y recursos visuales
+**Revisión:** 5 de noviembre de 2026, tercera pasada, sin cambios de DNS ni publicaciones.
+
+### Proyecto titular de cada subdominio principal
+La API `list_project_domains` corroboró asociaciones de dominio verificadas (`verified: true`), además de las comprobaciones DNS anteriores. Se confirmó el titular de los nueve accesos del portal:
+
+| Acceso del portal | Proyecto asignado en Vercel |
+|---|---|
+| `opinion.appvalúo.com` | `appvaluo-opinion-valor-rapida` |
+| `captura.appvalúo.com` | `appvaluo-captura-v2` |
+| `propiedades.appvalúo.com` | `appvaluo-propiedades` |
+| `visual.appvalúo.com` | `appvaluo-visual-ia` |
+| `croquis.appvalúo.com` | `croquis-ia-cad-online` |
+| `escrituracion.appvalúo.com` | `appvaluo-escrituracion` |
+| `control.appvalúo.com` | `appvaluo-control-tramites` |
+| `catastral.appvalúo.com` | `agente-tramites-catastrales` |
+| `mapa.appvalúo.com` | `appvaluo-mapa-dinamico` |
+
+**Precaución especial del dominio raíz:** el proyecto `agente-tramites-catastrales` también tiene asignado `xn--appvalo-c2a.com` (appvalúo.com) en Vercel, mientras la raíz actualmente responde con la web alojada en GitHub Pages. **No cambiar el apex, sus DNS, ni asignaciones del proyecto** durante esta fase. Esto evita confundir una asociación registrada con el origen que sirve el portal real.
+
+### Cuatro posibles pruebas con dominio estándar, sin dominio AppValúo personalizado
+Se volvieron a consultar `appvaluo-opinion-e2e-test`, `appvaluo-pdf-master-smoke`, `croquis-ia-cad-online-v1246` y `appvaluo-opinion-valor-schema-probe`. Sus dominios listados fueron únicamente sus respectivos `*.vercel.app`. **No se autorizan bajas:** siguen pendientes dependencias, tráfico, integraciones y respaldos.
+
+### Integridad de las tarjetas antes de publicar
+Se verificó que **las nueve imágenes principales** referenciadas por las tarjetas de la rama de desarrollo existen como archivos en GitHub. Además, se añadió una cuarta prueba automática a `tests/portal-static.test.mjs`: valida la correspondencia exacta entre las nueve tarjetas, sus nueve URL, las imágenes locales y los textos alternativos. Su aprobación mediante `node --test tests/portal-static.test.mjs` sigue siendo una condición de publicación; una validación de sintaxis o comprobación estática no sustituye su ejecución en Node ni las pruebas visuales en navegador.
+
+### Estado del control de publicación
+- El portal público en GitHub Pages **sigue mostrando ocho accesos**; Captura estará presente después de fusionar el PR #1, nunca antes.
+- El HEAD del PR #13 de Propiedades permanece con check **`Vercel: failure`** vinculado a la restricción de despliegues.
+- **No publicar ni fusionar** el PR #13 mientras persista el fallo; no interpretar un despliegue antiguo `READY` como habilitación para uno nuevo.
+- No se eliminaron proyectos, no se modificaron dominios, ni se hizo despliegue de producción.
