@@ -203,7 +203,7 @@ Los estados reflejan solo el despliegue informado por la API, no el tráfico rea
 ```js
 const DEFAULT_BACKEND_URL='https://mi-casa-backend.vercel.app';
 function backendUrl(){
-  return String(process.env.BACKEND_URL||DEFAULT_BACKEND_URL).trim().replace(/\\/+$/,'');
+  return String(process.env.BACKEND_URL||DEFAULT_BACKEND_URL).trim().replace(/\/+$/,'');
 }
 ```
 
