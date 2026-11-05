@@ -1,0 +1,31 @@
+name: Diagnóstico público de AppValúo (solo lectura)
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tests/portal-live-readonly.test.mjs'
+      - '.github/workflows/portal-live-check.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portal-live-check-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  salud-publica:
+    name: Comprobar 10 destinos oficiales
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Descargar código del PR
+        uses: actions/checkout@v4
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: GET sin autenticación sobre los 10 destinos
+        run: node --test tests/portal-live-readonly.test.mjs
