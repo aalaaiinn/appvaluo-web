@@ -1,0 +1,35 @@
+name: Pruebas del portal AppValúo
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'estilos.css'
+      - 'CNAME'
+      - 'img/**'
+      - 'tests/portal-static.test.mjs'
+      - '.github/workflows/portal-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portal-ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pruebas-estaticas:
+    name: Revisar los enlaces y buscador
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Descargar código del PR
+        uses: actions/checkout@v4
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Ejecutar pruebas sin despliegue
+        run: node --test tests/portal-static.test.mjs
