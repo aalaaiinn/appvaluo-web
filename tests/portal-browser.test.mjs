@@ -144,3 +144,28 @@ test("Chromium tableta: interfaz adaptable sin desbordamiento", async () => {
     await context.close();
   }
 });
+
+test("Chromium móvil compacto y paisaje: sin desbordamiento, filtros accesibles por teclado", async () => {
+  for (const viewport of [
+    { width: 320, height: 568 },
+    { width: 360, height: 740 },
+    { width: 844, height: 390 },
+  ]) {
+    const { context, page, jsErrors } = await openPortal(viewport, true);
+    try {
+      await checkCommon(page, jsErrors);
+      const gestion = page.locator('.portal-filter[data-filter="gestion"]');
+      await gestion.focus();
+      await page.keyboard.press("Enter");
+      assert.equal(await gestion.getAttribute("aria-pressed"), "true");
+      assert.equal(await page.locator("#portal-grid .branch-wrap:visible").count(), 4);
+      const search = page.locator("#portal-search-input");
+      await search.fill("escrituración");
+      assert.equal(await page.locator("#portal-grid .branch-wrap:visible").count(), 1);
+      await search.fill("");
+      assert.deepEqual(jsErrors, []);
+    } finally {
+      await context.close();
+    }
+  }
+});
