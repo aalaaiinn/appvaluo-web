@@ -76,9 +76,15 @@ async function checkCommon(page, jsErrors) {
   assert.equal(await page.locator("#portal-grid .branch-wrap").count(), 9);
   assert.equal(await page.locator("#portal-grid .branch-share").count(), 9);
   assert.equal(await page.locator("#portal-counter").innerText(), "9 herramientas disponibles");
-  const loaded = await page.locator("#portal-grid img").evaluateAll((imgs) =>
-    imgs.every((img) => img.complete && img.naturalWidth > 0));
-  assert.ok(loaded, "Las nueve imágenes deben cargar correctamente");
+  // Las imágenes son lazy: en móvil algunas aún no están cargadas fuera del viewport.
+  // Forzamos carga solo en la prueba para verificar los nueve archivos sin falsos fallos.
+  await page.locator("#portal-grid img").evaluateAll((imgs) => {
+    imgs.forEach((img) => { img.loading = "eager"; });
+  });
+  await page.waitForFunction(() => {
+    const imgs = [...document.querySelectorAll("#portal-grid img")];
+    return imgs.length === 9 && imgs.every((img) => img.complete && img.naturalWidth > 0);
+  }, null, { timeout: 10000 });
   const sizes = await page.evaluate(() => ({
     width: innerWidth, document: document.documentElement.scrollWidth,
   }));
