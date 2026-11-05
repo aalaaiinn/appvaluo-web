@@ -37,6 +37,15 @@ for (const [name, url, isPortal] of sites) {
     const status = response.status;
     const origin = new URL(response.url).origin;
     console.log(name + ": HTTP " + status + " desde " + origin);
+    // Para 402 solo leer encabezados públicos y una muestra corta del error.
+    // No se imprimen cookies, encabezados privados ni datos de usuarios.
+    if (status === 402) {
+      const errorTag = response.headers.get("x-vercel-error");
+      const serverTag = response.headers.get("server");
+      const preview = (await response.text())
+        .replace(/<[^>]+>/g, " ").replace(/\\s+/g, " ").trim().slice(0, 270);
+      console.log("Diagnóstico 402", { server: serverTag, errorTag, preview });
+    }
     if (isPortal) {
       assert.equal(status, 200, "La portada debe servir HTTP 200");
       const text = await response.text();
@@ -59,5 +68,38 @@ for (const [name, url, isPortal] of sites) {
       );
       await response.body?.cancel();
     }
+  });
+}
+
+
+const oldDeployments = [
+  ["Opinión de Valor (deploy anterior)", "https://appvaluo-opinion-valor-rapida-22s4mm53v.vercel.app/"],
+  ["Croquis IA CAD (deploy anterior)", "https://croquis-ia-cad-online-mr3l8efor-alainolmos52-5287s-projects.vercel.app/"],
+  ["Agente Catastral (deploy anterior)", "https://agente-tramites-catastrales-qy7rmg0kd.vercel.app/"],
+  ["IA Visión (deploy anterior)", "https://appvaluo-visual-is5v6vtkn-alainolmos52-5287s-projects.vercel.app/"],
+];
+for (const [name, url] of oldDeployments) {
+  test("Comparar acceso al despliegue previo: " + name, { timeout: 18000 }, async () => {
+    const response = await fetch(url, {
+      method: "GET",
+      redirect: "manual",
+      signal: AbortSignal.timeout(13000),
+      headers: { "Accept": "text/html", "User-Agent": "AppValuo-ReadOnly-HealthCheck/1.0" },
+    });
+    console.log(name + ": HTTP " + response.status);
+    if (response.status === 402) {
+      const preview = (await response.text()).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim().slice(0, 270);
+      console.log("Despliegue previo también devuelve 402", {
+        server: response.headers.get("server"),
+        errorTag: response.headers.get("x-vercel-error"),
+        preview,
+      });
+    } else {
+      await response.body?.cancel();
+    }
+    assert.ok(
+      (response.status >= 200 && response.status < 400) || response.status === 401 || response.status === 403,
+      "El despliegue anterior tampoco entrega una respuesta navegable: HTTP " + response.status,
+    );
   });
 }
