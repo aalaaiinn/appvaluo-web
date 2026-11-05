@@ -4,7 +4,7 @@
  */
 import test from "node:test";
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
 
 const html = readFileSync(new URL("../index.html", import.meta.url), "utf8");
 const css = readFileSync(new URL("../estilos.css", import.meta.url), "utf8");
@@ -103,4 +103,31 @@ test("El buscador y los filtros operan sin consultar servidores", () => {
   search.value = "opinion";
   search.listeners.input();
   assert.equal(wraps.filter((wrap) => !wrap.hidden).length, 1, "Búsqueda sin acentos");
+});
+
+test("Los nueve accesos mantienen la ruta, imagen y nombre accesible correctos", () => {
+  const expected = new Map([
+    ["branch-opinion", "https://opinion.appvalúo.com/"],
+    ["branch-captura", "https://captura.appvalúo.com/"],
+    ["branch-properties", "https://propiedades.appvalúo.com/"],
+    ["branch-visual", "https://visual.appvalúo.com/login"],
+    ["branch-croquis", "https://croquis.appvalúo.com/"],
+    ["branch-escrituracion", "https://escrituracion.appvalúo.com/"],
+    ["branch-tramites", "https://control.appvalúo.com/"],
+    ["branch-catastral", "https://catastral.appvalúo.com/nuevo-tramite"],
+    ["branch-map", "https://mapa.appvalúo.com/"],
+  ]);
+  assert.equal(cards.length, expected.size);
+  for (const card of cards) {
+    assert.equal(card.href, expected.get(card.className), `Enlace incorrecto: ${card.className}`);
+    const cardStart = html.indexOf(`<a class="branch-card ${card.className}"`);
+    assert.ok(cardStart >= 0, `Falta tarjeta ${card.className}`);
+    const cardEnd = html.indexOf("</a>", cardStart);
+    const markup = html.slice(cardStart, cardEnd);
+    const imageSrc = markup.match(/<img\b[^>]*\bsrc="([^"]+)"/)?.[1];
+    const imageAlt = markup.match(/<img\b[^>]*\balt="([^"]+)"/)?.[1];
+    assert.ok(imageSrc && !imageSrc.startsWith("http"), `Imagen local ausente: ${card.className}`);
+    assert.ok(existsSync(new URL("../" + imageSrc, import.meta.url)), `Archivo inexistente: ${imageSrc}`);
+    assert.ok(imageAlt?.trim(), `Texto alternativo ausente: ${card.className}`);
+  }
 });
