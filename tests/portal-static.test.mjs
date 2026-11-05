@@ -10,15 +10,18 @@ const html = readFileSync(new URL("../index.html", import.meta.url), "utf8");
 const css = readFileSync(new URL("../estilos.css", import.meta.url), "utf8");
 const cname = readFileSync(new URL("../CNAME", import.meta.url), "utf8").trim();
 
-const cards = [...html.matchAll(/<a class="branch-card (branch-[a-z-]+)" data-categories="([^"]+)" href="([^"]+)" aria-label="([^"]+)"/g)]
+// Los atributos de los enlaces pueden variar de orden (por ejemplo, Mapa abre nueva pestaña).
+const cards = [...html.matchAll(/<a class="branch-card (branch-[a-z-]+)"([^>]*)>/g)]
   .map((match) => {
     const close = html.indexOf("</a>", match.index);
     assert.ok(close > match.index, "Cada tarjeta debe tener cierre");
+    const attrs = match[2];
+    const getAttr = (name) => attrs.match(new RegExp(name + '="([^"]*)"'))?.[1] ?? "";
     return {
       className: match[1],
-      categories: match[2],
-      href: match[3],
-      label: match[4],
+      categories: getAttr("data-categories"),
+      href: getAttr("href"),
+      label: getAttr("aria-label"),
       text: html.slice(match.index, close).replace(/<[^>]*>/g, " ").replace(/\s+/g, " "),
     };
   });
