@@ -1,0 +1,63 @@
+name: Pruebas del portal AppValúo
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'estilos.css'
+      - 'CNAME'
+      - 'img/**'
+      - 'tests/portal-static.test.mjs'
+      - 'tests/portal-browser.test.mjs'
+      - '.github/workflows/portal-ci.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portal-ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pruebas-estaticas:
+    name: Revisar los enlaces y buscador
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Descargar código del PR
+        uses: actions/checkout@v4
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Ejecutar pruebas sin despliegue
+        run: node --test tests/portal-static.test.mjs
+
+  pruebas-navegador:
+    name: Revisar PC, móvil y tableta
+    # Playwright 1.56.1 requiere Ubuntu 24.04; ubuntu-latest apunta ya a 26.04.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Descargar código del PR
+        uses: actions/checkout@v4
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Instalar Chromium para pruebas locales
+        run: |
+          npm install --no-save --no-package-lock --no-audit --no-fund playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Validar diseño e interacción del portal
+        run: node --test tests/portal-browser.test.mjs
+      - name: Guardar capturas de PC y móvil
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: portal-capturas-escritorio-movil
+          path: artifacts/*.png
+          if-no-files-found: ignore
+          retention-days: 7
