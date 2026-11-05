@@ -131,3 +131,14 @@ test("Los nueve accesos mantienen la ruta, imagen y nombre accesible correctos",
     assert.ok(imageAlt?.trim(), `Texto alternativo ausente: ${card.className}`);
   }
 });
+
+test("La portada identifica a AppValúo como portal único y genera vistas previas oficiales", () => {
+  assert.match(html, /<title>AppValúo \| Plataforma de valuación, propiedades y trámites<\/title>/);
+  assert.ok(html.includes('<link rel="canonical" href="https://xn--appvalo-c2a.com/" />'));
+  assert.ok(html.includes('<meta property="og:url" content="https://xn--appvalo-c2a.com/" />'));
+  assert.ok(html.includes('<meta property="og:image" content="https://xn--appvalo-c2a.com/img/appvaluo-logo.jpg" />'));
+  assert.ok(html.includes('<meta name="twitter:card" content="summary_large_image" />'));
+  assert.ok(html.includes('class="btn-primary" href="#ramas-appvaluo"'));
+  assert.ok(html.includes('class="btn-secondary" href="https://opinion.appvalúo.com/"'));
+  assert.ok(!html.includes('<meta property="og:url" content="https://appvaluo-propiedades.vercel.app"'));
+});
