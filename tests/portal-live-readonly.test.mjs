@@ -1,3 +1,4 @@
+// Revisión posterior a reactivación de los proyectos Opinión, Croquis, Catastral e IA Visión (05-nov-2026).
 /**
  * Comprobación pública, de solo lectura, para el ecosistema AppValúo.
  * Máximo una consulta GET por destino (más redirecciones del portal raíz).
