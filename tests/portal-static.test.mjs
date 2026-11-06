@@ -33,10 +33,11 @@ test("El portal incluye nueve herramientas únicas con direcciones profesionales
   for (const card of cards) {
     const url = new URL(card.href);
     assert.equal(url.protocol, "https:");
-    assert.ok(url.hostname.endsWith(".xn--appvalo-c2a.com"), card.href);
+    const isOpinionFallback = card.className === "branch-opinion" && card.href === "https://appvaluo-opinion-valor-rapida-22s4mm53v.vercel.app/";
+    assert.ok(url.hostname.endsWith(".xn--appvalo-c2a.com") || isOpinionFallback, card.href);
     assert.ok(card.label.startsWith("Abrir AppValúo"), card.label);
     assert.ok(card.categories.trim().length > 0);
-    assert.ok(!card.href.includes(".vercel.app"));
+    assert.ok(!card.href.includes(".vercel.app") || isOpinionFallback);
   }
   assert.ok(cards.some((card) => card.className === "branch-captura" && card.href === "https://captura.appvalúo.com/"));
 });
@@ -107,7 +108,7 @@ test("El buscador y los filtros operan sin consultar servidores", () => {
 
 test("Los nueve accesos mantienen la ruta, imagen y nombre accesible correctos", () => {
   const expected = new Map([
-    ["branch-opinion", "https://opinion.appvalúo.com/"],
+    ["branch-opinion", "https://appvaluo-opinion-valor-rapida-22s4mm53v.vercel.app/"],
     ["branch-captura", "https://captura.appvalúo.com/"],
     ["branch-properties", "https://propiedades.appvalúo.com/"],
     ["branch-visual", "https://visual.appvalúo.com/login"],
@@ -139,6 +140,16 @@ test("La portada identifica a AppValúo como portal único y genera vistas previ
   assert.ok(html.includes('<meta property="og:image" content="https://xn--appvalo-c2a.com/img/appvaluo-logo.jpg" />'));
   assert.ok(html.includes('<meta name="twitter:card" content="summary_large_image" />'));
   assert.ok(html.includes('class="btn-primary" href="#ramas-appvaluo"'));
-  assert.ok(html.includes('class="btn-secondary" href="https://opinion.appvalúo.com/"'));
+  assert.ok(html.includes('class="btn-secondary" href="https://appvaluo-opinion-valor-rapida-22s4mm53v.vercel.app/"'));
   assert.ok(!html.includes('<meta property="og:url" content="https://appvaluo-propiedades.vercel.app"'));
+});
+
+test("Solo Opinión de Valor utiliza el acceso temporal mientras el dominio oficial está bloqueado", () => {
+  const fallback = "https://appvaluo-opinion-valor-rapida-22s4mm53v.vercel.app/";
+  assert.equal(cards.filter((card) => card.href === fallback).length, 1);
+  assert.equal(cards.filter((card) => card.href.includes(".vercel.app")).length, 1);
+  assert.ok(html.includes('class="nav-cta" href="' + fallback + '"'));
+  assert.ok(html.includes('class="btn-secondary" href="' + fallback + '"'));
+  assert.ok(html.includes('Acceso temporal disponible'));
+  assert.ok(!html.includes('href="https://opinion.appvalúo.com/"'));
 });
