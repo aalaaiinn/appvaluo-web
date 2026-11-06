@@ -1,11 +1,10 @@
-name: Diagnóstico público de AppValúo (solo lectura)
+name: Diagnóstico de Opinión de Valor (solo lectura)
 
 on:
   pull_request:
     branches: [main]
     paths:
-      - 'tests/portal-live-readonly.test.mjs'
-      - 'tests/portal-fallback-candidates.test.mjs'
+      - 'tests/opinion-valor-smoke.test.mjs'
       - '.github/workflows/portal-live-check.yml'
   workflow_dispatch:
 
@@ -13,20 +12,20 @@ permissions:
   contents: read
 
 concurrency:
-  group: portal-live-check-${{ github.event.pull_request.number || github.ref }}
+  group: opinion-smoke-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
 jobs:
-  salud-publica:
-    name: Diagnosticar siete versiones alternativas
+  opinion-readonly:
+    name: Verificar acceso temporal de Opinión de Valor
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
-      - name: Descargar código del PR
+      - name: Obtener archivos del PR
         uses: actions/checkout@v4
-      - name: Preparar Node.js
+      - name: Instalar Node
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: GET sin autenticación a siete versiones históricas
-        run: node --test tests/portal-fallback-candidates.test.mjs
+      - name: Diagnosticar interfaz y API sin autenticar
+        run: node --test tests/opinion-valor-smoke.test.mjs
