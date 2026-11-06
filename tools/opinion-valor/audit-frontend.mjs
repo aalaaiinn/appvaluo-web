@@ -33,3 +33,14 @@ for(const term of ["tariffPanel.innerHTML","admin-item-actions","id=\"adminPanel
  if(at>=0)console.log("ADMIN_MARKUP",term,js.slice(Math.max(0,at-220),at+900).slice(0,1100));
 }
 }
+
+{
+ const js=await (await fetch(host+"/app.js")).text();
+ const p=js.indexOf("tariffPanel.innerHTML");
+ console.log("TARIFF_MARKUP_START"+js.slice(p,p+2600)+"TARIFF_MARKUP_END");
+ const css=await(await fetch(host+"/styles.css")).text();
+ const match=css.match(/\.admin-item[^}]{0,1200}\}/gi)||[];
+ console.log("ADMIN_CSS_START"+JSON.stringify(match.slice(0,15))+"ADMIN_CSS_END");
+ const login=css.match(/#admin[^}]{0,400}\}/gi)||[];
+ console.log("ADMIN_MODAL_CSS_START"+JSON.stringify(login.slice(0,30))+"ADMIN_MODAL_CSS_END");
+}
