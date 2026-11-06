@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'tests/portal-live-readonly.test.mjs'
+      - 'tests/portal-fallback-candidates.test.mjs'
       - '.github/workflows/portal-live-check.yml'
   workflow_dispatch:
 
@@ -17,7 +18,7 @@ concurrency:
 
 jobs:
   salud-publica:
-    name: Comprobar 10 destinos oficiales
+    name: Diagnosticar siete versiones alternativas
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:
@@ -27,5 +28,5 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: GET sin autenticación sobre los 10 destinos
-        run: node --test tests/portal-live-readonly.test.mjs
+      - name: GET sin autenticación a siete versiones históricas
+        run: node --test tests/portal-fallback-candidates.test.mjs
