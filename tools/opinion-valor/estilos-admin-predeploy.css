@@ -1,0 +1,47 @@
+/* AppValúo · Opinión de Valor · panel de administración (predeploy).
+ * Integrar al final de styles.css DEL PROYECTO appvaluo-opinion-valor-rapida.
+ * Reglas basadas en los selectores exactos de su frontend: #adminTariffs,
+ * .tariff-item, .admin-item-actions, .tariff-control, .tariff-check.
+ * No altera autenticación, tarifas, valores ni peticiones de red.
+ */
+#adminTariffs{display:grid;gap:10px;min-width:0;max-width:100%;width:100%}
+#adminTariffs .tariff-item{
+ box-sizing:border-box;width:100%;max-width:100%;min-width:0;
+ display:grid;grid-template-columns:minmax(140px,.9fr) minmax(0,2.3fr);
+ gap:10px 16px;align-items:start;padding:12px;
+}
+#adminTariffs .tariff-item>div:first-child{min-width:0;overflow-wrap:anywhere}
+#adminTariffs .tariff-item .admin-item-actions{
+ display:flex;justify-content:flex-start;align-items:center;
+ align-content:flex-start;flex:1 1 100%;flex-wrap:wrap;
+ gap:7px;min-width:0;max-width:100%
+}
+#adminTariffs .tariff-control{
+ display:inline-flex;align-items:center;gap:7px;
+ flex:0 1 192px;min-width:128px;margin:0;
+ font-size:.82rem;white-space:normal
+}
+#adminTariffs .tariff-control input{
+ width:100%;min-width:0;max-width:112px;
+ box-sizing:border-box;border-radius:8px;min-height:36px
+}
+#adminTariffs .tariff-check{
+ display:inline-flex;align-items:center;gap:5px;
+ margin:0;font-size:.82rem;white-space:nowrap
+}
+#adminTariffs .tariff-item button{
+ flex:0 0 auto;min-height:36px;padding:7px 10px;
+ white-space:normal;overflow-wrap:normal;line-height:1.2
+}
+#adminTariffs .tariff-item :is(input,button):focus-visible{
+ outline:2px solid #0d6f67;outline-offset:2px
+}
+@media(max-width:720px){
+ #adminTariffs .tariff-item{grid-template-columns:minmax(0,1fr)}
+ #adminTariffs .tariff-control{flex-basis:170px}
+}
+@media(max-width:420px){
+ #adminTariffs .tariff-item{padding:10px}
+ #adminTariffs .tariff-item .admin-item-actions{gap:6px}
+ #adminTariffs .tariff-item button{min-height:38px}
+}
