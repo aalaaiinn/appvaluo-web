@@ -26,3 +26,17 @@ for(const path of ["/styles.css","/app.js","/manifest.webmanifest","/api/health"
   await response.body?.cancel();
  });
 }
+
+test("Portal publicado: los tres accesos llevan a Opinión disponible",async()=>{
+ const response=await fetch("https://xn--appvalo-c2a.com/?comprobacion=opinion-temporal-20261105",{
+   signal:AbortSignal.timeout(12000),
+   headers:{"Cache-Control":"no-cache","User-Agent":"AppValuo-ReadOnly-HealthCheck/1.0"}
+ });
+ assert.equal(response.status,200);
+ const html=await response.text();
+ const target="https://appvaluo-opinion-valor-rapida-22s4mm53v.vercel.app/";
+ const hits=html.split('href="'+target+'"').length-1;
+ console.log("Portal público",response.status,"enlaces alternativos de Opinión",hits);
+ assert.equal(hits,3,"El portal público aún no enlaza a Opinión temporal en menú, portada y tarjeta");
+ assert.ok(html.includes("Acceso temporal disponible"));
+});
