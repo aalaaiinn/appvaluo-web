@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'tests/opinion-valor-smoke.test.mjs'
+      - 'tests/opinion-valor-browser.test.mjs'
       - '.github/workflows/portal-live-check.yml'
   workflow_dispatch:
 
@@ -29,3 +30,29 @@ jobs:
           node-version: '22'
       - name: Diagnosticar interfaz y API sin autenticar
         run: node --test tests/opinion-valor-smoke.test.mjs
+  
+  opinion-browser:
+    name: Revisar pantalla de Opinión en PC y móvil
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - name: Obtener archivos del PR
+        uses: actions/checkout@v4
+      - name: Preparar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Preparar navegador
+        run: |
+          npm install --no-save --no-package-lock --no-audit --no-fund playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Verificar interfaz pública sin ingreso
+        run: node --test tests/opinion-valor-browser.test.mjs
+      - name: Guardar capturas
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: opinion-valor-escritorio-movil
+          path: artifacts/opinion-*.png
+          if-no-files-found: ignore
+          retention-days: 7
