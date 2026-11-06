@@ -44,3 +44,14 @@ for(const term of ["tariffPanel.innerHTML","admin-item-actions","id=\"adminPanel
  const login=css.match(/#admin[^}]{0,400}\}/gi)||[];
  console.log("ADMIN_MODAL_CSS_START"+JSON.stringify(login.slice(0,30))+"ADMIN_MODAL_CSS_END");
 }
+
+for(const url of [
+ "https://appvaluo-opinion-valor-rapida.vercel.app/verificar.html",
+ "https://appvaluo-opinion-valor-rapida-22s4mm53v.vercel.app/verificar.html"
+]){
+ try{
+  const r=await fetch(url,{redirect:"manual",signal:AbortSignal.timeout(10000)});
+  console.log("QR_VERIFICACION_PUBLICA",new URL(url).hostname,r.status,r.headers.get("x-vercel-error")||"-");
+  await r.body?.cancel();
+ }catch(err){console.log("QR_VERIFICACION_PUBLICA",new URL(url).hostname,"NETWORK_ERROR",String(err).slice(0,160))}
+}
