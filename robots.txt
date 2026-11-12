@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://xn--appvalo-c2a.com/sitemap.xml
