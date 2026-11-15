@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-MX">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AppValúo | Soluciones digitales e inmobiliarias</title>
+  <title>AppValúo | Valuación, propiedades y soluciones digitales inmobiliarias</title>
   <meta name="description" content="AppValúo desarrolla soluciones digitales e inmobiliarias: modernización de imagen corporativa, presencia digital, comercialización, valuación y herramientas para el sector." />
   <link rel="canonical" href="https://xn--appvalo-c2a.com/" />
   <meta property="og:type" content="website" />
@@ -16,15 +16,18 @@
   <meta property="og:image" content="https://xn--appvalo-c2a.com/img/appvaluo-logo.jpg" />
   <meta property="og:image:alt" content="Logotipo de AppValúo" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="theme-color" content="#06111f" />
+  <meta name="theme-color" content="#06111e" />
   <link rel="icon" href="favicon.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="estilos.css?v=20261104-portal-fase2" />
+  <link rel="stylesheet" href="portal-2026.css?v=20261115" />
+  <link rel="preload" href="img/arquitectura-portada.webp" as="image" type="image/webp" fetchpriority="high" />
 </head>
 
 <body>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"AppValúo","url":"https://xn--appvalo-c2a.com/","logo":"https://xn--appvalo-c2a.com/img/appvaluo-logo.jpg","description":"Soluciones digitales e inmobiliarias para valuación, propiedades, mapas y trámites.","contactPoint":{"@type":"ContactPoint","telephone":"+52-311-339-6544","contactType":"customer service","availableLanguage":"Spanish"}}</script>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
   <header class="main-header" id="top">
@@ -39,12 +42,12 @@
 
       <nav class="main-nav" id="mainNav" aria-label="Menú principal">
         <a href="#ramas-appvaluo">Aplicaciones</a>
-        <a href="#divisiones">Servicios</a>
-        <a href="paquetes-inmobiliarias.html">Paquetes para inmobiliarias</a>
-        <a href="#muestras">Ejemplos</a>
-        <a href="#precios">Precios</a>
+        <a href="#divisiones">Soluciones</a>
+        <a href="#soluciones-para-inmobiliarias">Para inmobiliarias</a>
+        <a href="#muestras">Demostraciones</a>
+        <a href="#precios">Cotizaciones</a>
         <a href="#contacto">Contacto</a>
-        <a class="nav-cta" href="https://appvaluo-opinion-valor-rapida-22s4mm53v.vercel.app/">Valuar mi propiedad ↗</a>
+        <a class="nav-cta" href="https://opinion.appvalúo.com/" target="_blank" rel="noopener">Valuar mi propiedad ↗</a>
       </nav>
     </div>
   </header>
@@ -53,27 +56,41 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow"><span class="eyebrow-dot"></span> soluciones digitales e inmobiliarias</p>
-          <h1 id="hero-title">Más que valuación.<strong>Tecnología y soluciones para tu inmobiliaria.</strong></h1>
-          <p class="hero-lead">Impulsa tu inmobiliaria con modernización de imagen, presencia digital y posicionamiento comercial. Además, utiliza las herramientas de AppValúo para valuación, propiedades, mapas, captura y trámites. Cada aplicación conserva su funcionamiento independiente.</p>
+          <p class="eyebrow"><span class="eyebrow-dot"></span> APPVALÚO · SOLUCIONES DIGITALES E INMOBILIARIAS</p>
+          <h1 id="hero-title">Más que valuación.<strong>Tecnología que transforma el sector inmobiliario.</strong></h1>
+          <p class="hero-lead">Valúa, administra, comercializa y analiza inmuebles con herramientas digitales especializadas. También impulsamos la imagen y presencia digital de tu negocio.</p>
           <div class="hero-actions">
-            <a class="btn-primary" href="#ramas-appvaluo">Explorar aplicaciones <span aria-hidden="true">↓</span></a>
-            <a class="btn-secondary" href="soluciones-inmobiliarias.html">Servicios para inmobiliarias ↗</a>
+            <a class="btn-primary" href="#ramas-appvaluo">Explorar aplicaciones <span aria-hidden="true">↗</span></a>
+            <a class="btn-secondary" href="soluciones-inmobiliarias.html">Soluciones para inmobiliarias ↗</a>
+            <a class="btn-secondary" href="#contacto">Solicitar información ↓</a>
           </div>
-          <div class="hero-notes" aria-label="Beneficios principales">
-            <span><b>01</b> valuación y captura</span>
-            <span><b>02</b> mapas y propiedades</span>
-            <span><b>03</b> imagen y estrategia digital</span>
+          <div class="hero-notes" aria-label="Áreas de especialización">
+            <span><b>01</b> Valuación profesional</span>
+            <span><b>02</b> Mercado y cartografía</span>
+            <span><b>03</b> Tecnología empresarial</span>
           </div>
         </div>
-
         <div class="hero-media">
           <div class="hero-glow" aria-hidden="true"></div>
-          <img src="img/appvaluo-logo.jpg" alt="AppValúo: innovación digital para valorar inmuebles" class="hero-image" />
-          <div class="hero-badge"><span class="badge-pulse"></span><strong>tecnología aplicada a tu negocio</strong><small>Identidad, orden y resultados medibles.</small></div>
+          <div class="hero-visual">
+            <img src="img/arquitectura-portada.webp" alt="Vivienda contemporánea utilizada como imagen representativa de soluciones inmobiliarias" class="hero-image" fetchpriority="high" width="1200" height="800" />
+            <div class="hero-top-label"><i aria-hidden="true"></i> Tecnología aplicada al inmueble</div>
+            <div class="hero-map-preview" aria-label="Vista de referencia del Mapa Dinámico">
+              <img src="img/mapa-dinamico-appvaluo.png" alt="Vista real de la interfaz del Mapa Dinámico AppValúo" width="640" height="400" />
+              <span>Mapa Dinámico · Análisis territorial</span>
+            </div>
+            <div class="hero-badge"><span class="badge-pulse" aria-hidden="true"></span><strong>Herramientas conectadas por una visión</strong><small>Cada aplicación funciona de forma independiente.</small></div>
+          </div>
         </div>
       </div>
     </section>
+    <aside class="quick-strip" aria-label="Ventajas del ecosistema AppValúo">
+      <div class="container">
+        <div class="quick-item"><span class="quick-icon" aria-hidden="true">◇</span><span><strong>6 aplicaciones principales</strong><small>Valuación, propiedades, mapas y gestión.</small></span></div>
+        <div class="quick-item"><span class="quick-icon" aria-hidden="true">⌁</span><span><strong>Herramientas especializadas</strong><small>Diseño visual, croquis y apoyo catastral.</small></span></div>
+        <div class="quick-item"><span class="quick-icon" aria-hidden="true">✧</span><span><strong>Soluciones para empresas</strong><small>Identidad, promoción y digitalización.</small></span></div>
+      </div>
+    </aside>
 
     <section id="divisiones" class="section" aria-labelledby="divisiones-title">
       <div class="container">
@@ -114,7 +131,7 @@
           <p id="portal-counter" class="portal-counter" role="status" aria-live="polite">9 herramientas disponibles</p>
         </div>
         <div class="branches-grid" id="portal-grid">
-          <a class="branch-card branch-opinion" data-categories="valuacion" href="https://appvaluo-opinion-valor-rapida-22s4mm53v.vercel.app/" aria-label="Abrir AppValúo Opinión de Valor Rápida mediante acceso temporal">
+          <a class="branch-card branch-opinion" data-categories="valuacion" href="https://opinion.appvalúo.com/" aria-label="Abrir AppValúo Opinión de Valor Rápida mediante acceso temporal">
             <span class="branch-image"><img src="img/opinion-3d.webp" alt="Logo AppValúo Opinión de Valor Rápida en dorado y plata" width="960" height="960" loading="lazy" /></span>
             <span class="branch-content"><span class="branch-label">Acceso temporal disponible · Estimación inmobiliaria</span><strong>Opinión de Valor Rápida</strong><span>Analiza inmuebles, revisa comparables y genera opiniones de valor en PDF.</span><span class="branch-action">Abrir Opinión de Valor (acceso temporal) <span aria-hidden="true">↗</span></span></span>
           </a>
