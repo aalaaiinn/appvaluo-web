@@ -247,3 +247,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .hero-image {height:250px}
   .hero-badge {left:10px;bottom:10px;max-width:78%;padding:10px 11px}
 }
+
+
+.portal-divider {grid-column:1 / -1;display:flex;align-items:center;flex-wrap:wrap;gap:8px 20px;border-top:1px solid rgba(166,210,232,.22);padding:35px 2px 12px;margin-top:10px;color:#eac781}
+.portal-divider span {font-size:.91rem;letter-spacing:.095em;font-weight:850}
+.portal-divider small {font-size:.88rem;color:#aac5d6}
+@media (max-width:650px) {.portal-divider {padding:23px 0 7px;gap:5px}.portal-divider span {font-size:.83rem}}
