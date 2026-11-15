@@ -197,3 +197,39 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   .hero-map-preview {transform:none}
   .branch-card,.feature-card,.btn-primary,.btn-secondary {transition:none}
 }
+
+
+/* Ajustes de compatibilidad con declaraciones heredadas en estilos.css */
+.brand-2026 {display:inline-flex;align-items:center;gap:12px;min-width:260px}
+.brand-2026 .logo-principal {width:49px;height:49px;flex:0 0 49px;border-radius:10px;object-fit:cover;object-position:center}
+.brand-wordmark {display:flex;flex-direction:column;justify-content:center;gap:1px;min-width:0;line-height:1.2}
+.brand-wordmark strong {color:#f2f8fc;font-family:"Space Grotesk","DM Sans",sans-serif;font-size:1.37rem;font-weight:800;letter-spacing:-.045em}
+.brand-wordmark small {color:#9fbccc;font-size:.63rem;letter-spacing:.005em;font-weight:700}
+.hero-grid {display:grid;width:100%}
+.hero-media {display:block;max-width:none}
+.hero-glow {display:block;pointer-events:none}
+.hero-badge {position:absolute;margin-top:0}
+.hero-copy {max-width:none}
+.branch-content > .branch-benefits {min-height:0;align-items:center}
+.branch-content > .branch-benefits span {min-height:0!important;line-height:1.2}
+@media (max-width:1120px) {
+ .brand-2026 {min-width:224px}
+ .brand-wordmark strong {font-size:1.25rem}
+ .brand-wordmark small {font-size:.58rem}
+}
+@media (max-width:900px) {
+ .hero-grid {display:grid}
+ .hero-media {display:block;width:min(100%,700px);max-width:700px}
+}
+@media (max-width:650px) {
+ .brand-2026 {min-width:0;gap:10px}
+ .brand-wordmark strong {font-size:1.19rem}
+ .brand-wordmark small {font-size:.56rem;max-width:188px}
+ .brand-2026 .logo-principal {height:41px;width:41px;flex-basis:41px}
+ .hero-media {display:block;max-width:none}
+ .hero-notes {display:flex}
+ .hero-badge {position:absolute;max-width:60%}
+}
+@media (max-width:360px) {
+ .brand-wordmark small {max-width:160px;font-size:.51rem}
+}
