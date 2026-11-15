@@ -33,11 +33,10 @@ test("El portal incluye nueve herramientas únicas con direcciones profesionales
   for (const card of cards) {
     const url = new URL(card.href);
     assert.equal(url.protocol, "https:");
-    const isOpinionFallback = card.className === "branch-opinion" && card.href === "https://appvaluo-opinion-valor-rapida-22s4mm53v.vercel.app/";
-    assert.ok(url.hostname.endsWith(".xn--appvalo-c2a.com") || isOpinionFallback, card.href);
+    assert.ok(url.hostname.endsWith(".xn--appvalo-c2a.com"), card.href);
     assert.ok(card.label.startsWith("Abrir AppValúo"), card.label);
     assert.ok(card.categories.trim().length > 0);
-    assert.ok(!card.href.includes(".vercel.app") || isOpinionFallback);
+    assert.ok(!card.href.includes(".vercel.app"));
   }
   assert.ok(cards.some((card) => card.className === "branch-captura" && card.href === "https://captura.appvalúo.com/"));
 });
@@ -108,7 +107,7 @@ test("El buscador y los filtros operan sin consultar servidores", () => {
 
 test("Los nueve accesos mantienen la ruta, imagen y nombre accesible correctos", () => {
   const expected = new Map([
-    ["branch-opinion", "https://appvaluo-opinion-valor-rapida-22s4mm53v.vercel.app/"],
+    ["branch-opinion", "https://opinion.appvalúo.com/"],
     ["branch-captura", "https://captura.appvalúo.com/"],
     ["branch-properties", "https://propiedades.appvalúo.com/"],
     ["branch-visual", "https://visual.appvalúo.com/login"],
@@ -127,29 +126,48 @@ test("Los nueve accesos mantienen la ruta, imagen y nombre accesible correctos",
     const markup = html.slice(cardStart, cardEnd);
     const imageSrc = markup.match(/<img\b[^>]*\bsrc="([^"]+)"/)?.[1];
     const imageAlt = markup.match(/<img\b[^>]*\balt="([^"]+)"/)?.[1];
-    assert.ok(imageSrc && !imageSrc.startsWith("http"), `Imagen local ausente: ${card.className}`);
-    assert.ok(existsSync(new URL("../" + imageSrc, import.meta.url)), `Archivo inexistente: ${imageSrc}`);
+    assert.ok(imageSrc, "Imagen ausente: " + card.className);
+    if (card.className === "branch-captura") {
+      assert.equal(imageSrc, "https://captura.appvalúo.com/brand-2026/icon-512.png");
+      assert.ok(markup.includes("img/appvaluo-logo.jpg"), "Debe existir respaldo local del logotipo");
+    } else {
+      assert.ok(!imageSrc.startsWith("http"), "Imagen local requerida: " + card.className);
+      assert.ok(existsSync(new URL("../" + imageSrc, import.meta.url)), "Archivo inexistente: " + imageSrc);
+    }
     assert.ok(imageAlt?.trim(), `Texto alternativo ausente: ${card.className}`);
   }
 });
 
 test("La portada identifica a AppValúo como portal único y genera vistas previas oficiales", () => {
-  assert.match(html, /<title>AppValúo \| Plataforma de valuación, propiedades y trámites<\/title>/);
+  assert.match(html, /<title>AppValúo \| Valuación, propiedades y soluciones digitales inmobiliarias<\/title>/);
   assert.ok(html.includes('<link rel="canonical" href="https://xn--appvalo-c2a.com/" />'));
   assert.ok(html.includes('<meta property="og:url" content="https://xn--appvalo-c2a.com/" />'));
   assert.ok(html.includes('<meta property="og:image" content="https://xn--appvalo-c2a.com/img/appvaluo-logo.jpg" />'));
   assert.ok(html.includes('<meta name="twitter:card" content="summary_large_image" />'));
   assert.ok(html.includes('class="btn-primary" href="#ramas-appvaluo"'));
-  assert.ok(html.includes('class="btn-secondary" href="https://appvaluo-opinion-valor-rapida-22s4mm53v.vercel.app/"'));
+  assert.ok(html.includes('class="btn-secondary" href="soluciones-inmobiliarias.html"'));
   assert.ok(!html.includes('<meta property="og:url" content="https://appvaluo-propiedades.vercel.app"'));
 });
 
-test("Solo Opinión de Valor utiliza el acceso temporal mientras el dominio oficial está bloqueado", () => {
-  const fallback = "https://appvaluo-opinion-valor-rapida-22s4mm53v.vercel.app/";
-  assert.equal(cards.filter((card) => card.href === fallback).length, 1);
-  assert.equal(cards.filter((card) => card.href.includes(".vercel.app")).length, 1);
-  assert.ok(html.includes('class="nav-cta" href="' + fallback + '"'));
-  assert.ok(html.includes('class="btn-secondary" href="' + fallback + '"'));
-  assert.ok(html.includes('Acceso temporal disponible'));
-  assert.ok(!html.includes('href="https://opinion.appvalúo.com/"'));
+test("Opinión de Valor utiliza el dominio oficial y no rutas temporales", () => {
+  const url = "https://opinion.appvalúo.com/";
+  assert.equal(cards.filter(card => card.href === url).length, 1);
+  assert.equal(cards.filter(card => card.href.includes(".vercel.app")).length, 0);
+  assert.ok(html.includes('class="nav-cta" href="' + url + '"'));
+  assert.ok(!html.includes("Acceso temporal disponible"));
+});
+
+test("Renovación 2026 incorpora seis aplicaciones principales y herramientas complementarias", () => {
+  const order = ["branch-captura", "branch-opinion", "branch-properties", "branch-map", "branch-tramites", "branch-escrituracion"];
+  assert.deepEqual(cards.slice(0,6).map(x => x.className), order);
+  assert.deepEqual(cards.slice(6).map(x => x.className), ["branch-visual", "branch-croquis", "branch-catastral"]);
+  for (const id of ["metodologia", "contactLeadForm", "muestras", "mapa-dinamico-appvalúo"]) {
+    assert.ok(html.includes('id="' + id + '"'), "Falta sección "+id);
+  }
+  assert.ok(html.includes('portal-2026.css?v=20261115'));
+  assert.ok(html.includes('img/arquitectura-portada.webp'));
+  assert.ok(html.includes('class="hero-map-preview"'));
+  assert.equal((html.match(/class="branch-benefits"/g) || []).length, 9);
+  assert.ok(html.includes('https://wa.me/523113396544'));
+  assert.ok(!html.includes('https://appvaluo-opinion-valor-rapida-22s4mm53v.vercel.app/'));
 });

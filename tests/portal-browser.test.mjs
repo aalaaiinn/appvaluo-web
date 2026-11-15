@@ -73,6 +73,8 @@ async function openPortal(viewport, isMobile = false) {
 
 async function checkCommon(page, jsErrors) {
   assert.equal(await page.locator("#portal-grid a.branch-card").count(), 9);
+  assert.equal(await page.locator("#contactLeadForm").count(), 1);
+  assert.equal(await page.locator(".hero-visual .hero-image").count(), 1);
   assert.equal(await page.locator("#portal-grid .branch-wrap").count(), 9);
   assert.equal(await page.locator("#portal-grid .branch-share").count(), 9);
   assert.equal(await page.locator("#portal-counter").innerText(), "9 herramientas disponibles");
@@ -96,6 +98,8 @@ test("Chromium escritorio: tarjetas, filtros, búsqueda y captura de pantalla", 
   const { context, page, jsErrors } = await openPortal({ width: 1440, height: 900 });
   try {
     await checkCommon(page, jsErrors);
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await page.screenshot({ path: resolve(screenshots, "portal-inicio-escritorio.png") });
     await page.locator("#ramas-appvaluo").screenshot({ path: resolve(screenshots, "portal-escritorio.png") });
     await page.locator('.portal-filter[data-filter="valuacion"]').click();
     assert.equal(await page.locator("#portal-grid .branch-wrap:visible").count(), 5);
@@ -124,6 +128,8 @@ test("Chromium móvil: menú, búsqueda, tarjetas y sin desplazamiento lateral",
     assert.equal(await menu.getAttribute("aria-expanded"), "true");
     await page.locator('#mainNav a[href="#ramas-appvaluo"]').click();
     assert.equal(await menu.getAttribute("aria-expanded"), "false");
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await page.screenshot({ path: resolve(screenshots, "portal-inicio-movil.png") });
     await page.locator("#ramas-appvaluo").screenshot({ path: resolve(screenshots, "portal-movil.png") });
     await page.locator("#portal-search-input").fill("opinión");
     assert.equal(await page.locator("#portal-grid .branch-wrap:visible").count(), 1);
