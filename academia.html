@@ -14,6 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link href="academia.css?v=20261122" rel="stylesheet" />
+  <link href="academia-premium.css?v=20261122a" rel="stylesheet" />
 </head>
 <body>
   <a class="skip-link" href="#biblioteca">Saltar a las publicaciones</a>
@@ -21,68 +22,54 @@
   <header class="header" id="inicio">
     <div class="shell header-inner">
       <a class="brand" href="index.html" aria-label="Volver a la página principal de AppValúo">
-        <img src="img/academia-appvaluo-logo.jpg" alt="" width="52" height="52" />
-        <span><strong>APPVALÚO</strong><small>ACADEMIA / BIBLIOTECA DIGITAL</small></span>
+        <img src="img/academia-appvaluo-logo.jpg" alt="AppValúo" width="166" height="66" decoding="async" />
+        <span class="brand-descriptor"><strong>ACADEMIA</strong><small>BIBLIOTECA DIGITAL</small></span>
       </a>
       <nav class="header-links" aria-label="Menú de Academia">
         <a href="#biblioteca">Publicaciones</a>
         <a href="#criterios">Alcance profesional</a>
-        <a class="nav-return" href="index.html">Volver al portal <span aria-hidden="true">↗</span></a>
+        <a class="nav-return" href="index.html" aria-label="Volver al portal principal"><span class="nav-label">Volver al portal</span> <span class="nav-icon" aria-hidden="true">↗</span></a>
       </nav>
     </div>
   </header>
 
   <main>
     <section class="hero" aria-labelledby="heroTitle">
-      <div class="grid-overlay" aria-hidden="true"></div>
-      <div class="hero-orbit orbit-one" aria-hidden="true"></div>
-      <div class="hero-orbit orbit-two" aria-hidden="true"></div>
+      
       <div class="shell hero-inner">
         <div class="hero-copy">
           <p class="kicker"><span class="pulse" aria-hidden="true"></span> PLATAFORMA EDITORIAL · 2026</p>
-          <h1 id="heroTitle">El conocimiento que <em>respalda el valor.</em></h1>
+          <h1 id="heroTitle">El conocimiento <em>que respalda el valor.</em></h1>
           <p class="hero-lede">Consulta las publicaciones técnicas de AppValúo en una biblioteca diseñada para profesionales inmobiliarios, estudiantes y especialistas en valuación.</p>
           <div class="hero-actions">
             <a class="button primary" href="#biblioteca">Explorar biblioteca <span aria-hidden="true">↗</span></a>
             <a class="button secondary" href="#criterios">Ver criterios de consulta ↓</a>
           </div>
           <div class="hero-stats" aria-label="Contenido de la biblioteca">
-            <span><b>02</b><small>Publicaciones</small></span>
-            <span><b>214</b><small>Páginas de consulta</small></span>
+            <span><b>02</b><small>Obras principales</small></span>
+            <span><b>214</b><small>Páginas en biblioteca</small></span>
             <span><b>MX · LATAM</b><small>Alcance editorial</small></span>
           </div>
         </div>
-        <div class="hero-art" aria-label="Representación de biblioteca de valuación inmobiliaria">
-          <div class="art-halo" aria-hidden="true"></div>
-          <div class="art-panel">
-            <span class="art-overline">APPVALUO / KNOWLEDGE SYSTEM</span>
-            <svg viewBox="0 0 400 290" role="img" aria-label="Esquema arquitectónico estilizado de edificio, suelo y líneas de medición">
-              <defs>
-                <linearGradient id="goldLine" x1="0" x2="1"><stop stop-color="#ffe6a2"/><stop offset="1" stop-color="#c18a3d"/></linearGradient>
-                <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#52d8ff" stop-opacity=".23"/><stop offset="1" stop-color="#39aaff" stop-opacity=".03"/></linearGradient>
-              </defs>
-              <g fill="none" stroke="#4ba4db" stroke-opacity=".34" stroke-width="1.5">
-                <path d="M20 236 179 154 378 230 224 275Z"/><path d="M53 250 210 171M92 259l159-71M139 271l163-69M25 228l188 71M78 200l186 79M132 171l189 85"/>
-              </g>
-              <g stroke="url(#goldLine)" stroke-width="2.2" stroke-linejoin="round">
-                <path d="m111 201 0-91 92-52 111 53v101l-111 56-92-67Z" fill="url(#glass)"/>
-                <path d="m203 58 0 210M111 110l92 50 111-49M203 160l-92 41M203 160l111 52" fill="none"/>
-                <path d="m139 126 27 15v34l-27-15ZM174 145l21 12v34l-21-12ZM221 170l29-16v45l-29 16ZM260 148l30-17v46l-30 17" fill="#071c2c" stroke="#69d9f5"/>
-              </g>
-              <g fill="#f3cf80"><circle cx="111" cy="110" r="4"/><circle cx="203" cy="58" r="4"/><circle cx="314" cy="111" r="4"/><circle cx="203" cy="268" r="4"/></g>
-              <path d="M108 90V42h206M323 117h48v94" fill="none" stroke="#69d9f5" stroke-width="1" stroke-dasharray="5 5" opacity=".75"/>
-            </svg>
-            <div class="art-bottom"><span><i aria-hidden="true"></i> BIBLIOTECA TÉCNICA</span><strong>EDICIÓN 2026</strong></div>
+        <figure class="hero-art hero-photo">
+          <div class="photo-frame">
+            <img class="hero-property" src="img/arquitectura-portada.webp"
+                 alt="Visualización arquitectónica fotorrealista de residencia contemporánea al anochecer, con iluminación cálida y entorno construido."
+                 width="1280" height="720" fetchpriority="high" decoding="async" />
+            <figcaption class="photo-caption">
+              <span class="photo-tag">CONOCIMIENTO APLICADO</span>
+              <strong>Del análisis a una conclusión sustentada.</strong>
+              <small>Métodos, normativa y criterio profesional.</small>
+            </figcaption>
           </div>
-          <span class="floating-chip chip-a">METODOLOGÍA · 01</span>
-          <span class="floating-chip chip-b">ANÁLISIS · 02</span>
-        </div>
+          <div class="photo-accent" aria-hidden="true"><span class="accent-line"></span><span>ACADEMIA APPVALÚO · 2026</span></div>
+        </figure>
       </div>
     </section>
 
     <section class="library section" id="biblioteca" aria-labelledby="libraryTitle">
       <div class="shell">
-        <div class="heading-line"><div><p class="eyebrow">COLECCIÓN EDITORIAL</p><h2 id="libraryTitle">Biblioteca <span>profesional.</span></h2><p>Dos documentos independientes, con objetivos y alcances diferentes. Selecciona la publicación que necesitas.</p></div><span class="collection-count">01 / 02 PUBLICACIONES</span></div>
+        <div class="heading-line"><div><p class="eyebrow">COLECCIÓN EDITORIAL</p><h2 id="libraryTitle">Biblioteca <span>profesional.</span></h2><p>Dos documentos independientes, con objetivos y alcances diferentes. Selecciona la publicación que necesitas.</p></div><span class="collection-count">02 OBRAS TÉCNICAS</span></div>
         <div class="library-tools" role="search" aria-label="Buscar publicaciones">
           <label class="search" for="librarySearch"><svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><circle cx="10.8" cy="10.8" r="7"/><path d="m16 16 5 5"/></svg><input id="librarySearch" type="search" placeholder="Buscar: Nayarit, México, Latinoamérica, métodos…" autocomplete="off" /></label>
           <div class="filters" role="group" aria-label="Filtrar publicaciones">
@@ -132,7 +119,7 @@
           </div>
         </section>
         <p id="noResults" class="empty" hidden>No hay publicaciones que coincidan con tu búsqueda. Prueba con otro término.</p>
-        <div class="disclaimer"><span class="disclaimer-icon" aria-hidden="true">i</span><p><strong>Importante:</strong> ambas publicaciones son materiales de consulta y formación. No sustituyen las normas vigentes, la investigación de mercado, la revisión jurídica ni el criterio de un profesionista acreditado. Las ilustraciones generadas con IA son conceptuales.</p></div>
+        <div class="disclaimer"><span class="disclaimer-icon" aria-hidden="true">i</span><p><strong>Importante:</strong> ambas publicaciones son materiales de consulta y formación. No sustituyen las normas vigentes, la investigación de mercado, la revisión jurídica ni el criterio de un profesionista acreditado. Las imágenes arquitectónicas son ilustrativas y no representan inmuebles sujetos a valuación.</p></div>
       </div>
     </section>
 

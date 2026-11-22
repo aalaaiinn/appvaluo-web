@@ -145,3 +145,45 @@ test('Suplementos imprimibles A4: generar tres PDF de capacitación',async()=>{
   }finally{await context.close();}
  }
 });
+
+test('Rediseño premium: logotipo completo, visual arquitectónica fotorrealista y móvil sin recortes',async()=>{
+  for(const width of [320,360,390,768,1024,1440]){
+    const {context,page,errors}=await visit('academia.html',{width,height:900});
+    try{
+      const brand=page.locator('.header .brand img');
+      const photo=page.locator('.hero-property');
+      assert.ok(await brand.isVisible(),'Logo no visible a '+width);
+      assert.ok(await photo.isVisible(),'Imagen arquitectónica no visible a '+width);
+      const logoInfo=await brand.evaluate(el=>{
+        const cs=getComputedStyle(el),b=el.getBoundingClientRect();
+        return {fit:cs.objectFit,w:b.width,h:b.height,natW:el.naturalWidth,natH:el.naturalHeight};
+      });
+      assert.equal(logoInfo.fit,'contain','Logotipo se recorta por object-fit');
+      assert.ok(logoInfo.natW>logoInfo.natH*2,'Asset de logo horizontal esperado');
+      assert.ok(logoInfo.w>logoInfo.h*1.7,'Logo no debe colapsar en cuadrado');
+      const photoInfo=await photo.evaluate(el=>{
+        const b=el.getBoundingClientRect(),p=el.parentElement.getBoundingClientRect();
+        return {w:b.width,h:b.height,pw:p.width,ph:p.height,fit:getComputedStyle(el).objectFit,loaded:el.complete&&el.naturalWidth>0};
+      });
+      assert.equal(photoInfo.fit,'cover');
+      assert.ok(photoInfo.loaded,'La imagen real debe existir');
+      assert.ok(photoInfo.w>=photoInfo.pw-4 && photoInfo.h>=photoInfo.ph-4,'Imagen ajustada dentro del borde: '+JSON.stringify(photoInfo));
+      assert.equal(await page.locator('.hero-art svg').count(),0,'No debe quedar el dibujo vectorial');
+      const heroTitle=page.locator('#heroTitle');
+      assert.ok(await heroTitle.isVisible());
+      const crossing=await page.evaluate(()=>{
+        const img=document.querySelector('.hero-property')?.getBoundingClientRect();
+        const h=document.querySelector('#heroTitle')?.getBoundingClientRect();
+        const shell=document.querySelector('.hero-inner')?.getBoundingClientRect();
+        return {overlap:img&&h?!(h.right<img.left||img.right<h.left||h.bottom<img.top||img.bottom<h.top):true,
+          titleClipped:h&&shell?h.left<shell.left-2||h.right>shell.right+2:false};
+      });
+      assert.equal(crossing.overlap,false,'Titular superpuesto sobre la foto a '+width);
+      assert.equal(crossing.titleClipped,false,'Titular fuera del contenedor a '+width);
+      await safeViewport(page,errors);
+      if([390,1440].includes(width)){
+        await page.screenshot({path:resolve(shots,'academia-premium-'+width+'.png'),fullPage:true});
+      }
+    }finally{await context.close();}
+  }
+});
