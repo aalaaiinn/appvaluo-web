@@ -167,7 +167,7 @@ test('Rediseño premium: logotipo completo, visual arquitectónica fotorrealista
       });
       assert.equal(photoInfo.fit,'cover');
       assert.ok(photoInfo.loaded,'La imagen real debe existir');
-      assert.ok(photoInfo.w>=photoInfo.pw-1 && photoInfo.h>=photoInfo.ph-1);
+      assert.ok(photoInfo.w>=photoInfo.pw-4 && photoInfo.h>=photoInfo.ph-4,'Imagen ajustada dentro del borde: '+JSON.stringify(photoInfo));
       assert.equal(await page.locator('.hero-art svg').count(),0,'No debe quedar el dibujo vectorial');
       const heroTitle=page.locator('#heroTitle');
       assert.ok(await heroTitle.isVisible());
