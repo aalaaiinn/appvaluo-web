@@ -64,9 +64,9 @@ assert.equal(registry.registro_mexico.length,52,'52 fichas territoriales estruct
 assert.equal(registry.registro_mexico.filter(x=>x.municipio).length,20,'20 municipios');
 assert.equal(registry.registro_mexico.filter(x=>!x.municipio).length,32,'32 entidades');
 assert.equal(registry.registro_internacional.length,5,'5 fuentes transnacionales verificadas');
-const refs=[...registry.registro_mexico,...registry.registro_internacional];
-assert.equal(new Set(refs.map(x=>x.id)).size,refs.length,'IDs únicos');
-for(const source of refs){
+const sourceRecords=[...registry.registro_mexico,...registry.registro_internacional];
+assert.equal(new Set(sourceRecords.map(x=>x.id)).size,sourceRecords.length,'IDs únicos');
+for(const source of sourceRecords){
  assert.ok(source.id&&source.estatus&&source.fecha_revision&&source.emisor);
  assert.ok(source.fuente_primaria_url.startsWith('https://'),'enlace seguro: '+source.id);
 }
