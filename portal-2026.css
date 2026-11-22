@@ -253,3 +253,24 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .portal-divider span {font-size:.91rem;letter-spacing:.095em;font-weight:850}
 .portal-divider small {font-size:.88rem;color:#aac5d6}
 @media (max-width:650px) {.portal-divider {padding:23px 0 7px;gap:5px}.portal-divider span {font-size:.83rem}}
+
+
+/* Academia AppValúo — colección editorial integrada en portal 2026 */
+.academia-home-section{background:radial-gradient(circle at 15% 5%,rgba(28,103,139,.14),transparent 40%),#071726;border-top:1px solid rgba(145,192,216,.14);border-bottom:1px solid rgba(145,192,216,.14)}
+.academia-home-top{display:flex;justify-content:space-between;align-items:end;gap:34px;margin-bottom:31px}
+.academia-home-top h2{font-family:"Space Grotesk","DM Sans",sans-serif;font-size:clamp(2.3rem,3.8vw,3.9rem);letter-spacing:-.055em;line-height:1.12;margin:13px 0 16px;max-width:800px}
+.academia-home-top h2 em{color:#f4ca77;font-style:normal}
+.academia-home-top p:not(.eyebrow){color:#b6cbdc;max-width:760px;margin-bottom:0;font-size:1rem}
+.academia-home-explore{display:inline-flex;align-items:center;gap:24px;text-decoration:none;padding:14px 20px;border-radius:11px;background:linear-gradient(130deg,#f5d99d,#d9ac66);color:#071827;font-size:.82rem;font-weight:850;white-space:nowrap}
+.academia-home-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:19px}
+.academia-home-card{border-radius:18px;padding:31px;min-width:0;background:linear-gradient(140deg,#102e46,#0b2034);border:1px solid rgba(128,190,215,.25);box-shadow:0 16px 36px rgba(0,0,0,.13)}
+.academia-home-label{display:flex;align-items:center;gap:8px;color:#edc982;font-size:.66rem;letter-spacing:.12em;font-weight:850}
+.academia-home-label i{display:inline-block;width:6px;height:6px;background:#63dceb;border-radius:50%;box-shadow:0 0 0 4px rgba(86,211,230,.1)}
+.academia-home-card h3{font:700 clamp(1.4rem,2vw,1.83rem)/1.15 "Space Grotesk","DM Sans",sans-serif;letter-spacing:-.032em;margin:22px 0 15px;color:#fff}
+.academia-home-card h3 small{display:block;font:650 .95rem/1.4 "DM Sans",sans-serif;color:#ebcb8d;margin-top:10px}
+.academia-home-card p{color:#b9cad6;font-size:.91rem;line-height:1.7;max-width:510px}
+.academia-home-card a{display:inline-flex;gap:22px;text-decoration:none;color:#f6d99f;font-weight:800;font-size:.86rem;margin-top:8px}
+.academia-home-card a:hover,.academia-home-card a:focus-visible{color:#fff}
+.academia-home-footnote{font-size:.76rem;color:#8eaabe;margin:20px 0 0}
+@media(max-width:850px){.academia-home-top{align-items:start;flex-direction:column}.academia-home-grid{grid-template-columns:1fr}}
+@media(max-width:650px){.academia-home-card{padding:23px}.academia-home-top h2{font-size:clamp(2.1rem,9vw,2.8rem)}.academia-home-explore{width:100%;justify-content:space-between}}
