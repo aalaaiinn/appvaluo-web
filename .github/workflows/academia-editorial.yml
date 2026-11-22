@@ -1,0 +1,28 @@
+name: Academia · Control editorial
+on:
+  pull_request:
+    paths:
+      - 'academia*.html'
+      - 'academia*.css'
+      - 'academia.js'
+      - 'sitemap.xml'
+      - 'biblioteca/**'
+      - 'tests/academia-editorial.mjs'
+      - '.github/workflows/academia-editorial.yml'
+  workflow_dispatch:
+
+jobs:
+  academica:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - name: Obtener repositorio
+        uses: actions/checkout@v4
+      - name: Configurar Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validar contenido editorial y enlaces
+        run: node tests/academia-editorial.mjs
