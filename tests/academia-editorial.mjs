@@ -11,6 +11,7 @@ const css=read('academia-contenido.css');
 const jur=read('academia-jurisdicciones.html');
 const met=read('academia-metodologia.html');
 const cssHome=read('academia.css');
+const registry=JSON.parse(read('normativa/registro-fuentes-2026.json'));
 
 
 for (const [file,html] of [['academia-nayarit.html',nay],['academia-internacional.html',lat]]) {
@@ -59,4 +60,14 @@ assert.match(met,/1,200,000/,'Residual ilustrativo');
 assert.equal(479550+120*12500*(1-0.15)+75000,1829550);
 assert.equal((16000*12*(1-0.05)-42400)/0.08,1750000);
 assert.equal(5000000-2400000-350000-300000-150000-600000,1200000);
+assert.equal(registry.registro_mexico.length,52,'52 fichas territoriales estructuradas');
+assert.equal(registry.registro_mexico.filter(x=>x.municipio).length,20,'20 municipios');
+assert.equal(registry.registro_mexico.filter(x=>!x.municipio).length,32,'32 entidades');
+assert.equal(registry.registro_internacional.length,5,'5 fuentes transnacionales verificadas');
+const refs=[...registry.registro_mexico,...registry.registro_internacional];
+assert.equal(new Set(refs.map(x=>x.id)).size,refs.length,'IDs únicos');
+for(const source of refs){
+ assert.ok(source.id&&source.estatus&&source.fecha_revision&&source.emisor);
+ assert.ok(source.fuente_primaria_url.startsWith('https://'),'enlace seguro: '+source.id);
+}
 console.log('Academia: comprobaciones estáticas de estructura, PDFs, vigencia y aritmética aprobadas.');
