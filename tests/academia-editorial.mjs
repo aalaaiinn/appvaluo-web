@@ -8,6 +8,10 @@ const lat=read('academia-internacional.html');
 const sitemap=read('sitemap.xml');
 const js=read('academia.js');
 const css=read('academia-contenido.css');
+const jur=read('academia-jurisdicciones.html');
+const met=read('academia-metodologia.html');
+const cssHome=read('academia.css');
+
 
 for (const [file,html] of [['academia-nayarit.html',nay],['academia-internacional.html',lat]]) {
   assert.match(html, /<html lang="es-MX">/, `${file}: lengua`);
@@ -38,4 +42,21 @@ const refs=[[3250,.98],[3400,.95],[3100,1.03],[3300,.97],[3150,1.02],[3500,.91]]
 assert.deepEqual(refs,[3185,3185,3193,3201,3213,3230]);
 assert.equal((refs[2]+refs[3])/2,3197);
 assert.equal(3197*150,479550);
+// Cobertura territorial de fuentes; no equivale a 52 leyes catastrales cotejadas.
+assert.equal((jur.match(/data-grupo="nayarit"/g)||[]).length,20,'20 municipios Nayarit');
+assert.equal((jur.match(/data-grupo="mexico"/g)||[]).length,32,'32 entidades federativas');
+assert.match(jur,/fuentes/);
+for(const name of ['Tepic','Xalisco','Compostela','Bahía de Banderas','La Yesca'])assert.ok(jur.includes(name));
+for(const name of ['Chile','Argentina','Perú','Colombia'])assert.ok(lat.includes(name),'Anexo internacional '+name);
+for(const page of ['academia-jurisdicciones.html','academia-metodologia.html']){
+ assert.ok(home.includes('href="'+page+'"'),'Academia enlaza '+page);
+ assert.ok(sitemap.includes(page),'Sitemap '+page);
+}
+assert.match(cssHome,/\.publication\[hidden\]/,'Los filtros realmente ocultan tarjetas');
+assert.match(met,/1,829,550/,'Cálculo enfoque costo');
+assert.match(met,/1,750,000/,'Cálculo de ingresos');
+assert.match(met,/1,200,000/,'Residual ilustrativo');
+assert.equal(479550+120*12500*(1-0.15)+75000,1829550);
+assert.equal((16000*12*(1-0.05)-42400)/0.08,1750000);
+assert.equal(5000000-2400000-350000-300000-150000-600000,1200000);
 console.log('Academia: comprobaciones estáticas de estructura, PDFs, vigencia y aritmética aprobadas.');
