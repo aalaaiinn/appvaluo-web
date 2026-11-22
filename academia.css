@@ -13,3 +13,6 @@
 .resource-card:hover{transform:translateY(-2px);border-color:#f5d999}
 @media(max-width:720px){.resource-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.resource-card{transition:none}}
+
+/* Evitar que display:flex de tarjetas invalide el atributo hidden del buscador. */
+.publication[hidden],.empty[hidden]{display:none!important}
