@@ -7,6 +7,7 @@ on:
       - 'academia*.js'
       - 'sitemap.xml'
       - 'biblioteca/**'
+      - 'normativa/**'
       - 'tests/academia-*.mjs'
       - '.github/workflows/academia-editorial.yml'
   workflow_dispatch:
