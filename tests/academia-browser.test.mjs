@@ -127,3 +127,21 @@ test('Recursos, directorio e impresiones: navegables y sin 404',async()=>{
   }finally{await context.close();}
  }
 });
+
+
+test('Suplementos imprimibles A4: generar tres PDF de capacitación',async()=>{
+ const books=[
+  ['academia-nayarit.html','academia-nayarit-suplemento.pdf'],
+  ['academia-internacional.html','academia-internacional-suplemento.pdf'],
+  ['academia-metodologia.html','academia-metodologia-suplemento.pdf']
+ ];
+ for(const [route,filename] of books){
+  const {context,page,errors}=await visit(route,{width:1024,height:1440});
+  try{
+   await safeViewport(page,errors);
+   const bytes=await page.pdf({path:resolve(shots,filename),format:'A4',printBackground:true,preferCSSPageSize:true});
+   assert.ok(bytes.length>15000,'PDF imprimible vacío: '+route);
+   assert.equal(bytes.subarray(0,5).toString(),'%PDF-','PDF inválido: '+route);
+  }finally{await context.close();}
+ }
+});
