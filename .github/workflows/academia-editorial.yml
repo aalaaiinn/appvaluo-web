@@ -48,6 +48,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: academia-capturas-320-1440
-          path: artifacts/academia-*.png
+          path: |\n            artifacts/academia-*.png\n            artifacts/academia-*.pdf
           if-no-files-found: ignore
           retention-days: 7
