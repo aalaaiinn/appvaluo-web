@@ -30,3 +30,5 @@
 
 /* Cabecera compacta para evitar scroll lateral en pantallas de 320 px. */
 @media(max-width:440px){header.site .shell{gap:8px}.brand{font-size:.78rem;letter-spacing:.03em}.back{font-size:.68rem;padding:6px 8px}}
+
+tr[data-buscar][hidden]{display:none!important}
