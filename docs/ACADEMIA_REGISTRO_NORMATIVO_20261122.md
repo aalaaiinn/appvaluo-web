@@ -54,3 +54,26 @@ Estatus permitidos:
 - No desplegar sin revisión visual y de contenido. No modificar servicios operativos.
 
 **Decisión de publicación:** sólo incorporar el paquete editorial mediante PR independiente y pruebas. Los dos libros PDF de referencia se conservan hasta disponer de edición revisada y sustentada.
+
+## Ampliación editorial del mismo 22-nov-2026
+
+### Recursos publicados en la rama del PR #10
+- `academia-metodologia.html`: comparación de mercado, costo, ingresos y residual, cada uno con ejercicio **completamente ficticio** y operaciones comprobadas; guarda PDF desde impresión A4 del navegador.
+- `academia-jurisdicciones.html`: inventario de 20 municipios de Nayarit con Leyes de Ingresos 2026 y 32 entidades mexicanas con ruta de consulta y etiquetas de verificación.
+- `normativa/registro-fuentes-2026.json`: registro editable con 52 jurisdicciones, cinco fichas normativas internacionales, fuente, emisor, fecha de corte y estado de cotejo.
+- `academia-internacional.html`: ampliación a Chile, Argentina y reformas de Perú.
+- `tests/academia-browser.test.mjs`: pruebas automáticas de navegación, filtros, lector, descarga y cuatro resoluciones; genera capturas y versiones PDF de los suplementos, conservadas como artefactos de CI.
+
+### Fuentes adicionales contrastadas
+- [Ley de Ingresos Bahía de Banderas 2026](https://congresonayarit.gob.mx/wp-content/uploads/QUE_HACEMOS/LEGISLACION_ESTATAL/leyes_ingresos_presupuesto/2026/ley_ingresos_bahia_de_banderas_2026.pdf) publicada en el Periódico Oficial de Nayarit el 29/12/2025; identificada como ley de ingresos, **no** como tabla de valores unitarios.
+- [SII Chile, 06/02/2026](https://www.sii.cl/noticias/2026/060226noti01pcr.htm): postergación del reavalúo no agrícola a 2027. [Resolución SII 22/2026](https://www.sii.cl/normativa_legislacion/resoluciones/2026/reso22.pdf): deja sin efecto metodología prevista para 2026.
+- [Argentina TTN, Resolución 80/2025](https://www.argentina.gob.ar/normativa/nacional/resoluci%C3%B3n-80-2025-419266/texto): aprueba Digesto de Normas Nacionales de Valuación consolidado al 23/10/2025; revisar actualizaciones del [TTN](https://www.argentina.gob.ar/tribunal-de-tasaciones-de-la-nacion/normas-nacionales-de-valuacion).
+- [Perú: SAT Lima, directorio](https://www.gob.pe/115146-legislacion): identifica RM 277-2025-VIVIENDA sobre valores unitarios oficiales para 2026. No se extrajeron tablas ni valores por localidad.
+- [SEGOB: Orden Jurídico Nacional](https://ordenjuridico.gob.mx/estatal.php): índice de legislación local, con advertencia expresa de consultar publicación oficial.
+- [INEGI: 32 entidades federativas](https://www.inegi.org.mx/app/areasgeograficas/): referencia territorial para el índice nacional.
+
+### Qué significa «completado» y qué no
+La **integración digital de los recursos didácticos**, el registro documental, las comprobaciones matemáticas y las pruebas de navegador sí pueden cerrarse técnicamente en este PR. **No** se declarará terminada la validación jurídica de las 32 legislaciones, los 20 decretos municipales de tablas de valores ni de toda Latinoamérica: requeriría leyes y reformas consolidadas, textos de periódicos oficiales, revisión profesional local y, en muchos casos, datos sujetos a solicitud formal. Etiquetar «sin verificar» es una condición de rigor, no una omisión técnica.
+
+### Compatibilidad operativa
+No modificar la autenticación, facturación, datos, tablas de comparables ni lógica profesional de las aplicaciones de avalúo. La biblioteca es lectura pública y descarga voluntaria; nunca debe generar automáticamente un valor fiscal o comercial.
