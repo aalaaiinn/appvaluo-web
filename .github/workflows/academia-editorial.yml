@@ -4,25 +4,49 @@ on:
     paths:
       - 'academia*.html'
       - 'academia*.css'
-      - 'academia.js'
+      - 'academia*.js'
       - 'sitemap.xml'
       - 'biblioteca/**'
-      - 'tests/academia-editorial.mjs'
+      - 'tests/academia-*.mjs'
       - '.github/workflows/academia-editorial.yml'
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
-  academica:
+  estatico:
+    name: Estructura, fuentes y archivos
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    permissions:
-      contents: read
     steps:
-      - name: Obtener repositorio
-        uses: actions/checkout@v4
-      - name: Configurar Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Validar contenido editorial y enlaces
+      - name: Validar estructura, PDFs y aritmética
         run: node tests/academia-editorial.mjs
+
+  navegador:
+    name: Chromium · biblioteca, móvil y PDFs
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Instalar Chromium
+        run: |
+          npm install --no-save --no-package-lock --no-audit --no-fund playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Probar interfaz y visor real
+        run: node --test tests/academia-browser.test.mjs
+      - name: Guardar capturas de Academia
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: academia-capturas-320-1440
+          path: artifacts/academia-*.png
+          if-no-files-found: ignore
+          retention-days: 7
