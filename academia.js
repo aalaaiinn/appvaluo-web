@@ -43,24 +43,30 @@
   modal?.addEventListener('close',()=>frame?.removeAttribute('src'));
   modal?.addEventListener('click',ev=>{if(ev.target===modal)closeReader();});
 
-  // Evita botones rotos en vistas de una rama sin los binarios; en el paquete completo sí existen.
+  // HEAD es una comprobación orientativa: algunos CDN la rechazan aunque GET funcione.
+  // Sólo bloquear si el servidor confirmó que el archivo falta (404/410).
   if(location.protocol==='https:' || location.protocol==='http:') {
     cards.forEach(async card=>{
       const link=card.querySelector('a.pdf-download');
       const button=card.querySelector('button.view-pdf');
       const status=card.querySelector('.file-status');
-      if(!link) return;
+      if(!link)return;
       try {
         const r=await fetch(link.getAttribute('href'),{method:'HEAD',cache:'no-store'});
-        if(!r.ok) throw new Error('PDF not found');
-        if(status) status.textContent='PDF disponible para lectura y descarga';
+        if(r.status===404 || r.status===410) {
+          if(button)button.disabled=true;
+          link.removeAttribute('href');
+          link.setAttribute('aria-disabled','true');
+          link.style.opacity='.44';
+          link.style.pointerEvents='none';
+          if(status)status.textContent='Archivo no encontrado en este servidor.';
+        } else if(r.ok) {
+          if(status)status.textContent='PDF disponible para lectura y descarga';
+        } else {
+          if(status)status.textContent='No fue posible comprobar el PDF; puedes intentar abrirlo.';
+        }
       } catch(err) {
-        if(button) button.disabled=true;
-        link.removeAttribute('href');
-        link.setAttribute('aria-disabled','true');
-        link.style.opacity='.44';
-        link.style.pointerEvents='none';
-        if(status)status.textContent='PDF pendiente de publicación en este servidor.';
+        if(status)status.textContent='Verificación no disponible; puedes intentar abrir el PDF.';
       }
     });
   }
